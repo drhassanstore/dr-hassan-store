@@ -1082,235 +1082,264 @@
 
 
 <script>
+const GOOGLE_SHEETS_URL = "https://script.google.com/macros/s/AKfycbwq5d1yK6zwhTRo70rhBZn-oNUCPqXMOowmIplB1ffItl2wlSrLdtEHkodX1fQf5Y3VFQ/exec";
 
-  let cart = [];
+let cart = [];
+let discount = 0;
 
-  let discount = 0;
+function toggleCart() {
+  document.getElementById("cart").classList.toggle("active");
+}
 
+function addToCart(name, price) {
+  const existing = cart.find(item => item.name === name);
 
-  function toggleCart() {
-
-    document
-      .getElementById("cart")
-      .classList
-      .toggle("active");
-
+  if (existing) {
+    existing.quantity += 1;
+  } else {
+    cart.push({ name, price: Number(price), quantity: 1 });
   }
 
+  updateCart();
+  alert("تمت إضافة المنتج إلى السلة");
+}
 
-  function addToCart(name, price) {
+function changeQuantity(index, change) {
+  if (!cart[index]) return;
 
-    cart.push({
-      name: name,
-      price: price
-    });
+  cart[index].quantity += change;
 
-    updateCart();
-
-    alert("تمت إضافة المنتج إلى السلة 🛒");
-
-  }
-
-
-  function removeFromCart(index) {
-
+  if (cart[index].quantity <= 0) {
     cart.splice(index, 1);
-
-    updateCart();
-
   }
 
+  updateCart();
+}
 
-  function updateCart() {
+function removeFromCart(index) {
+  cart.splice(index, 1);
+  updateCart();
+}
 
-    const cartItems =
-      document.getElementById("cartItems");
+function getSubtotal() {
+  return cart.reduce((sum, item) =>
+    sum + (Number(item.price) * Number(item.quantity)), 0
+  );
+}
 
-    const cartTotal =
-      document.getElementById("cartTotal");
+function getFinalTotal() {
+  let total = getSubtotal() - Number(discount || 0);
 
-    cartItems.innerHTML = "";
+  if (total < 0) total = 0;
 
-    let total = 0;
+  const payment = document.getElementById("paymentMethod");
+  if (payment && payment.value === "الدفع عند الاستلام") {
+    total += 20;
+  }
 
+  return total;
+}
 
-    if (cart.length === 0) {
+function updateCart() {
+  const cartItems = document.getElementById("cartItems");
+  const cartTotal = document.getElementById("cartTotal");
 
-      cartItems.innerHTML =
-        "<p>السلة فارغة حاليًا</p>";
+  cartItems.innerHTML = "";
 
-    }
+  if (cart.length === 0) {
+    cartItems.innerHTML = "<p>السلة فارغة حاليًا</p>";
+    cartTotal.innerText = "0";
+    updateOrderSummary();
+    return;
+  }
 
+  cart.forEach((item, index) => {
+    const itemTotal = Number(item.price) * Number(item.quantity);
 
-    cart.forEach((item, index) => {
+    cartItems.innerHTML += `
+      <div class="cart-item">
+        <div class="cart-item-top">
+          <strong>${item.name}</strong>
+          <span>${itemTotal} جنيه</span>
+        </div>
 
-      total += item.price;
-
-      cartItems.innerHTML += `
-
-        <div class="cart-item">
-
-          <strong>
-            ${item.name}
-          </strong>
-
-          <br>
-
-          ${item.price} جنيه
-
-          <br>
+        <div class="cart-controls">
+          <button class="qty-btn" onclick="changeQuantity(${index}, -1)">−</button>
+          <strong>${item.quantity}</strong>
+          <button class="qty-btn" onclick="changeQuantity(${index}, 1)">+</button>
 
           <button
+            class="remove-btn"
             onclick="removeFromCart(${index})"
-            style="
-              border:none;
-              color:red;
-              background:none;
-              cursor:pointer;
-              margin-top:5px;
-            "
           >
             حذف
           </button>
-
         </div>
 
-      `;
+        <small>${item.price} جنيه للقطعة</small>
+      </div>
+    `;
+  });
 
-    });
+  cartTotal.innerText = getFinalTotal();
+  updateOrderSummary();
+}
 
+function updateOrderSummary() {
+  const box = document.getElementById("orderSummary");
+  const subtotalEl = document.getElementById("summarySubtotal");
+  const discountEl = document.getElementById("summaryDiscount");
+  const codEl = document.getElementById("summaryCOD");
+  const totalEl = document.getElementById("summaryTotal");
 
-    total -= discount;
+  if (!box) return;
 
-    if (total < 0) {
-      total = 0;
-    }
-
-
-    cartTotal.innerText = total;
-
+  if (cart.length === 0) {
+    box.innerHTML = '<div class="empty-summary">لم تختاري أي منتجات بعد.</div>';
+    return;
   }
 
+  let productsHtml = "";
 
-  function applyCoupon() {
+  cart.forEach(item => {
+    productsHtml += `
+      <div class="summary-row">
+        <span>${item.name} × ${item.quantity}</span>
+        <span>${Number(item.price) * Number(item.quantity)} جنيه</span>
+      </div>
+    `;
+  });
 
-    const coupon =
-      document
-        .getElementById("coupon")
-        .value
-        .trim()
-        .toUpperCase();
+  const subtotal = getSubtotal();
+  const cod = document.getElementById("paymentMethod")?.value === "الدفع عند الاستلام" ? 20 : 0;
+  const total = getFinalTotal();
 
+  box.innerHTML = `
+    ${productsHtml}
+    <div class="summary-row">
+      <span>قيمة المنتجات</span>
+      <span>${subtotal} جنيه</span>
+    </div>
+    <div class="summary-row">
+      <span>الخصم</span>
+      <span>${Number(discount || 0)} جنيه</span>
+    </div>
+    <div class="summary-row">
+      <span>رسوم الدفع عند الاستلام</span>
+      <span>${cod} جنيه</span>
+    </div>
+    <div class="summary-row summary-total">
+      <span>الإجمالي</span>
+      <span>${total} جنيه</span>
+    </div>
+  `;
 
-    const message =
-      document.getElementById("couponMessage");
+  if (subtotalEl) subtotalEl.innerText = subtotal;
+  if (discountEl) discountEl.innerText = discount;
+  if (codEl) codEl.innerText = cod;
+  if (totalEl) totalEl.innerText = total;
+}
 
+function applyCoupon() {
+  const coupon = document.getElementById("coupon").value.trim().toUpperCase();
+  const message = document.getElementById("couponMessage");
 
-    /*
-      كود الخصم الحالي:
-      DRHASSAN10
-
-      قيمة الخصم:
-      10 جنيه
-    */
-
-
-    if (coupon === "DRHASSAN10") {
-
-      discount = 10;
-
-      message.innerText =
-        "تم تطبيق خصم 10 جنيه بنجاح 🎉";
-
-      message.style.color =
-        "green";
-
-    } else {
-
-      discount = 0;
-
-      message.innerText =
-        "كوبون الخصم غير صحيح";
-
-      message.style.color =
-        "red";
-
-    }
-
-
-    updateCart();
-
+  if (coupon === "DRHASSAN10") {
+    discount = 10;
+    message.innerText = "تم تطبيق خصم 10 جنيه بنجاح";
+    message.style.color = "green";
+  } else if (coupon === "") {
+    discount = 0;
+    message.innerText = "";
+  } else {
+    discount = 0;
+    message.innerText = "كوبون الخصم غير صحيح";
+    message.style.color = "red";
   }
 
+  updateCart();
+}
 
-  function sendOrder(event) {
+function buildProductsText() {
+  return cart.map(item =>
+    "- " + item.name + " × " + item.quantity +
+    " : " + (Number(item.price) * Number(item.quantity)) + " جنيه"
+  ).join("\n");
+}
 
-    event.preventDefault();
+async function sendOrder(event) {
+  event.preventDefault();
 
+  if (cart.length === 0) {
+    alert("أضيفي منتجًا واحدًا على الأقل إلى السلة قبل إرسال الطلب.");
+    document.getElementById("products").scrollIntoView({ behavior: "smooth" });
+    return;
+  }
 
-    const name =
-      document.getElementById("name").value;
+  const form = event.target;
+  const button = event.submitter;
 
-    const phone =
-      document.getElementById("phone").value;
+  const name = document.getElementById("name").value.trim();
+  const phone = document.getElementById("phone").value.trim();
+  const governorate = document.getElementById("governorate").value.trim();
+  const area = document.getElementById("area").value.trim();
+  const address = document.getElementById("address").value.trim();
+  const payment = document.getElementById("paymentMethod").value;
 
-    const governorate =
-      document.getElementById("governorate").value;
+  if (!name || !phone || !governorate || !area || !address) {
+    alert("من فضلك املئي جميع بيانات الطلب.");
+    return;
+  }
 
-    const area =
-      document.getElementById("area").value;
+  const subtotal = getSubtotal();
+  const discountValue = Number(discount || 0);
+  const codFee = payment === "الدفع عند الاستلام" ? 20 : 0;
+  const total = Math.max(0, subtotal - discountValue) + codFee;
 
-    const address =
-      document.getElementById("address").value;
+  const orderId = "DH-" + Date.now().toString().slice(-8);
 
-    const payment =
-      document.getElementById("paymentMethod").value;
+  const products = buildProductsText();
 
+  const data = new URLSearchParams();
+  data.append("orderId", orderId);
+  data.append("name", name);
+  data.append("phone", phone);
+  data.append("governorate", governorate);
+  data.append("area", area);
+  data.append("address", address);
+  data.append("products", products);
+  data.append("subtotal", subtotal);
+  data.append("discount", discountValue);
+  data.append("codFee", codFee);
+  data.append("total", total);
+  data.append("payment", payment);
 
-    let products = "";
+  const oldText = button ? button.innerText : "";
 
-    let total = 0;
+  if (button) {
+    button.disabled = true;
+    button.innerText = "جاري تسجيل الطلب...";
+  }
 
-
-    cart.forEach(item => {
-
-      products +=
-        "- " +
-        item.name +
-        " : " +
-        item.price +
-        " جنيه\n";
-
-      total += item.price;
-
+  try {
+    await fetch(GOOGLE_SHEETS_URL, {
+      method: "POST",
+      mode: "no-cors",
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8"
+      },
+      body: data.toString()
     });
 
-
-    total -= discount;
-
-
-    if (
-      payment ===
-      "الدفع عند الاستلام"
-    ) {
-
-      total += 20;
-
-    }
-
-
-    const message =
-
+    const whatsappMessage =
 `طلب جديد من موقع Dr. Hassan
 
+رقم الطلب: ${orderId}
+
 الاسم: ${name}
-
 رقم التليفون: ${phone}
-
 المحافظة: ${governorate}
-
 المنطقة: ${area}
-
 العنوان:
 ${address}
 
@@ -1318,45 +1347,60 @@ ${address}
 ${payment}
 
 المنتجات:
-${products || "لم يتم اختيار منتجات"}
+${products}
 
-الخصم:
-${discount} جنيه
+قيمة المنتجات: ${subtotal} جنيه
+الخصم: ${discountValue} جنيه
+${codFee > 0 ? "رسوم الدفع عند الاستلام: 20 جنيه\n" : ""}الإجمالي: ${total} جنيه`;
 
-الإجمالي:
-${total} جنيه`;
-
-
-    const whatsappNumber =
-      "201080212554";
-
+    const whatsappNumber = "201080212554";
 
     window.open(
-      "https://wa.me/" +
-      whatsappNumber +
-      "?text=" +
-      encodeURIComponent(message),
+      "https://wa.me/" + whatsappNumber +
+      "?text=" + encodeURIComponent(whatsappMessage),
       "_blank"
     );
 
+    const successBox = document.getElementById("successBox");
+    const successNumber = document.getElementById("successOrderNumber");
+
+    if (successBox && successNumber) {
+      successNumber.innerText = orderId;
+      successBox.style.display = "block";
+      successBox.scrollIntoView({ behavior: "smooth", block: "center" });
+    } else {
+      alert("تم تسجيل الطلب بنجاح\nرقم الطلب: " + orderId);
+    }
+
+    cart = [];
+    discount = 0;
+    form.reset();
+
+    document.getElementById("couponMessage").innerText = "";
+    document.getElementById("coupon").value = "";
+
+    updateCart();
+
+  } catch (error) {
+    console.error(error);
+    alert("حدث خطأ أثناء إرسال الطلب. حاولي مرة أخرى.");
+  } finally {
+    if (button) {
+      button.disabled = false;
+      button.innerText = oldText || "إرسال الطلب على واتساب";
+    }
+  }
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+  const payment = document.getElementById("paymentMethod");
+
+  if (payment) {
+    payment.addEventListener("change", updateCart);
   }
 
-</script>
-
-
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-  const form = document.querySelector('form[onsubmit="sendOrder(event)"]');
-  if (!form) return;
-
-  form.addEventListener("submit", function (event) {
-    if (typeof cart !== "undefined" && Array.isArray(cart) && cart.length === 0) {
-      event.preventDefault();
-      alert("أضيفي منتجًا واحدًا على الأقل إلى السلة قبل إرسال الطلب.");
-    }
-  });
+  updateCart();
 });
 </script>
-
 </body>
 </html>
