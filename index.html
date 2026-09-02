@@ -1,22 +1,31 @@
+```html
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Dr. Hassan Store</title>
-
-  <meta name="description" content="Dr. Hassan Store - Skin Care, Hair Care, Body Care & Offers">
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <title>Dr. Hassan | Dermatology • Hair • Skincare</title>
 
   <style>
+
+    :root {
+      --green: #176b5a;
+      --dark-green: #10483d;
+      --light-green: #eef7f4;
+      --white: #ffffff;
+      --text: #26312e;
+      --gray: #6d7774;
+      --border: #e4ebe8;
+      --red: #c0392b;
+    }
+
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
+      font-family: Arial, sans-serif;
     }
 
     html {
@@ -24,197 +33,167 @@
     }
 
     body {
-      font-family: "Cairo", sans-serif;
-      background: #fafaf8;
-      color: #222;
-      line-height: 1.7;
+      background: var(--white);
+      color: var(--text);
     }
 
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
 
-    button,
-    input,
-    select,
-    textarea {
-      font-family: inherit;
-    }
-
-    /* ================= HEADER ================= */
+    /* =========================
+       HEADER
+    ========================= */
 
     header {
       position: sticky;
       top: 0;
       z-index: 1000;
-      background: rgba(255,255,255,0.96);
+
+      background: rgba(255, 255, 255, 0.96);
       backdrop-filter: blur(10px);
-      border-bottom: 1px solid #eee;
-    }
 
-    .top-bar {
-      background: #173f35;
-      color: white;
-      text-align: center;
-      padding: 8px;
-      font-size: 13px;
-    }
+      border-bottom: 1px solid var(--border);
 
-    .navbar {
-      max-width: 1200px;
-      margin: auto;
-      min-height: 75px;
+      padding: 12px 7%;
+
       display: flex;
       align-items: center;
       justify-content: space-between;
+
       gap: 20px;
-      padding: 0 20px;
     }
 
     .logo {
-      font-size: 23px;
-      font-weight: 800;
-      color: #173f35;
-      white-space: nowrap;
+      color: var(--green);
+      font-size: 22px;
+      font-weight: bold;
     }
 
     .logo span {
-      color: #b88948;
+      display: block;
+      color: var(--gray);
+      font-size: 11px;
+      font-weight: normal;
+      margin-top: 3px;
     }
 
-    nav {
-      display: flex;
-      gap: 25px;
-      align-items: center;
-      font-weight: 600;
-      font-size: 14px;
+    nav a {
+      color: var(--text);
+      text-decoration: none;
+
+      margin: 0 8px;
+
+      font-size: 15px;
+      font-weight: bold;
     }
 
     nav a:hover {
-      color: #b88948;
+      color: var(--green);
     }
 
     .cart-btn {
       border: none;
-      background: #173f35;
+      background: var(--green);
       color: white;
-      border-radius: 30px;
+
       padding: 10px 17px;
+
+      border-radius: 25px;
+
       cursor: pointer;
-      font-weight: 700;
-      position: relative;
+
+      font-size: 15px;
     }
 
-    .cart-count {
-      background: #b88948;
-      width: 22px;
-      height: 22px;
-      border-radius: 50%;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      margin-right: 5px;
-      font-size: 12px;
-    }
 
-    /* ================= HERO ================= */
+    /* =========================
+       HERO
+    ========================= */
 
     .hero {
-      min-height: 560px;
+      min-height: 570px;
+
       display: flex;
       align-items: center;
+      justify-content: center;
+
+      text-align: center;
+
+      padding: 70px 20px;
+
       background:
-        radial-gradient(circle at 15% 20%, rgba(184,137,72,.13), transparent 30%),
-        radial-gradient(circle at 85% 70%, rgba(23,63,53,.12), transparent 35%),
-        #f5f4ef;
+        linear-gradient(
+          rgba(255,255,255,.82),
+          rgba(238,247,244,.96)
+        );
     }
 
     .hero-content {
-      max-width: 1200px;
-      width: 100%;
-      margin: auto;
-      padding: 70px 25px;
-      display: grid;
-      grid-template-columns: 1.1fr .9fr;
-      align-items: center;
-      gap: 50px;
+      max-width: 850px;
     }
 
-    .hero-text .small-title {
-      color: #b88948;
-      font-weight: 800;
-      margin-bottom: 10px;
+    .hero-logo {
+      width: min(430px, 90%);
+      max-height: 300px;
+
+      object-fit: contain;
+
+      margin-bottom: 25px;
     }
 
-    .hero-text h1 {
-      font-size: clamp(42px, 6vw, 72px);
-      line-height: 1.1;
-      color: #173f35;
-      margin-bottom: 20px;
+    .hero h1 {
+      color: var(--dark-green);
+
+      font-size: clamp(32px, 5vw, 52px);
+
+      margin-bottom: 15px;
     }
 
-    .hero-text h1 span {
-      color: #b88948;
-    }
+    .hero p {
+      color: var(--gray);
 
-    .hero-text p {
-      max-width: 600px;
-      color: #666;
-      font-size: 17px;
+      font-size: 19px;
+      line-height: 1.9;
+
       margin-bottom: 30px;
     }
 
-    .main-btn {
+
+    /* =========================
+       BUTTON
+    ========================= */
+
+    .btn {
       display: inline-block;
-      background: #173f35;
+
+      background: var(--green);
       color: white;
-      padding: 14px 28px;
-      border-radius: 30px;
-      font-weight: 700;
-      transition: .3s;
+
       border: none;
-      cursor: pointer;
-    }
 
-    .main-btn:hover {
-      transform: translateY(-3px);
-      background: #b88948;
-    }
+      padding: 14px 30px;
 
-    .hero-card {
-      min-height: 360px;
       border-radius: 30px;
-      background: linear-gradient(145deg, #173f35, #255b4e);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      color: white;
-      padding: 30px;
-      box-shadow: 0 25px 50px rgba(23,63,53,.18);
+
+      text-decoration: none;
+
+      font-weight: bold;
+
+      cursor: pointer;
+
+      transition: .25s;
     }
 
-    .hero-card-inner {
-      border: 1px solid rgba(255,255,255,.3);
-      border-radius: 25px;
-      padding: 50px 30px;
-      width: 100%;
+    .btn:hover {
+      background: var(--dark-green);
+      transform: translateY(-2px);
     }
 
-    .hero-card .icon {
-      font-size: 70px;
-      margin-bottom: 10px;
-    }
 
-    .hero-card h2 {
-      font-size: 30px;
-    }
-
-    /* ================= SECTIONS ================= */
+    /* =========================
+       SECTIONS
+    ========================= */
 
     section {
-      padding: 80px 20px;
+      padding: 80px 8%;
     }
 
     .section-title {
@@ -222,1409 +201,1558 @@
       margin-bottom: 45px;
     }
 
-    .section-title span {
-      color: #b88948;
-      font-weight: 800;
-      font-size: 14px;
-    }
-
     .section-title h2 {
-      color: #173f35;
-      font-size: 35px;
-      margin-top: 5px;
+      color: var(--dark-green);
+
+      font-size: 34px;
+
+      margin-bottom: 10px;
     }
 
     .section-title p {
-      color: #777;
-      max-width: 650px;
-      margin: 8px auto;
+      color: var(--gray);
+
+      line-height: 1.7;
     }
 
-    /* ================= CATEGORIES ================= */
+
+    /* =========================
+       CATEGORIES
+    ========================= */
 
     .categories {
-      max-width: 1100px;
-      margin: auto;
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 18px;
+
+      grid-template-columns:
+        repeat(4, 1fr);
+
+      gap: 22px;
     }
 
     .category {
       background: white;
+
+      border: 1px solid var(--border);
+
       border-radius: 20px;
-      padding: 30px 15px;
-      text-align: center;
-      border: 1px solid #eee;
-      transition: .3s;
+
+      overflow: hidden;
+
       cursor: pointer;
+
+      transition: .3s;
     }
 
     .category:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 15px 35px rgba(0,0,0,.08);
-      border-color: #b88948;
+      transform: translateY(-7px);
+
+      box-shadow:
+        0 15px 35px
+        rgba(23,107,90,.12);
     }
 
-    .category-icon {
-      font-size: 40px;
-      margin-bottom: 8px;
+    .category img {
+      width: 100%;
+
+      height: 250px;
+
+      object-fit: cover;
+    }
+
+    .category-content {
+      padding: 22px;
+
+      text-align: center;
     }
 
     .category h3 {
-      color: #173f35;
-      font-size: 17px;
-    }
+      color: var(--dark-green);
 
-    /* ================= PRODUCTS ================= */
+      font-size: 22px;
 
-    .products-section {
-      background: #fff;
-    }
-
-    .products-grid {
-      max-width: 1200px;
-      margin: auto;
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 22px;
-    }
-
-    .product-card {
-      background: white;
-      border: 1px solid #eee;
-      border-radius: 20px;
-      overflow: hidden;
-      transition: .3s;
-      position: relative;
-    }
-
-    .product-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 18px 40px rgba(0,0,0,.09);
-    }
-
-    .product-image {
-      height: 240px;
-      background: #f4f2ed;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-      position: relative;
-    }
-
-    .product-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .placeholder-image {
-      font-size: 65px;
-    }
-
-    .offer-badge {
-      position: absolute;
-      top: 12px;
-      right: 12px;
-      background: #b88948;
-      color: white;
-      border-radius: 20px;
-      padding: 4px 11px;
-      font-size: 12px;
-      font-weight: 700;
-    }
-
-    .product-info {
-      padding: 18px;
-    }
-
-    .product-category {
-      color: #b88948;
-      font-size: 12px;
-      font-weight: 700;
-    }
-
-    .product-info h3 {
-      color: #173f35;
-      font-size: 17px;
-      margin: 5px 0;
-    }
-
-    .product-info p {
-      color: #777;
-      font-size: 13px;
-      min-height: 45px;
-    }
-
-    .price {
-      margin: 12px 0;
-      font-weight: 800;
-      font-size: 20px;
-      color: #173f35;
-    }
-
-    .old-price {
-      color: #999;
-      text-decoration: line-through;
-      font-size: 13px;
-      margin-right: 7px;
-      font-weight: 500;
-    }
-
-    .add-btn {
-      width: 100%;
-      background: #173f35;
-      color: white;
-      border: none;
-      padding: 11px;
-      border-radius: 12px;
-      cursor: pointer;
-      font-weight: 700;
-      transition: .3s;
-    }
-
-    .add-btn:hover {
-      background: #b88948;
-    }
-
-    /* ================= WHY US ================= */
-
-    .features {
-      max-width: 1100px;
-      margin: auto;
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 20px;
-    }
-
-    .feature {
-      text-align: center;
-      padding: 25px 15px;
-    }
-
-    .feature-icon {
-      width: 65px;
-      height: 65px;
-      background: #edf2ef;
-      border-radius: 50%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin: auto auto 15px;
-      font-size: 28px;
-    }
-
-    .feature h3 {
-      color: #173f35;
-      font-size: 17px;
-    }
-
-    .feature p {
-      color: #777;
-      font-size: 13px;
-      margin-top: 5px;
-    }
-
-    /* ================= ABOUT ================= */
-
-    .about {
-      background: #173f35;
-      color: white;
-    }
-
-    .about-content {
-      max-width: 950px;
-      margin: auto;
-      text-align: center;
-    }
-
-    .about h2 {
-      font-size: 35px;
-      margin-bottom: 15px;
-    }
-
-    .about p {
-      color: #e1e8e5;
-      line-height: 2;
-    }
-
-    /* ================= COUPONS ================= */
-
-    .coupon-box {
-      max-width: 850px;
-      margin: auto;
-      background: #f5f1e8;
-      border: 1px dashed #b88948;
-      border-radius: 20px;
-      padding: 30px;
-      text-align: center;
-    }
-
-    .coupon-box h3 {
-      color: #173f35;
       margin-bottom: 8px;
     }
 
-    .coupon-code {
-      display: inline-block;
-      margin-top: 12px;
-      padding: 8px 20px;
-      background: white;
-      border-radius: 20px;
-      color: #b88948;
-      font-weight: 800;
-      letter-spacing: 1px;
-    }
+    .category p {
+      color: var(--gray);
 
-    /* ================= CONTACT ================= */
-
-    .contact {
-      background: #f5f4ef;
-    }
-
-    .contact-grid {
-      max-width: 900px;
-      margin: auto;
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-    }
-
-    .contact-card {
-      background: white;
-      padding: 25px;
-      border-radius: 18px;
-      text-align: center;
-      border: 1px solid #eee;
-    }
-
-    .contact-card .icon {
-      font-size: 35px;
-      margin-bottom: 8px;
-    }
-
-    .contact-card h3 {
-      color: #173f35;
-      font-size: 17px;
-    }
-
-    .contact-card p {
-      color: #777;
-      margin-top: 5px;
-    }
-
-    .whatsapp-btn {
-      display: inline-block;
-      margin-top: 10px;
-      background: #173f35;
-      color: white;
-      padding: 9px 18px;
-      border-radius: 25px;
-      font-size: 13px;
-    }
-
-    /* ================= FOOTER ================= */
-
-    footer {
-      background: #102f28;
-      color: white;
-      text-align: center;
-      padding: 30px 20px;
-    }
-
-    footer p {
-      color: #c9d4d0;
-      font-size: 13px;
-    }
-
-    /* ================= CART ================= */
-
-    .overlay {
-      position: fixed;
-      inset: 0;
-      background: rgba(0,0,0,.45);
-      z-index: 2000;
-      display: none;
-    }
-
-    .overlay.active {
-      display: block;
-    }
-
-    .cart-panel {
-      position: fixed;
-      top: 0;
-      left: 0;
-      height: 100vh;
-      width: min(430px, 100%);
-      background: white;
-      z-index: 2100;
-      transform: translateX(-100%);
-      transition: .35s;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .cart-panel.active {
-      transform: translateX(0);
-    }
-
-    .cart-header {
-      padding: 20px;
-      background: #173f35;
-      color: white;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .close-cart {
-      background: transparent;
-      color: white;
-      border: none;
-      font-size: 28px;
-      cursor: pointer;
-    }
-
-    .cart-items {
-      flex: 1;
-      overflow-y: auto;
-      padding: 15px;
-    }
-
-    .empty-cart {
-      text-align: center;
-      color: #888;
-      padding: 50px 10px;
-    }
-
-    .cart-item {
-      display: grid;
-      grid-template-columns: 65px 1fr auto;
-      gap: 10px;
-      align-items: center;
-      padding: 12px 0;
-      border-bottom: 1px solid #eee;
-    }
-
-    .cart-item-image {
-      width: 65px;
-      height: 65px;
-      background: #f3f1ec;
-      border-radius: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 25px;
-      overflow: hidden;
-    }
-
-    .cart-item-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .cart-item h4 {
-      color: #173f35;
-      font-size: 13px;
-    }
-
-    .cart-item small {
-      color: #888;
-    }
-
-    .quantity {
-      display: flex;
-      align-items: center;
-      gap: 7px;
-      margin-top: 5px;
-    }
-
-    .quantity button {
-      width: 24px;
-      height: 24px;
-      border: 1px solid #ddd;
-      background: white;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-
-    .remove-item {
-      border: none;
-      background: transparent;
-      color: #c33;
-      cursor: pointer;
-      font-size: 12px;
-    }
-
-    .cart-footer {
-      padding: 18px;
-      border-top: 1px solid #eee;
-      max-height: 55vh;
-      overflow-y: auto;
-    }
-
-    .summary-row {
-      display: flex;
-      justify-content: space-between;
-      margin: 7px 0;
       font-size: 14px;
     }
 
-    .total-row {
-      font-size: 20px;
-      font-weight: 800;
-      color: #173f35;
-      border-top: 1px solid #eee;
-      padding-top: 10px;
-      margin-top: 10px;
+
+    /* =========================
+       PRODUCTS
+    ========================= */
+
+    .products {
+      background: var(--light-green);
     }
 
-    .coupon-form {
-      display: flex;
-      gap: 7px;
-      margin: 12px 0;
+    .products-grid {
+      display: grid;
+
+      grid-template-columns:
+        repeat(auto-fit, minmax(230px, 1fr));
+
+      gap: 25px;
     }
 
-    .coupon-form input {
-      flex: 1;
-      padding: 9px;
-      border: 1px solid #ddd;
-      border-radius: 8px;
-      outline: none;
+    .product {
+      background: white;
+
+      border-radius: 18px;
+
+      overflow: hidden;
+
+      text-align: center;
+
+      box-shadow:
+        0 8px 25px
+        rgba(0,0,0,.06);
     }
 
-    .coupon-form button {
-      background: #b88948;
-      color: white;
-      border: none;
-      padding: 8px 12px;
-      border-radius: 8px;
-      cursor: pointer;
-    }
-
-    .customer-form {
-      margin-top: 15px;
-    }
-
-    .customer-form h3 {
-      color: #173f35;
-      margin-bottom: 10px;
-    }
-
-    .form-group {
-      margin-bottom: 9px;
-    }
-
-    .form-group label {
-      display: block;
-      font-size: 12px;
-      font-weight: 700;
-      margin-bottom: 3px;
-    }
-
-    .form-group input,
-    .form-group select,
-    .form-group textarea {
+    .product img {
       width: 100%;
-      padding: 9px 10px;
-      border: 1px solid #ddd;
-      border-radius: 8px;
-      outline: none;
-      font-size: 13px;
+
+      height: 240px;
+
+      object-fit: cover;
     }
 
-    .form-group textarea {
-      min-height: 70px;
-      resize: vertical;
+    .product-info {
+      padding: 20px;
+    }
+
+    .product h3 {
+      color: var(--dark-green);
+
+      margin-bottom: 8px;
+    }
+
+    .product p {
+      color: var(--gray);
+
+      margin-bottom: 12px;
+    }
+
+    .price {
+      color: var(--green);
+
+      font-size: 21px;
+
+      font-weight: bold;
+
+      margin-bottom: 15px;
+    }
+
+
+    /* =========================
+       SHIPPING
+    ========================= */
+
+    .shipping-grid {
+      max-width: 900px;
+
+      margin: auto;
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(2, 1fr);
+
+      gap: 15px;
+    }
+
+    .shipping-item {
+      background: var(--light-green);
+
+      padding: 18px 22px;
+
+      border-radius: 14px;
+
+      display: flex;
+
+      justify-content: space-between;
+
+      gap: 10px;
+
+      font-weight: bold;
+    }
+
+    .shipping-price {
+      color: var(--green);
+
+      white-space: nowrap;
+    }
+
+
+    /* =========================
+       PAYMENT
+    ========================= */
+
+    .payment {
+      background: var(--light-green);
+
+      text-align: center;
     }
 
     .payment-box {
-      margin-top: 12px;
-      background: #f6f6f3;
-      border-radius: 10px;
-      padding: 10px;
+      max-width: 750px;
+
+      background: white;
+
+      margin: auto;
+
+      padding: 35px;
+
+      border-radius: 20px;
+
+      border: 1px solid var(--border);
     }
 
-    .payment-box label {
+    .payment-box p {
+      margin: 15px 0;
+
+      line-height: 1.8;
+    }
+
+    .important {
+      color: #b64b32;
+
+      font-weight: bold;
+    }
+
+
+    /* =========================
+       ORDER
+    ========================= */
+
+    .order-box {
+      max-width: 750px;
+
+      margin: auto;
+
+      background: white;
+
+      padding: 35px;
+
+      border-radius: 20px;
+
+      box-shadow:
+        0 10px 30px
+        rgba(0,0,0,.08);
+
+      border: 1px solid var(--border);
+    }
+
+    .form-group {
+      margin-bottom: 17px;
+    }
+
+    label {
       display: block;
-      padding: 5px 0;
-      cursor: pointer;
-      font-size: 13px;
+
+      margin-bottom: 8px;
+
+      font-weight: bold;
+
+      color: var(--dark-green);
     }
 
-    .transfer-info {
-      display: none;
-      margin-top: 8px;
-      padding: 10px;
-      background: #fff;
-      border: 1px dashed #b88948;
-      border-radius: 8px;
-      font-size: 12px;
-    }
-
-    .transfer-info strong {
-      color: #173f35;
-      font-size: 16px;
-    }
-
-    .order-btn {
+    input,
+    select,
+    textarea {
       width: 100%;
-      background: #173f35;
-      color: white;
-      border: none;
-      border-radius: 12px;
-      padding: 13px;
-      margin-top: 12px;
-      cursor: pointer;
-      font-weight: 800;
+
+      padding: 14px;
+
+      border: 1px solid #d9e3df;
+
+      border-radius: 10px;
+
       font-size: 15px;
+
+      outline: none;
     }
 
-    .order-btn:hover {
-      background: #b88948;
+    input:focus,
+    select:focus,
+    textarea:focus {
+      border-color: var(--green);
     }
 
-    .notice {
-      font-size: 11px;
-      color: #888;
+    textarea {
+      min-height: 100px;
+
+      resize: vertical;
+    }
+
+
+    /* =========================
+       COUPON
+    ========================= */
+
+    .coupon-box {
+      display: flex;
+
+      gap: 10px;
+
+      margin: 20px 0;
+    }
+
+    .coupon-box input {
+      flex: 1;
+    }
+
+    .coupon-btn {
+      border: none;
+
+      padding: 12px 20px;
+
+      border-radius: 10px;
+
+      background: var(--dark-green);
+
+      color: white;
+
+      cursor: pointer;
+    }
+
+
+    /* =========================
+       CART
+    ========================= */
+
+    .cart {
+      position: fixed;
+
+      top: 0;
+      left: -420px;
+
+      width: min(400px, 100%);
+
+      height: 100vh;
+
+      background: white;
+
+      z-index: 2000;
+
+      padding: 25px;
+
+      transition: .35s;
+
+      box-shadow:
+        0 0 30px
+        rgba(0,0,0,.15);
+
+      overflow-y: auto;
+    }
+
+    .cart.active {
+      left: 0;
+    }
+
+    .cart h2 {
+      color: var(--dark-green);
+
+      margin-bottom: 25px;
+    }
+
+    .close-cart {
+      float: left;
+
+      background: none;
+
+      border: none;
+
+      font-size: 28px;
+
+      cursor: pointer;
+    }
+
+    .cart-item {
+      padding: 15px 0;
+
+      border-bottom:
+        1px solid var(--border);
+    }
+
+    .cart-total {
+      margin-top: 20px;
+
+      font-size: 20px;
+
+      font-weight: bold;
+
+      color: var(--dark-green);
+    }
+
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    footer {
+      background: var(--dark-green);
+
+      color: white;
+
       text-align: center;
-      margin-top: 7px;
+
+      padding: 30px 20px;
+
+      line-height: 2;
     }
 
-    /* ================= MOBILE ================= */
+
+    /* =========================
+       WHATSAPP
+    ========================= */
+
+    .whatsapp {
+      position: fixed;
+
+      bottom: 25px;
+      left: 25px;
+
+      background: #25D366;
+
+      color: white;
+
+      text-decoration: none;
+
+      width: 58px;
+      height: 58px;
+
+      border-radius: 50%;
+
+      display: flex;
+
+      align-items: center;
+      justify-content: center;
+
+      font-size: 28px;
+
+      box-shadow:
+        0 8px 20px
+        rgba(0,0,0,.2);
+    }
+
+
+    /* =========================
+       MOBILE
+    ========================= */
 
     @media (max-width: 900px) {
-      nav {
-        display: none;
+
+      .categories {
+        grid-template-columns:
+          repeat(2, 1fr);
       }
 
-      .hero-content {
-        grid-template-columns: 1fr;
+    }
+
+    @media (max-width: 700px) {
+
+      header {
+        padding: 12px 5%;
+
+        flex-wrap: wrap;
+
+        justify-content: center;
+      }
+
+      nav {
         text-align: center;
       }
 
-      .hero-text p {
-        margin-left: auto;
-        margin-right: auto;
-      }
+      nav a {
+        margin: 5px;
 
-      .products-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .categories {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .features {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
-    @media (max-width: 600px) {
-      .navbar {
-        min-height: 65px;
-      }
-
-      .logo {
-        font-size: 18px;
-      }
-
-      .cart-btn {
-        padding: 8px 12px;
-        font-size: 12px;
-      }
-
-      .hero {
-        min-height: auto;
-      }
-
-      .hero-content {
-        padding: 55px 18px;
-      }
-
-      .hero-card {
-        min-height: 280px;
+        font-size: 13px;
       }
 
       section {
-        padding: 55px 15px;
-      }
-
-      .section-title h2 {
-        font-size: 28px;
-      }
-
-      .products-grid {
-        gap: 12px;
-      }
-
-      .product-image {
-        height: 180px;
-      }
-
-      .product-info {
-        padding: 12px;
-      }
-
-      .product-info h3 {
-        font-size: 14px;
-      }
-
-      .product-info p {
-        font-size: 11px;
-      }
-
-      .price {
-        font-size: 17px;
+        padding: 60px 5%;
       }
 
       .categories {
-        gap: 10px;
-      }
-
-      .category {
-        padding: 20px 10px;
-      }
-
-      .features {
-        gap: 10px;
-      }
-
-      .contact-grid {
         grid-template-columns: 1fr;
       }
+
+      .shipping-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .coupon-box {
+        flex-direction: column;
+      }
+
     }
+
   </style>
+
 </head>
+
 
 <body>
 
-  <!-- ================= TOP BAR ================= -->
 
-  <div class="top-bar">
-    🚚 شحن لجميع المحافظات | 💬 خدمة العملاء عبر واتساب: 01080212554
-  </div>
+  <!-- =========================
+       CART
+  ========================== -->
 
-  <!-- ================= HEADER ================= -->
+  <div class="cart" id="cart">
 
-  <header>
-    <div class="navbar">
+    <button
+      class="close-cart"
+      onclick="toggleCart()">
+      ×
+    </button>
 
-      <a href="#home" class="logo">
-        Dr. <span>Hassan</span> Store
-      </a>
+    <h2>🛒 سلة المشتريات</h2>
 
-      <nav>
-        <a href="#home">الرئيسية</a>
-        <a href="#categories">الأقسام</a>
-        <a href="#products">المنتجات</a>
-        <a href="#offers">العروض</a>
-        <a href="#contact">تواصل معنا</a>
-      </nav>
+    <div id="cartItems">
 
-      <button class="cart-btn" onclick="openCart()">
-        🛒 السلة
-        <span class="cart-count" id="cartCount">0</span>
-      </button>
+      <p>
+        السلة فارغة حاليًا
+      </p>
 
     </div>
+
+    <div class="cart-total">
+
+      الإجمالي:
+      <span id="cartTotal">
+        0
+      </span>
+
+      جنيه
+
+    </div>
+
+    <br>
+
+    <a
+      href="#order"
+      class="btn"
+      onclick="toggleCart()">
+
+      إتمام الطلب
+
+    </a>
+
+  </div>
+
+
+  <!-- =========================
+       HEADER
+  ========================== -->
+
+  <header>
+
+    <div class="logo">
+
+      Dr. Hassan
+
+      <span>
+        DERMATOLOGY • HAIR • SKINCARE
+      </span>
+
+    </div>
+
+
+    <nav>
+
+      <a href="#home">
+        الرئيسية
+      </a>
+
+      <a href="#categories">
+        الأقسام
+      </a>
+
+      <a href="#products">
+        المنتجات
+      </a>
+
+      <a href="#shipping">
+        الشحن
+      </a>
+
+      <a href="#order">
+        اطلب الآن
+      </a>
+
+    </nav>
+
+
+    <button
+      class="cart-btn"
+      onclick="toggleCart()">
+
+      🛒 السلة
+
+    </button>
+
   </header>
 
-  <!-- ================= HERO ================= -->
 
-  <section class="hero" id="home">
+  <!-- =========================
+       HERO
+  ========================== -->
+
+  <section
+    class="hero"
+    id="home">
 
     <div class="hero-content">
 
-      <div class="hero-text">
 
-        <div class="small-title">✦ أهلاً بكم في</div>
+      <!--
+        مهم:
+        ضعي صورة الشعار بجانب index.html
+        واسمها logo.jpg
+      -->
 
-        <h1>
-          Dr. <span>Hassan</span><br>
-          Store
-        </h1>
+      <img
+        src="logo.jpg"
+        alt="Dr. Hassan Logo"
+        class="hero-logo">
 
-        <p>
-          اكتشفي مجموعة مختارة من منتجات العناية بالبشرة
-          والشعر والجسم، مع عروض مميزة وشحن لجميع المحافظات.
-        </p>
 
-        <a href="#products" class="main-btn">
-          تسوقي الآن ←
-        </a>
+      <h1>
+        العناية ببشرتك وشعرك تبدأ من هنا
+      </h1>
 
-      </div>
 
-      <div class="hero-card">
+      <p>
 
-        <div class="hero-card-inner">
+        اختاري منتجاتك بكل سهولة من Dr. Hassan
+        واستمتعي بتجربة تسوق بسيطة وآمنة.
 
-          <div class="icon">✨</div>
+      </p>
 
-          <h2>جمالك يبدأ من هنا</h2>
+
+      <a
+        href="#categories"
+        class="btn">
+
+        اكتشفي الأقسام
+
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       CATEGORIES
+  ========================== -->
+
+  <section id="categories">
+
+    <div class="section-title">
+
+      <h2>
+        تسوقي حسب القسم
+      </h2>
+
+      <p>
+        اختاري القسم المناسب لكِ
+      </p>
+
+    </div>
+
+
+    <div class="categories">
+
+
+      <div class="category">
+
+        <img
+          src="https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=700&q=80"
+          alt="Skin Care">
+
+        <div class="category-content">
+
+          <h3>
+            Skin Care
+          </h3>
 
           <p>
-            منتجات مختارة بعناية لتناسب روتينك اليومي
+            منتجات العناية بالبشرة
           </p>
 
         </div>
 
       </div>
 
-    </div>
 
-  </section>
+      <div class="category">
 
-  <!-- ================= CATEGORIES ================= -->
+        <img
+          src="https://images.unsplash.com/photo-1527799820374-dcf8b9d4a388?auto=format&fit=crop&w=700&q=80"
+          alt="Hair Care">
 
-  <section id="categories">
+        <div class="category-content">
 
-    <div class="section-title">
-      <span>SHOP BY CATEGORY</span>
-      <h2>تسوقي حسب القسم</h2>
-      <p>اختاري القسم المناسب وشوفي المنتجات المتاحة.</p>
-    </div>
+          <h3>
+            Hair Care
+          </h3>
 
-    <div class="categories">
+          <p>
+            منتجات العناية بالشعر
+          </p>
 
-      <a href="#skin-care" class="category">
-        <div class="category-icon">🧴</div>
-        <h3>Skin Care</h3>
-      </a>
+        </div>
 
-      <a href="#hair-care" class="category">
-        <div class="category-icon">💆‍♀️</div>
-        <h3>Hair Care</h3>
-      </a>
-
-      <a href="#body-care" class="category">
-        <div class="category-icon">🧖‍♀️</div>
-        <h3>Body Care</h3>
-      </a>
-
-      <a href="#offers" class="category">
-        <div class="category-icon">🔥</div>
-        <h3>Offers</h3>
-      </a>
-
-    </div>
-
-  </section>
-
-  <!-- ================= PRODUCTS ================= -->
-
-  <section class="products-section" id="products">
-
-    <div class="section-title">
-      <span>OUR PRODUCTS</span>
-      <h2>منتجاتنا</h2>
-      <p>اختاري منتجاتك وأضيفيها إلى السلة.</p>
-    </div>
-
-    <div class="products-grid" id="productsGrid"></div>
-
-  </section>
-
-  <!-- ================= WHY US ================= -->
-
-  <section>
-
-    <div class="section-title">
-      <span>WHY US</span>
-      <h2>ليه Dr. Hassan Store؟</h2>
-    </div>
-
-    <div class="features">
-
-      <div class="feature">
-        <div class="feature-icon">🚚</div>
-        <h3>شحن لجميع المحافظات</h3>
-        <p>نوصل طلباتك لمختلف المحافظات.</p>
       </div>
 
-      <div class="feature">
-        <div class="feature-icon">💳</div>
-        <h3>طرق دفع متعددة</h3>
-        <p>تحويل أو دفع عند الاستلام.</p>
+
+      <div class="category">
+
+        <img
+          src="https://images.unsplash.com/photo-1608248597279-f99d160bfcbc?auto=format&fit=crop&w=700&q=80"
+          alt="Body Care">
+
+        <div class="category-content">
+
+          <h3>
+            Body Care
+          </h3>
+
+          <p>
+            منتجات العناية بالجسم
+          </p>
+
+        </div>
+
       </div>
 
-      <div class="feature">
-        <div class="feature-icon">🎁</div>
-        <h3>عروض وكوبونات</h3>
-        <p>استفيدي من الخصومات المتاحة.</p>
+
+      <div class="category">
+
+        <img
+          src="https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?auto=format&fit=crop&w=700&q=80"
+          alt="Offers">
+
+        <div class="category-content">
+
+          <h3>
+            Offers
+          </h3>
+
+          <p>
+            أفضل العروض والخصومات
+          </p>
+
+        </div>
+
       </div>
 
-      <div class="feature">
-        <div class="feature-icon">💬</div>
-        <h3>خدمة عملاء</h3>
-        <p>تواصلي معنا بسهولة عبر واتساب.</p>
-      </div>
 
     </div>
 
   </section>
 
-  <!-- ================= OFFERS ================= -->
 
-  <section id="offers" class="products-section">
+  <!-- =========================
+       PRODUCTS
+  ========================== -->
 
-    <div class="section-title">
-      <span>SPECIAL OFFERS</span>
-      <h2>🔥 عروض مميزة</h2>
-      <p>استفيدي من أفضل العروض والخصومات.</p>
-    </div>
+  <section
+    class="products"
+    id="products">
 
-    <div class="products-grid" id="offersGrid"></div>
-
-  </section>
-
-  <!-- ================= COUPONS ================= -->
-
-  <section>
 
     <div class="section-title">
-      <span>DISCOUNT COUPONS</span>
-      <h2>🎁 كوبونات الخصم</h2>
-    </div>
 
-    <div class="coupon-box">
-
-      <h3>استخدمي كوبون الخصم عند الطلب</h3>
+      <h2>
+        منتجاتنا
+      </h2>
 
       <p>
-        ضعي الكود في السلة قبل تأكيد الأوردر.
+        اختاري المنتج وأضيفيه إلى السلة
       </p>
 
-      <div class="coupon-code">
-        HASSAN10
+    </div>
+
+
+    <div class="products-grid">
+
+
+      <!-- PRODUCT 1 -->
+
+      <div class="product">
+
+        <img
+          src="https://images.unsplash.com/photo-1556228578-0d85b1a4d571?auto=format&fit=crop&w=700&q=80"
+          alt="منتج عناية بالبشرة">
+
+        <div class="product-info">
+
+          <h3>
+            كريم العناية بالبشرة
+          </h3>
+
+          <p>
+            منتج للعناية اليومية بالبشرة
+          </p>
+
+          <div class="price">
+            250 جنيه
+          </div>
+
+          <button
+            class="btn"
+            onclick="addToCart('كريم العناية بالبشرة',250)">
+
+            أضيفي للسلة
+
+          </button>
+
+        </div>
+
       </div>
 
-      <p style="margin-top:10px;font-size:13px;">
-        خصم 10% على الطلب
-      </p>
+
+      <!-- PRODUCT 2 -->
+
+      <div class="product">
+
+        <img
+          src="https://images.unsplash.com/photo-1571781926291-c477ebfd024b?auto=format&fit=crop&w=700&q=80"
+          alt="منتج عناية بالبشرة">
+
+        <div class="product-info">
+
+          <h3>
+            سيروم البشرة
+          </h3>
+
+          <p>
+            سيروم للعناية بالبشرة
+          </p>
+
+          <div class="price">
+            300 جنيه
+          </div>
+
+          <button
+            class="btn"
+            onclick="addToCart('سيروم البشرة',300)">
+
+            أضيفي للسلة
+
+          </button>
+
+        </div>
+
+      </div>
+
+
+      <!-- PRODUCT 3 -->
+
+      <div class="product">
+
+        <img
+          src="https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?auto=format&fit=crop&w=700&q=80"
+          alt="منتج للعناية بالشعر">
+
+        <div class="product-info">
+
+          <h3>
+            منتج العناية بالشعر
+          </h3>
+
+          <p>
+            عناية يومية بالشعر
+          </p>
+
+          <div class="price">
+            200 جنيه
+          </div>
+
+          <button
+            class="btn"
+            onclick="addToCart('منتج العناية بالشعر',200)">
+
+            أضيفي للسلة
+
+          </button>
+
+        </div>
+
+      </div>
+
 
     </div>
 
   </section>
 
-  <!-- ================= ABOUT ================= -->
 
-  <section class="about">
+  <!-- =========================
+       SHIPPING
+  ========================== -->
 
-    <div class="about-content">
-
-      <h2>عن Dr. Hassan Store</h2>
-
-      <p>
-        في Dr. Hassan Store نهتم بتوفير منتجات العناية التي
-        تساعدك على بناء روتين مناسب لاحتياجاتك.
-        هدفنا تقديم تجربة شراء سهلة، واضحة ومريحة،
-        مع خدمة عملاء سريعة وشحن لجميع المحافظات.
-      </p>
-
-    </div>
-
-  </section>
-
-  <!-- ================= CONTACT ================= -->
-
-  <section class="contact" id="contact">
+  <section id="shipping">
 
     <div class="section-title">
 
-      <span>CONTACT US</span>
-
-      <h2>تواصلي معنا</h2>
+      <h2>
+        أسعار الشحن
+      </h2>
 
       <p>
-        عندك سؤال أو محتاجة مساعدة في اختيار المنتج؟
-        إحنا معاكِ.
+        الشحن متاح لجميع المحافظات
       </p>
 
     </div>
 
-    <div class="contact-grid">
 
-      <div class="contact-card">
+    <div class="shipping-grid">
 
-        <div class="icon">💬</div>
 
-        <h3>واتساب</h3>
+      <div class="shipping-item">
 
-        <p>01080212554</p>
+        <span>
+          الكافور والجميزة
+        </span>
 
-        <a
-          class="whatsapp-btn"
-          href="https://wa.me/201080212554"
-          target="_blank">
-          تواصلي عبر واتساب
-        </a>
+        <span class="shipping-price">
+          70 جنيه
+        </span>
 
       </div>
 
-      <div class="contact-card">
 
-        <div class="icon">📞</div>
+      <div class="shipping-item">
 
-        <h3>خدمة العملاء</h3>
+        <span>
+          الضواحي والمدينة الجديدة
+        </span>
 
-        <p>01080212554</p>
-
-        <a
-          class="whatsapp-btn"
-          href="tel:01080212554">
-          اتصلي الآن
-        </a>
+        <span class="shipping-price">
+          75 جنيه
+        </span>
 
       </div>
 
-      <div class="contact-card">
 
-        <div class="icon">🚚</div>
+      <div class="shipping-item">
 
-        <h3>الشحن</h3>
+        <span>
+          محافظات الدلتا والقنال
+        </span>
 
-        <p>شحن لجميع المحافظات</p>
+        <span class="shipping-price">
+          90 جنيه
+        </span>
 
       </div>
+
+
+      <div class="shipping-item">
+
+        <span>
+          محافظات الصعيد
+        </span>
+
+        <span class="shipping-price">
+          95 جنيه
+        </span>
+
+      </div>
+
+
+      <div class="shipping-item">
+
+        <span>
+          ضواحي الصعيد
+        </span>
+
+        <span class="shipping-price">
+          100 جنيه
+        </span>
+
+      </div>
+
+
+      <div class="shipping-item">
+
+        <span>
+          البحر الأحمر والوادي الجديد
+        </span>
+
+        <span class="shipping-price">
+          120 جنيه
+        </span>
+
+      </div>
+
+
+      <div class="shipping-item">
+
+        <span>
+          الساحل - مطروح - السخنة
+        </span>
+
+        <span class="shipping-price">
+          130 جنيه
+        </span>
+
+      </div>
+
+
+      <div class="shipping-item">
+
+        <span>
+          جنوب سيناء
+        </span>
+
+        <span class="shipping-price">
+          150 جنيه
+        </span>
+
+      </div>
+
 
     </div>
 
   </section>
 
-  <!-- ================= FOOTER ================= -->
 
-  <footer>
+  <!-- =========================
+       PAYMENT
+  ========================== -->
 
-    <h3>Dr. Hassan Store</h3>
+  <section class="payment">
 
-    <p>
-      © 2026 Dr. Hassan Store - جميع الحقوق محفوظة
-    </p>
+    <div class="section-title">
 
-  </footer>
-
-
-  <!-- ================= CART ================= -->
-
-  <div class="overlay" id="overlay" onclick="closeCart()"></div>
-
-  <div class="cart-panel" id="cartPanel">
-
-    <div class="cart-header">
-
-      <h2>🛒 سلة المشتريات</h2>
-
-      <button class="close-cart" onclick="closeCart()">×</button>
+      <h2>
+        طرق الدفع
+      </h2>
 
     </div>
 
-    <div class="cart-items" id="cartItems">
 
-      <div class="empty-cart">
-        السلة فارغة حاليًا 🛍️
-      </div>
+    <div class="payment-box">
+
+
+      <p>
+        💳
+
+        <strong>
+          تحويل:
+        </strong>
+
+        01080212554
+      </p>
+
+
+      <p>
+        💵
+
+        <strong>
+          الدفع عند الاستلام
+        </strong>
+      </p>
+
+
+      <p class="important">
+
+        يتم إضافة 20 جنيه رسوم إضافية
+        عند اختيار الدفع عند الاستلام.
+
+      </p>
+
 
     </div>
 
-    <div class="cart-footer">
-
-      <div class="coupon-form">
-
-        <input
-          type="text"
-          id="couponInput"
-          placeholder="كود الخصم">
-
-        <button onclick="applyCoupon()">
-          تطبيق
-        </button>
-
-      </div>
-
-      <div id="couponMessage"
-           style="font-size:12px;text-align:center;">
-      </div>
-
-      <div class="summary-row">
-        <span>إجمالي المنتجات</span>
-        <strong id="subtotal">0 ج.م</strong>
-      </div>
-
-      <div class="summary-row">
-        <span>الخصم</span>
-        <strong id="discount">0 ج.م</strong>
-      </div>
-
-      <div class="summary-row">
-        <span>رسوم الدفع عند الاستلام</span>
-        <strong id="codFee">0 ج.م</strong>
-      </div>
-
-      <div class="summary-row total-row">
-        <span>الإجمالي</span>
-        <strong id="total">0 ج.م</strong>
-      </div>
+  </section>
 
 
-      <!-- CUSTOMER FORM -->
+  <!-- =========================
+       ORDER
+  ========================== -->
 
-      <div class="customer-form">
+  <section id="order">
 
-        <h3>بيانات الطلب</h3>
+
+    <div class="section-title">
+
+      <h2>
+        إتمام الطلب
+      </h2>
+
+      <p>
+        املئي بياناتك وسيتم إرسال الطلب لخدمة العملاء
+      </p>
+
+    </div>
+
+
+    <div class="order-box">
+
+
+      <form onsubmit="sendOrder(event)">
+
 
         <div class="form-group">
-          <label>الاسم بالكامل *</label>
+
+          <label>
+            الاسم بالكامل
+          </label>
+
           <input
             type="text"
-            id="customerName"
-            placeholder="اكتبي اسمك">
+            id="name"
+            required>
+
         </div>
 
+
         <div class="form-group">
-          <label>رقم التليفون *</label>
+
+          <label>
+            رقم التليفون
+          </label>
+
           <input
             type="tel"
-            id="customerPhone"
-            placeholder="01xxxxxxxxx">
+            id="phone"
+            required>
+
         </div>
+
 
         <div class="form-group">
 
-          <label>المحافظة *</label>
+          <label>
+            المحافظة
+          </label>
 
-          <select id="governorate">
+          <input
+            type="text"
+            id="governorate"
+            required>
 
-            <option value="">اختاري المحافظة</option>
+        </div>
 
-            <option>القاهرة</option>
-            <option>الجيزة</option>
-            <option>الإسكندرية</option>
-            <option>القليوبية</option>
-            <option>الشرقية</option>
-            <option>الدقهلية</option>
-            <option>البحيرة</option>
-            <option>الغربية</option>
-            <option>المنوفية</option>
-            <option>كفر الشيخ</option>
-            <option>دمياط</option>
-            <option>بورسعيد</option>
-            <option>الإسماعيلية</option>
-            <option>السويس</option>
-            <option>شمال سيناء</option>
-            <option>جنوب سيناء</option>
-            <option>البحر الأحمر</option>
-            <option>الفيوم</option>
-            <option>بني سويف</option>
-            <option>المنيا</option>
-            <option>أسيوط</option>
-            <option>سوهاج</option>
-            <option>قنا</option>
-            <option>الأقصر</option>
-            <option>أسوان</option>
-            <option>الوادي الجديد</option>
+
+        <div class="form-group">
+
+          <label>
+            المنطقة
+          </label>
+
+          <input
+            type="text"
+            id="area"
+            required>
+
+        </div>
+
+
+        <div class="form-group">
+
+          <label>
+            العنوان بالتفصيل
+          </label>
+
+          <textarea
+            id="address"
+            required>
+          </textarea>
+
+        </div>
+
+
+        <div class="form-group">
+
+          <label>
+            طريقة الدفع
+          </label>
+
+          <select id="paymentMethod">
+
+            <option value="تحويل">
+              تحويل على 01080212554
+            </option>
+
+            <option value="الدفع عند الاستلام">
+              الدفع عند الاستلام (+20 جنيه)
+            </option>
 
           </select>
 
         </div>
 
-        <div class="form-group">
-
-          <label>المنطقة *</label>
-
-          <input
-            type="text"
-            id="area"
-            placeholder="مثال: مدينة نصر">
-
-        </div>
 
         <div class="form-group">
 
-          <label>العنوان بالتفصيل *</label>
-
-          <textarea
-            id="address"
-            placeholder="اسم الشارع، رقم العمارة، الدور، الشقة وأي تفاصيل مهمة"></textarea>
-
-        </div>
-
-
-        <!-- PAYMENT -->
-
-        <div class="payment-box">
-
-          <strong>طريقة الدفع</strong>
-
           <label>
-
-            <input
-              type="radio"
-              name="payment"
-              value="transfer"
-              checked
-              onchange="changePayment()">
-
-            تحويل
-
-          </label>
-
-          <label>
-
-            <input
-              type="radio"
-              name="payment"
-              value="cod"
-              onchange="changePayment()">
-
-            الدفع عند الاستلام (+20 ج.م)
-
+            كوبون الخصم
           </label>
 
 
-          <div class="transfer-info" id="transferInfo">
+          <div class="coupon-box">
 
-            <div>
-              💳 التحويل على الرقم:
-            </div>
+            <input
+              type="text"
+              id="coupon"
+              placeholder="اكتبي كود الخصم">
 
-            <strong>01080212554</strong>
 
-            <div style="margin-top:5px;">
-              بعد التحويل، احتفظي بإثبات التحويل
-              وأرسليه لخدمة العملاء على واتساب.
-            </div>
+            <button
+              type="button"
+              class="coupon-btn"
+              onclick="applyCoupon()">
+
+              تطبيق
+
+            </button>
 
           </div>
+
+
+          <small id="couponMessage"></small>
 
         </div>
 
 
         <button
-          class="order-btn"
-          onclick="sendOrder()">
+          type="submit"
+          class="btn">
 
-          تأكيد الطلب عبر واتساب 💬
+          إرسال الطلب على واتساب
 
         </button>
 
-        <div class="notice">
-          بالضغط على تأكيد الطلب سيتم فتح واتساب وإرسال تفاصيل طلبك.
-        </div>
 
-      </div>
+      </form>
 
     </div>
 
-  </div>
+  </section>
 
 
-  <!-- ================= JAVASCRIPT ================= -->
+  <!-- =========================
+       FOOTER
+  ========================== -->
+
+  <footer>
+
+    <p>
+      © 2026 Dr. Hassan - جميع الحقوق محفوظة
+    </p>
+
+    <p>
+      خدمة العملاء: 01080212554
+    </p>
+
+  </footer>
+
+
+  <!-- =========================
+       WHATSAPP BUTTON
+  ========================== -->
+
+  <a
+    class="whatsapp"
+    href="https://wa.me/201080212554"
+    target="_blank">
+
+    ☎
+
+  </a>
+
+
+  <!-- =========================
+       JAVASCRIPT
+  ========================== -->
 
   <script>
 
-    /*
-    ==========================================================
-    المنتجات
-    ==========================================================
 
-    لتعديل منتج:
-    غيري:
-    name = اسم المنتج
-    category = القسم
-    price = السعر
-    oldPrice = السعر القديم (اكتبي 0 لو مفيش خصم)
-    image = رابط صورة المنتج
-    description = وصف المنتج
-    offer = true لو المنتج عليه عرض
-
-    الأقسام المتاحة:
-    skin
-    hair
-    body
-    offer
-    */
-
-    const products = [
-
-      {
-        id: 1,
-        name: "Skin Care Product 1",
-        category: "skin",
-        categoryName: "Skin Care",
-        price: 250,
-        oldPrice: 300,
-        image: "",
-        emoji: "🧴",
-        description: "منتج للعناية بالبشرة.",
-        offer: true
-      },
-
-      {
-        id: 2,
-        name: "Skin Care Product 2",
-        category: "skin",
-        categoryName: "Skin Care",
-        price: 300,
-        oldPrice: 0,
-        image: "",
-        emoji: "✨",
-        description: "اختيار مناسب لروتين العناية بالبشرة.",
-        offer: false
-      },
-
-      {
-        id: 3,
-        name: "Hair Care Product 1",
-        category: "hair",
-        categoryName: "Hair Care",
-        price: 200,
-        oldPrice: 250,
-        image: "",
-        emoji: "💆‍♀️",
-        description: "منتج للعناية بالشعر.",
-        offer: true
-      },
-
-      {
-        id: 4,
-        name: "Hair Care Product 2",
-        category: "hair",
-        categoryName: "Hair Care",
-        price: 350,
-        oldPrice: 0,
-        image: "",
-        emoji: "💇‍♀️",
-        description: "لروتين شعر أفضل.",
-        offer: false
-      },
-
-      {
-        id: 5,
-        name: "Body Care Product 1",
-        category: "body",
-        categoryName: "Body Care",
-        price: 220,
-        oldPrice: 280,
-        image: "",
-        emoji: "🧖‍♀️",
-        description: "منتج للعناية بالجسم.",
-        offer: true
-      },
-
-      {
-        id: 6,
-        name: "Body Care Product 2",
-        category: "body",
-        categoryName: "Body Care",
-        price: 180,
-        oldPrice: 0,
-        image: "",
-        emoji: "🌸",
-        description: "عناية يومية للجسم.",
-        offer: false
-      },
-
-      {
-        id: 7,
-        name: "Special Offer 1",
-        category: "offer",
-        categoryName: "Offers",
-        price: 400,
-        oldPrice: 500,
-        image: "",
-        emoji: "🔥",
-        description: "عرض مميز لفترة محدودة.",
-        offer: true
-      },
-
-      {
-        id: 8,
-        name: "Special Offer 2",
-        category: "offer",
-        categoryName: "Offers",
-        price: 300,
-        oldPrice: 400,
-        image: "",
-        emoji: "🎁",
-        description: "استفيدي من العرض قبل انتهائه.",
-        offer: true
-      }
-
-    ];
-
+    /* =========================
+       CART DATA
+    ========================== */
 
     let cart = [];
 
-    let appliedCoupon = null;
+    let discount = 0;
 
 
-    /*
-    ==========================
-    عرض المنتجات
-    ==========================
-    */
+    /* =========================
+       OPEN / CLOSE CART
+    ========================== */
 
-    function createProductCard(product) {
+    function toggleCart() {
 
-      let imageHTML = product.image
-        ? `<img src="${product.image}" alt="${product.name}">`
-        : `<div class="placeholder-image">${product.emoji}</div>`;
+      document
+        .getElementById("cart")
+        .classList
+        .toggle("active");
 
-      let priceHTML = `${product.price} ج.م`;
+    }
 
-      if (product.oldPrice > product.price) {
 
-        priceHTML += `
-          <span class="old-price">
-            ${product.oldPrice} ج.م
-          </span>
-        `;
+    /* =========================
+       ADD TO CART
+    ========================== */
 
-      }
+    function addToCart(name, price) {
 
-      return `
+      cart.push({
 
-        <div class="product-card">
+        name: name,
 
-          <div class="product-image">
+        price: Number(price)
 
-            ${product.offer
-              ? `<div class="offer-badge">عرض</div>`
-              : ""
-            }
+      });
 
-            ${imageHTML}
+      updateCart();
+
+      alert(
+        "تمت إضافة المنتج إلى السلة 🛒"
+      );
+
+    }
+
+
+    /* =========================
+       UPDATE CART
+    ========================== */
+
+    function updateCart() {
+
+      const cartItems =
+        document.getElementById("cartItems");
+
+      const cartTotal =
+        document.getElementById("cartTotal");
+
+
+      /* تفريغ السلة قبل إعادة عرضها */
+
+      cartItems.innerHTML = "";
+
+
+      /* لو السلة فارغة */
+
+      if (cart.length === 0) {
+
+        cartItems.innerHTML = `
+
+          <div
+            style="
+              text-align:center;
+              padding:30px 10px;
+              color:#6d7774;
+            "
+          >
+
+            <div
+              style="
+                font-size:40px;
+                margin-bottom:10px;
+              "
+            >
+              🛒
+            </div>
+
+            <p>
+              السلة فارغة حاليًا
+            </p>
 
           </div>
 
-          <div class="product-info">
+        `;
 
-            <div class="product-category">
-              ${product.categoryName}
+        cartTotal.innerText = "0";
+
+        return;
+
+      }
+
+
+      /* إجمالي المنتجات */
+
+      let subtotal = 0;
+
+
+      /* عرض جميع المنتجات */
+
+      cart.forEach(
+        (item, index) => {
+
+          const itemPrice =
+            Number(item.price) || 0;
+
+
+          subtotal += itemPrice;
+
+
+          cartItems.innerHTML += `
+
+            <div class="cart-item">
+
+              <div
+                style="
+                  display:flex;
+                  justify-content:space-between;
+                  align-items:center;
+                  gap:10px;
+                "
+              >
+
+                <div>
+
+                  <strong>
+                    ${item.name}
+                  </strong>
+
+                  <div
+                    style="
+                      color:#176b5a;
+                      font-weight:bold;
+                      margin-top:5px;
+                    "
+                  >
+
+                    ${itemPrice.toLocaleString("ar-EG")}
+                    جنيه
+
+                  </div>
+
+                </div>
+
+
+                <button
+                  onclick="removeFromCart(${index})"
+
+                  style="
+                    border:none;
+                    background:#fff0ed;
+                    color:#c0392b;
+                    padding:7px 10px;
+                    border-radius:8px;
+                    cursor:pointer;
+                  "
+                >
+
+                  حذف
+
+                </button>
+
+              </div>
+
             </div>
 
-            <h3>${product.name}</h3>
+          `;
 
-            <p>${product.description}</p>
+        }
+      );
 
-            <div class="price">
-              ${priceHTML}
-            </div>
 
-            <button
-              class="add-btn"
-              onclick="addToCart(${product.id})">
+      /* التأكد من قيمة الخصم */
 
-              أضيفي للسلة 🛒
+      const validDiscount =
+        Number(discount) > 0
+          ? Number(discount)
+          : 0;
 
-            </button>
+
+      /* الإجمالي بعد الخصم */
+
+      const finalTotal =
+        Math.max(
+          0,
+          subtotal - validDiscount
+        );
+
+
+      /* ملخص السلة */
+
+      cartItems.innerHTML += `
+
+        <div
+          style="
+            margin-top:20px;
+            padding-top:15px;
+            border-top:1px solid #e4ebe8;
+            line-height:2;
+          "
+        >
+
+          <div
+            style="
+              display:flex;
+              justify-content:space-between;
+            "
+          >
+
+            <span>
+              إجمالي المنتجات:
+            </span>
+
+            <strong>
+              ${subtotal.toLocaleString("ar-EG")}
+              جنيه
+            </strong>
+
+          </div>
+
+
+          <div
+            style="
+              display:flex;
+              justify-content:space-between;
+              color:#176b5a;
+            "
+          >
+
+            <span>
+              الخصم:
+            </span>
+
+            <strong>
+
+              -
+              ${validDiscount.toLocaleString("ar-EG")}
+              جنيه
+
+            </strong>
+
+          </div>
+
+
+          <div
+            style="
+              display:flex;
+              justify-content:space-between;
+              margin-top:8px;
+              padding-top:10px;
+              border-top:1px solid #e4ebe8;
+              font-size:20px;
+              color:#10483d;
+            "
+          >
+
+            <span>
+              الإجمالي النهائي:
+            </span>
+
+            <strong>
+
+              ${finalTotal.toLocaleString("ar-EG")}
+              جنيه
+
+            </strong>
 
           </div>
 
@@ -1632,578 +1760,241 @@
 
       `;
 
-    }
 
+      /* تحديث إجمالي السلة */
 
-    function displayProducts() {
-
-      const grid = document.getElementById("productsGrid");
-
-      grid.innerHTML = products
-        .map(createProductCard)
-        .join("");
-
-      const offersGrid =
-        document.getElementById("offersGrid");
-
-      offersGrid.innerHTML = products
-        .filter(product => product.offer)
-        .map(createProductCard)
-        .join("");
+      cartTotal.innerText =
+        finalTotal.toLocaleString("ar-EG");
 
     }
 
 
-    /*
-    ==========================
-    السلة
-    ==========================
-    */
+    /* =========================
+       REMOVE PRODUCT
+    ========================== */
 
-    function addToCart(id) {
+    function removeFromCart(index) {
 
-      const product =
-        products.find(p => p.id === id);
-
-      const existing =
-        cart.find(item => item.id === id);
-
-      if (existing) {
-
-        existing.quantity++;
-
-      } else {
-
-        cart.push({
-          ...product,
-          quantity: 1
-        });
-
-      }
-
-      updateCart();
-
-      openCart();
-
-    }
-
-
-    function increaseQuantity(id) {
-
-      const item =
-        cart.find(item => item.id === id);
-
-      if (item) {
-        item.quantity++;
-      }
+      cart.splice(index, 1);
 
       updateCart();
 
     }
 
 
-    function decreaseQuantity(id) {
-
-      const item =
-        cart.find(item => item.id === id);
-
-      if (!item) return;
-
-      item.quantity--;
-
-      if (item.quantity <= 0) {
-
-        cart =
-          cart.filter(item => item.id !== id);
-
-      }
-
-      updateCart();
-
-    }
-
-
-    function removeFromCart(id) {
-
-      cart =
-        cart.filter(item => item.id !== id);
-
-      updateCart();
-
-    }
-
-
-    function calculateSubtotal() {
-
-      return cart.reduce(
-        (sum, item) =>
-          sum + item.price * item.quantity,
-        0
-      );
-
-    }
-
-
-    function updateCart() {
-
-      const cartItems =
-        document.getElementById("cartItems");
-
-      const cartCount =
-        document.getElementById("cartCount");
-
-
-      const count =
-        cart.reduce(
-          (sum, item) => sum + item.quantity,
-          0
-        );
-
-      cartCount.textContent = count;
-
-
-      if (cart.length === 0) {
-
-        cartItems.innerHTML = `
-          <div class="empty-cart">
-            السلة فارغة حاليًا 🛍️
-          </div>
-        `;
-
-      } else {
-
-        cartItems.innerHTML =
-          cart.map(item => {
-
-            const imageHTML =
-              item.image
-              ? `<img src="${item.image}" alt="${item.name}">`
-              : item.emoji;
-
-            return `
-
-              <div class="cart-item">
-
-                <div class="cart-item-image">
-                  ${imageHTML}
-                </div>
-
-                <div>
-
-                  <h4>${item.name}</h4>
-
-                  <small>
-                    ${item.price} ج.م
-                  </small>
-
-                  <div class="quantity">
-
-                    <button
-                      onclick="decreaseQuantity(${item.id})">
-                      −
-                    </button>
-
-                    <span>
-                      ${item.quantity}
-                    </span>
-
-                    <button
-                      onclick="increaseQuantity(${item.id})">
-                      +
-                    </button>
-
-                  </div>
-
-                </div>
-
-                <button
-                  class="remove-item"
-                  onclick="removeFromCart(${item.id})">
-                  حذف
-                </button>
-
-              </div>
-
-            `;
-
-          }).join("");
-
-      }
-
-
-      updateSummary();
-
-    }
-
-
-    /*
-    ==========================
-    الكوبونات
-    ==========================
-
-    تقدري تضيفي أكواد جديدة هنا.
-    */
-
-    const coupons = {
-
-      "HASSAN10": 10,
-      "WELCOME10": 10,
-      "HASSAN15": 15
-
-    };
-
+    /* =========================
+       COUPON
+    ========================== */
 
     function applyCoupon() {
 
-      const input =
-        document.getElementById("couponInput");
+      const coupon =
+        document
+          .getElementById("coupon")
+          .value
+          .trim()
+          .toUpperCase();
+
 
       const message =
-        document.getElementById("couponMessage");
-
-      const code =
-        input.value.trim().toUpperCase();
-
-
-      if (!code) {
-
-        message.textContent =
-          "اكتبي كود الخصم أولًا.";
-
-        message.style.color = "#c33";
-
-        return;
-
-      }
+        document.getElementById(
+          "couponMessage"
+        );
 
 
-      if (coupons[code]) {
+      /*
+        الكوبون الحالي:
 
-        appliedCoupon = {
+        DRHASSAN10
 
-          code: code,
+        الخصم:
 
-          discount: coupons[code]
+        10 جنيه
+      */
 
-        };
 
-        message.textContent =
-          `تم تطبيق خصم ${coupons[code]}% 🎉`;
+      if (
+        coupon === "DRHASSAN10"
+      ) {
 
-        message.style.color = "#173f35";
+        discount = 10;
+
+
+        message.innerText =
+          "تم تطبيق خصم 10 جنيه بنجاح 🎉";
+
+
+        message.style.color =
+          "green";
+
 
       } else {
 
-        appliedCoupon = null;
-
-        message.textContent =
-          "كود الخصم غير صحيح.";
-
-        message.style.color = "#c33";
-
-      }
-
-      updateSummary();
-
-    }
+        discount = 0;
 
 
-    /*
-    ==========================
-    حساب الإجمالي
-    ==========================
-    */
+        message.innerText =
+          "كوبون الخصم غير صحيح";
 
-    function updateSummary() {
 
-      const subtotal =
-        calculateSubtotal();
-
-      let discount = 0;
-
-      if (appliedCoupon) {
-
-        discount =
-          subtotal *
-          appliedCoupon.discount /
-          100;
+        message.style.color =
+          "red";
 
       }
 
 
-      const payment =
-        document.querySelector(
-          'input[name="payment"]:checked'
-        )?.value;
-
-
-      const codFee =
-        payment === "cod"
-          ? 20
-          : 0;
-
-
-      const total =
-        subtotal -
-        discount +
-        codFee;
-
-
-      document.getElementById("subtotal")
-        .textContent =
-        `${subtotal.toFixed(0)} ج.م`;
-
-      document.getElementById("discount")
-        .textContent =
-        `- ${discount.toFixed(0)} ج.م`;
-
-      document.getElementById("codFee")
-        .textContent =
-        `${codFee} ج.م`;
-
-      document.getElementById("total")
-        .textContent =
-        `${total.toFixed(0)} ج.م`;
+      updateCart();
 
     }
 
 
-    /*
-    ==========================
-    طريقة الدفع
-    ==========================
-    */
+    /* =========================
+       SEND ORDER TO WHATSAPP
+    ========================== */
 
-    function changePayment() {
+    function sendOrder(event) {
 
-      const payment =
-        document.querySelector(
-          'input[name="payment"]:checked'
-        ).value;
-
-      const transferInfo =
-        document.getElementById("transferInfo");
-
-
-      if (payment === "transfer") {
-
-        transferInfo.style.display = "block";
-
-      } else {
-
-        transferInfo.style.display = "none";
-
-      }
-
-
-      updateSummary();
-
-    }
-
-
-    /*
-    ==========================
-    فتح وإغلاق السلة
-    ==========================
-    */
-
-    function openCart() {
-
-      document
-        .getElementById("cartPanel")
-        .classList.add("active");
-
-      document
-        .getElementById("overlay")
-        .classList.add("active");
-
-    }
-
-
-    function closeCart() {
-
-      document
-        .getElementById("cartPanel")
-        .classList.remove("active");
-
-      document
-        .getElementById("overlay")
-        .classList.remove("active");
-
-    }
-
-
-    /*
-    ==========================
-    إرسال الأوردر واتساب
-    ==========================
-    */
-
-    function sendOrder() {
-
-      if (cart.length === 0) {
-
-        alert("السلة فارغة. أضيفي منتج أولًا.");
-
-        return;
-
-      }
+      event.preventDefault();
 
 
       const name =
         document
-          .getElementById("customerName")
-          .value.trim();
+          .getElementById("name")
+          .value;
+
 
       const phone =
         document
-          .getElementById("customerPhone")
-          .value.trim();
+          .getElementById("phone")
+          .value;
+
 
       const governorate =
         document
           .getElementById("governorate")
           .value;
 
+
       const area =
         document
           .getElementById("area")
-          .value.trim();
+          .value;
+
 
       const address =
         document
           .getElementById("address")
-          .value.trim();
-
-
-      if (
-        !name ||
-        !phone ||
-        !governorate ||
-        !area ||
-        !address
-      ) {
-
-        alert(
-          "من فضلك املئي كل بيانات الطلب."
-        );
-
-        return;
-
-      }
+          .value;
 
 
       const payment =
-        document.querySelector(
-          'input[name="payment"]:checked'
-        ).value;
+        document
+          .getElementById("paymentMethod")
+          .value;
 
 
-      let paymentName =
-        payment === "transfer"
-          ? "تحويل"
-          : "الدفع عند الاستلام";
+      let products = "";
+
+      let subtotal = 0;
 
 
-      const subtotal =
-        calculateSubtotal();
+      /* تجهيز المنتجات */
+
+      cart.forEach(
+        (item, index) => {
+
+          products +=
+            `${index + 1}- ${item.name} : ${item.price} جنيه\n`;
+
+          subtotal +=
+            Number(item.price) || 0;
+
+        }
+      );
 
 
-      let discount = 0;
+      /* حساب الخصم */
 
-      if (appliedCoupon) {
-
-        discount =
-          subtotal *
-          appliedCoupon.discount /
-          100;
-
-      }
-
-
-      const codFee =
-        payment === "cod"
-          ? 20
+      const validDiscount =
+        Number(discount) > 0
+          ? Number(discount)
           : 0;
 
 
-      const total =
-        subtotal -
-        discount +
-        codFee;
+      let total =
+        Math.max(
+          0,
+          subtotal - validDiscount
+        );
 
 
-      let orderText =
-        "🛍️ *طلب جديد - Dr. Hassan Store*%0A%0A";
+      /* رسوم الدفع عند الاستلام */
+
+      let codFee = 0;
 
 
-      orderText +=
-        "📦 *المنتجات:*%0A";
+      if (
+        payment ===
+        "الدفع عند الاستلام"
+      ) {
 
+        codFee = 20;
 
-      cart.forEach(item => {
-
-        orderText +=
-          `• ${item.name} × ${item.quantity} = ${(item.price * item.quantity).toFixed(0)} ج.م%0A`;
-
-      });
-
-
-      orderText += "%0A";
-
-      orderText +=
-        `💰 إجمالي المنتجات: ${subtotal.toFixed(0)} ج.م%0A`;
-
-      orderText +=
-        `🎁 الخصم: ${discount.toFixed(0)} ج.م%0A`;
-
-      orderText +=
-        `💳 طريقة الدفع: ${paymentName}%0A`;
-
-      orderText +=
-        `🚚 رسوم الدفع عند الاستلام: ${codFee} ج.م%0A`;
-
-      orderText +=
-        `💵 *الإجمالي النهائي: ${total.toFixed(0)} ج.م*%0A%0A`;
-
-
-      orderText +=
-        "👤 *بيانات العميل:*%0A";
-
-      orderText +=
-        `الاسم: ${name}%0A`;
-
-      orderText +=
-        `التليفون: ${phone}%0A`;
-
-      orderText +=
-        `المحافظة: ${governorate}%0A`;
-
-      orderText +=
-        `المنطقة: ${area}%0A`;
-
-      orderText +=
-        `العنوان بالتفصيل: ${address}%0A%0A`;
-
-
-      if (appliedCoupon) {
-
-        orderText +=
-          `🎟️ كود الخصم: ${appliedCoupon.code}%0A`;
+        total += codFee;
 
       }
 
 
-      orderText +=
-        "%0Aأرغب في تأكيد الطلب. ❤️";
+      /* رسالة واتساب */
 
+      const message =
+
+`طلب جديد من موقع Dr. Hassan
+
+الاسم: ${name}
+
+رقم التليفون: ${phone}
+
+المحافظة: ${governorate}
+
+المنطقة: ${area}
+
+العنوان:
+${address}
+
+طريقة الدفع:
+${payment}
+
+المنتجات:
+
+${products || "لم يتم اختيار منتجات"}
+
+إجمالي المنتجات:
+${subtotal} جنيه
+
+الخصم:
+${validDiscount} جنيه
+
+رسوم الدفع عند الاستلام:
+${codFee} جنيه
+
+الإجمالي النهائي:
+${total} جنيه`;
+
+
+      /*
+        رقم واتساب خدمة العملاء
+      */
 
       const whatsappNumber =
         "201080212554";
 
 
       const whatsappURL =
-        `https://wa.me/${whatsappNumber}?text=${orderText}`;
+        "https://wa.me/" +
+        whatsappNumber +
+        "?text=" +
+        encodeURIComponent(message);
 
 
       window.open(
@@ -2214,19 +2005,10 @@
     }
 
 
-    /*
-    ==========================
-    تشغيل الموقع
-    ==========================
-    */
-
-    displayProducts();
-
-    updateCart();
-
-    changePayment();
-
   </script>
 
+
 </body>
+
 </html>
+```
