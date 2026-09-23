@@ -9,7 +9,6 @@
   <meta name="description" content="متجر دكتور حسن لمنتجات العناية بالبشرة والشعر والجسم. منتجات أصلية وأسعار مميزة مع خدمة توصيل داخل مصر.">
   <meta name="keywords" content="دكتور حسن, عناية بالبشرة, مرطبات, صن بلوك, واقي شمس, منتجات العناية بالبشرة">
   <meta name="author" content="Dr. Hassan Store">
-  <meta name="google-site-verification" content="">
 
   <meta property="og:title" content="دكتور حسن | متجر العناية بالبشرة">
   <meta property="og:description" content="منتجات العناية بالبشرة والشعر بأسعار مميزة">
@@ -1176,12 +1175,12 @@
       </div>
 
       <div class="success-box" id="successBox">
-        <strong>تم إرسال طلبك بنجاح ✅</strong>
+        <strong>تم تجهيز طلبك بنجاح ✅</strong>
+        <br>
+        تم فتح واتساب لإرسال الطلب.
         <br>
         رقم الطلب:
         <strong id="successOrderId"></strong>
-        <br>
-        سنتواصل معك لتأكيد الطلب.
       </div>
 
       <div class="order-layout">
@@ -1252,7 +1251,7 @@
               type="submit"
               class="submit-btn"
               id="submitOrderBtn">
-              تأكيد الطلب
+              تأكيد الطلب عبر واتساب
             </button>
 
           </form>
@@ -1470,11 +1469,11 @@
   <script>
 
     /* =====================================================
-       GOOGLE APPS SCRIPT
+       WHATSAPP STORE NUMBER
+       رقم واتساب المتجر
     ===================================================== */
 
-    const GOOGLE_SCRIPT_URL =
-      "https://script.google.com/macros/s/AKfycbwq5d1yK6zwhTRo70rhBZn-oNUCPqXMOowmIplB1ffItl2wlSrLdtEHkodX1fQf5Y3VFQ/exec";
+    const WHATSAPP_NUMBER = "201080212554";
 
 
     /* =====================================================
@@ -1686,9 +1685,7 @@
     ===================================================== */
 
     let cart = [];
-
     let currentFilter = "all";
-
     let couponDiscount = 0;
 
     const COD_FEE = 20;
@@ -1912,7 +1909,6 @@
       }
 
       updateCart();
-
       openCart();
 
     }
@@ -2059,7 +2055,6 @@
 
 
       updateSummary();
-
       updateOrderSummary();
 
     }
@@ -2284,10 +2279,10 @@
 
 
     /* =====================================================
-       SEND ORDER
+       SEND ORDER TO WHATSAPP
     ===================================================== */
 
-    async function sendOrder(event) {
+    function sendOrder(event) {
 
       event.preventDefault();
 
@@ -2318,12 +2313,14 @@
         document.getElementById("paymentMethod").value;
 
 
-      if (!name ||
-          !phone ||
-          !governorate ||
-          !area ||
-          !address ||
-          !paymentMethod) {
+      if (
+        !name ||
+        !phone ||
+        !governorate ||
+        !area ||
+        !address ||
+        !paymentMethod
+      ) {
 
         alert("من فضلك املئي جميع البيانات المطلوبة.");
 
@@ -2332,10 +2329,14 @@
       }
 
 
+      /* ================= ORDER ID ================= */
+
       const orderId =
         "DH-" +
         Date.now().toString().slice(-8);
 
+
+      /* ================= TOTALS ================= */
 
       const subtotal =
         calculateSubtotal();
@@ -2352,126 +2353,127 @@
         );
 
 
+      /* ================= PRODUCTS MESSAGE ================= */
+
       const productsText =
-        cart.map(item =>
-          `${item.name} × ${item.quantity} = ${item.price * item.quantity} جنيه`
-        ).join(" | ");
+        cart.map((item, index) => {
+
+          return (
+            `${index + 1}. ${item.name}\n` +
+            `   الكمية: ${item.quantity}\n` +
+            `   السعر: ${item.price} جنيه\n` +
+            `   الإجمالي: ${item.price * item.quantity} جنيه`
+          );
+
+        }).join("\n\n");
 
 
-      const orderData = {
+      /* ================= WHATSAPP MESSAGE ================= */
 
-        orderId: orderId,
+      const message =
 
-        name: name,
+`🛍️ *طلب جديد - متجر دكتور حسن*
 
-        phone: phone,
+━━━━━━━━━━━━━━
+📋 *بيانات الطلب*
+━━━━━━━━━━━━━━
 
-        governorate: governorate,
+🔢 رقم الطلب: ${orderId}
 
-        area: area,
+👤 الاسم:
+${name}
 
-        address: address,
+📱 رقم الهاتف:
+${phone}
 
-        paymentMethod: paymentMethod,
+📍 المحافظة:
+${governorate}
 
-        coupon: couponDiscount > 0
-          ? "DRHASSAN10"
-          : "",
+📌 المنطقة:
+${area}
 
-        products: productsText,
+🏠 العنوان:
+${address}
 
-        subtotal: subtotal,
+💳 طريقة الدفع:
+${paymentMethod}
 
-        discount: couponDiscount,
+━━━━━━━━━━━━━━
+🛒 *المنتجات*
+━━━━━━━━━━━━━━
 
-        codFee: codFee,
+${productsText}
 
-        total: total,
+━━━━━━━━━━━━━━
+💰 *الحساب*
+━━━━━━━━━━━━━━
 
-        date: new Date().toLocaleString("ar-EG"),
+الإجمالي الفرعي: ${subtotal} جنيه
+الخصم: ${couponDiscount} جنيه
+رسوم الدفع عند الاستلام: ${codFee} جنيه
 
-        items: JSON.stringify(cart)
+💵 *الإجمالي النهائي: ${total} جنيه*
 
-      };
+━━━━━━━━━━━━━━
+📅 تاريخ الطلب:
+${new Date().toLocaleString("ar-EG")}
 
-
-      const submitButton =
-        document.getElementById("submitOrderBtn");
-
-      submitButton.disabled = true;
-
-      submitButton.textContent =
-        "جاري إرسال الطلب...";
-
-
-      try {
-
-        await fetch(
-          GOOGLE_SCRIPT_URL,
-          {
-            method: "POST",
-            mode: "no-cors",
-            headers: {
-              "Content-Type":
-                "application/json"
-            },
-            body: JSON.stringify(orderData)
-          }
-        );
+شكراً لطلبك من متجر دكتور حسن 🌿`;
 
 
-        document
-          .getElementById("successOrderId")
-          .textContent = orderId;
+      /* ================= OPEN WHATSAPP ================= */
 
-        document
-          .getElementById("successBox")
-          .classList.add("show");
+      const whatsappURL =
+        `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
 
 
-        cart = [];
-
-        couponDiscount = 0;
-
-        document
-          .getElementById("couponInput")
-          .value = "";
-
-        document
-          .getElementById("couponMessage")
-          .textContent = "";
-
-        document
-          .getElementById("orderForm")
-          .reset();
-
-        updateCart();
+      window.open(
+        whatsappURL,
+        "_blank"
+      );
 
 
-        document
-          .getElementById("successBox")
-          .scrollIntoView({
-            behavior: "smooth",
-            block: "center"
-          });
+      /* ================= SUCCESS MESSAGE ================= */
+
+      document
+        .getElementById("successOrderId")
+        .textContent = orderId;
+
+      document
+        .getElementById("successBox")
+        .classList.add("show");
 
 
-      } catch (error) {
+      /*
+        نمسح السلة بعد تجهيز الطلب.
+        العميل سيجد رسالة الطلب جاهزة داخل واتساب.
+      */
 
-        console.error(error);
+      cart = [];
 
-        alert(
-          "حدثت مشكلة أثناء إرسال الطلب. حاولي مرة أخرى."
-        );
+      couponDiscount = 0;
 
-      } finally {
+      document
+        .getElementById("couponInput")
+        .value = "";
 
-        submitButton.disabled = false;
+      document
+        .getElementById("couponMessage")
+        .textContent = "";
 
-        submitButton.textContent =
-          "تأكيد الطلب";
+      document
+        .getElementById("orderForm")
+        .reset();
 
-      }
+      updateCart();
+
+
+      document
+        .getElementById("successBox")
+        .scrollIntoView({
+          behavior: "smooth",
+          block: "center"
+        });
 
     }
 
@@ -2485,7 +2487,6 @@
       .addEventListener("change", function() {
 
         updateSummary();
-
         updateOrderSummary();
 
       });
@@ -2496,7 +2497,6 @@
     ===================================================== */
 
     renderProducts();
-
     updateCart();
 
   </script>
