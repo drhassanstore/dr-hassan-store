@@ -1032,9 +1032,13 @@
   <section class="hero" id="home" style="background-image:linear-gradient(90deg,rgba(16,72,61,.94),rgba(16,72,61,.55)),url('https://images.unsplash.com/photo-1556229010-6c3f2c9ca5f8?auto=format&fit=crop&w=1800&q=90');background-size:cover;background-position:center;min-height:430px;display:flex;align-items:center;">
     <div class="container hero-content">
       <div>
-        <div style="display:inline-flex;align-items:center;justify-content:center;background:rgba(255,255,255,.95);padding:10px 18px;border-radius:18px;margin-bottom:20px;box-shadow:0 10px 30px rgba(0,0,0,.12);">
-          <img src="logo.jpg" alt="شعار دكتور حسن" style="width:92px;height:92px;object-fit:contain;border-radius:14px;">
-        </div>
+        <a
+          href="https://wa.me/201080212554"
+          target="_blank"
+          class="consultation-btn"
+          style="display:inline-flex;align-items:center;justify-content:center;font-size:20px;font-weight:800;padding:16px 30px;min-width:220px;border-radius:16px;margin-bottom:22px;box-shadow:0 10px 25px rgba(0,0,0,.18);">
+          🩺 استشارة طبية
+        </a>
         <h1>منتجات دكتور حسن للعناية بالبشرة والشعر</h1>
         <p>اختاري عنايتك اليومية من مجموعة مختارة من المرطبات، السيرمات، واقي الشمس، الغسولات ومنتجات العناية بالشعر والتفتيح.</p>
         <a class="hero-btn" href="#products">تسوقي الآن 🛍️</a>
@@ -2379,6 +2383,13 @@
     let cart = [];
     let currentFilter = "all";
     let couponDiscount = 0;
+    let appliedCoupon = "";
+
+    const COUPONS = {
+      "DRHASSAN5": 0.05,
+      "DRHASSAN10": 0.10,
+      "DRHASSAN50": 0.50
+    };
 
     const COD_FEE = 20;
 
@@ -2781,23 +2792,28 @@
       const message =
         document.getElementById("couponMessage");
 
-      if (input === "DRHASSAN10") {
+      if (COUPONS[input]) {
 
-        couponDiscount = 10;
+        appliedCoupon = input;
+        couponDiscount =
+          calculateSubtotal() * COUPONS[input];
+
+        const percent = COUPONS[input] * 100;
 
         message.textContent =
-          "تم تطبيق خصم 10 جنيه ✅";
+          `تم تطبيق خصم ${percent}% بنجاح 🎉`;
 
         message.style.color = "#198754";
 
       } else {
 
+        appliedCoupon = "";
         couponDiscount = 0;
 
         if (input) {
 
           message.textContent =
-            "كود الخصم غير صحيح";
+            "كود الخصم غير صحيح ❌";
 
           message.style.color = "#d9534f";
 
@@ -2822,6 +2838,10 @@
 
       const subtotal =
         calculateSubtotal();
+
+      if (appliedCoupon && COUPONS[appliedCoupon]) {
+        couponDiscount = subtotal * COUPONS[appliedCoupon];
+      }
 
       const paymentMethod =
         document.getElementById("paymentMethod")
@@ -3165,6 +3185,7 @@ ${new Date().toLocaleString("ar-EG")}
       cart = [];
 
       couponDiscount = 0;
+      appliedCoupon = "";
 
       document
         .getElementById("couponInput")
