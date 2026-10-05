@@ -324,6 +324,16 @@
         url("https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=1200&q=80") center/cover;
     }
 
+    .category-card.serums {
+      background-image: linear-gradient(rgba(0,0,0,.08),rgba(0,0,0,.08)), url('https://images.unsplash.com/photo-1611930022073-b7a4ba5fcccd?auto=format&fit=crop&w=1200&q=85');
+    }
+
+    .category-card.lightening-pigmentation {
+      background:
+        linear-gradient(rgba(0,0,0,.05), rgba(0,0,0,.05)),
+        url("https://images.unsplash.com/photo-1612817288484-6f916006741a?auto=format&fit=crop&w=1200&q=80") center/cover;
+    }
+
     .category-card-content {
       position: relative;
       z-index: 2;
@@ -1017,6 +1027,20 @@
     </div>
   </header>
 
+  <!-- ================= STORE COVER ================= -->
+  <section class="hero" id="home" style="background-image:linear-gradient(90deg,rgba(16,72,61,.94),rgba(16,72,61,.55)),url('https://images.unsplash.com/photo-1556229010-6c3f2c9ca5f8?auto=format&fit=crop&w=1800&q=90');background-size:cover;background-position:center;min-height:430px;display:flex;align-items:center;">
+    <div class="container hero-content">
+      <div>
+        <div style="display:inline-flex;align-items:center;justify-content:center;background:rgba(255,255,255,.95);padding:10px 18px;border-radius:18px;margin-bottom:20px;box-shadow:0 10px 30px rgba(0,0,0,.12);">
+          <img src="logo.jpg" alt="شعار دكتور حسن" style="width:92px;height:92px;object-fit:contain;border-radius:14px;">
+        </div>
+        <h1>منتجات دكتور حسن للعناية بالبشرة والشعر</h1>
+        <p>اختاري عنايتك اليومية من مجموعة مختارة من المرطبات، السيرمات، واقي الشمس، الغسولات ومنتجات العناية بالشعر والتفتيح.</p>
+        <a class="hero-btn" href="#products">تسوقي الآن 🛍️</a>
+      </div>
+    </div>
+  </section>
+
   <!-- ================= CATEGORIES ================= -->
 
   <section class="categories" id="categories">
@@ -1036,6 +1060,14 @@
             <button onclick="filterProducts('moisturizers')">
               عرض المنتجات
             </button>
+          </div>
+        </div>
+
+        <div class="category-card serums" style="background-image:linear-gradient(rgba(0,0,0,.08),rgba(0,0,0,.08)),url('https://images.unsplash.com/photo-1611930022073-b7a4ba5fcccd?auto=format&fit=crop&w=1200&q=85');">
+          <div class="category-card-content">
+            <h3>السيرمات</h3>
+            <p>سيرمات للترطيب والتفتيح والنضارة</p>
+            <button onclick="filterProducts('serums')">عرض المنتجات</button>
           </div>
         </div>
 
@@ -1064,6 +1096,16 @@
             <h3>العناية بالشعر</h3>
             <p>منتجات لتقوية الشعر والعناية به</p>
             <button onclick="filterProducts('hair-care')">
+              عرض المنتجات
+            </button>
+          </div>
+        </div>
+
+        <div class="category-card lightening-pigmentation">
+          <div class="category-card-content">
+            <h3>العناية بالتفتيح والتصبغات</h3>
+            <p>منتجات للتفتيح والعناية بالبقع والتصبغات</p>
+            <button onclick="filterProducts('lightening-pigmentation')">
               عرض المنتجات
             </button>
           </div>
@@ -1111,6 +1153,13 @@
 
         <button
           class="filter-btn"
+          data-filter="serums"
+          onclick="filterProducts('serums')">
+          💧 السيرمات
+        </button>
+
+        <button
+          class="filter-btn"
           data-filter="cleansers"
           onclick="filterProducts('cleansers')">
           🧼 الغسولات
@@ -1121,6 +1170,13 @@
           data-filter="hair-care"
           onclick="filterProducts('hair-care')">
           💇‍♀️ العناية بالشعر
+        </button>
+
+        <button
+          class="filter-btn"
+          data-filter="lightening-pigmentation"
+          onclick="filterProducts('lightening-pigmentation')">
+          ✨ التفتيح والتصبغات
         </button>
 
       </div>
@@ -2226,6 +2282,92 @@
         image: "https://f.nooncdn.com/p/pzsku/Z546BDE5EDBB110A9D682Z/45/_/1719994511/b8cce63f-33d1-4d4c-beee-836a8821a86b.jpg?width=1200"
       },
 
+      /* ---------- LIGHTENING & PIGMENTATION CARE ---------- */
+
+      { id: "l1", name: "Rederma Laboratories gen.z Lightening Cream", category: "lightening-pigmentation", categoryName: "العناية بالتفتيح والتصبغات", oldPrice: 350, price: 275, image: "https://www.mouradpharmacy.com/web/image/product.product/72/image_1920?unique=bda4652" },
+      { id: "l2", name: "Lightening Cream (Dermawhite / Alpha Arbutin)", category: "lightening-pigmentation", categoryName: "العناية بالتفتيح والتصبغات", oldPrice: 200, price: 150, image: "https://f.nooncdn.com/p/pzsku/Z94B11B3367FCED84EA7EZ/45/1751469785/e251f8a9-57c6-486c-9165-9d3e81508c62.jpg" },
+      { id: "l3", name: "Daky Whitening Cream", category: "lightening-pigmentation", categoryName: "العناية بالتفتيح والتصبغات", oldPrice: 250, price: 200, image: "https://4eshopping.com/assets/images/products/7601391708002654.webp" },
+      { id: "l4", name: "StarVille Whitening Cream", category: "lightening-pigmentation", categoryName: "العناية بالتفتيح والتصبغات", oldPrice: 150, price: 125, image: "https://f.nooncdn.com/p/pzsku/ZECA44DB17F3A49DDFFBEZ/45/1758716154/0072d874-84a9-4667-a6c5-b52af024d62b.jpg" },
+      { id: "l5", name: "Dermactive Acti-White Depigmenting Cream", category: "lightening-pigmentation", categoryName: "العناية بالتفتيح والتصبغات", oldPrice: 350, price: 280, image: "https://f.nooncdn.com/p/1b936e5aa7fc5b598b5f10a6dd9bd61f|pzsku/Z8CF57981876D789DF3C5Z/45/1770800161/24a65f91-19da-4389-b884-465cbe268d34.jpg" },
+      { id: "l6", name: "Tetra Glow Whitening Cream Sensitive Zone", category: "lightening-pigmentation", categoryName: "العناية بالتفتيح والتصبغات", oldPrice: 450, price: 400, image: "https://f.nooncdn.com/p/pzsku/ZD8600F0E4739F1F6CC91Z/45/1767687972/f1c5ba64-3cd4-4c83-a7cc-ca29e44ff527.jpg" },
+      { id: "l7", name: "Dermaelle W+ Hyalu White Face & Neck Cream", category: "lightening-pigmentation", categoryName: "العناية بالتفتيح والتصبغات", oldPrice: 300, price: 260, image: "https://e-dermaelle.com/cdn/shop/files/1.faceandneckcream.png?v=1769010705" },
+      { id: "l8", name: "Daky Whitening Cream For Sensitive Zone", category: "lightening-pigmentation", categoryName: "العناية بالتفتيح والتصبغات", oldPrice: 250, price: 200, image: "https://tallah-beauty.com/cdn/shop/files/Daky_whitening_for_Sensitive_area_50_GM.png?v=1773062492&width=1946" },
+      { id: "l9", name: "Alejon Whitening Cream", category: "lightening-pigmentation", categoryName: "العناية بالتفتيح والتصبغات", oldPrice: 400, price: 350, image: "https://f.nooncdn.com/p/pzsku/Z6F8DC51E82DBA2329806Z/45/1751121427/f9d16893-5975-45ff-a661-399fe63c8f15.jpg" },
+      { id: "l10", name: "Kolagra Bikini Whitening Cream (Rich in Vitamin C)", category: "lightening-pigmentation", categoryName: "العناية بالتفتيح والتصبغات", oldPrice: 140, price: 120, image: "https://f.nooncdn.com/p/pzsku/ZA57154FB52373A3A007EZ/45/1753793161/2aa1b89e-3a55-4bd1-a0c0-2f82c9b4316a.jpg?width=800" },
+      { id: "l11", name: "Uriage Bariéderm-CICA Cream", category: "lightening-pigmentation", categoryName: "العناية بالتفتيح والتصبغات", oldPrice: 750, price: 650, image: "https://wee-prod-public.s3.eu-central-1.amazonaws.com/f11c1145/b077e5c2/c7e1c565/9ff256e2/680b32cc4a1785.73883062.large.png" },
+      { id: "l12", name: "Bioderma Pigmentbio Sensitive Areas", category: "lightening-pigmentation", categoryName: "العناية بالتفتيح والتصبغات", oldPrice: 1200, price: 999, image: "https://cdn.pharma-gdd.com/cache/product_show/31112e80e4c97d0de1ca073cded2759ca036fcad04f6f43d6c6ea849c1cf1683c42bcaee.jpg" },
+      { id: "l13", name: "Tetra Glow Depigmenting & Whitening Cream Night Care", category: "lightening-pigmentation", categoryName: "العناية بالتفتيح والتصبغات", oldPrice: 400, price: 350, image: "https://alfouadpharmacies.com/cdn/shop/files/Tetra-Glow-Night-Care-FaceNeck-Cream-30G.webp?v=1754297765" },
+      { id: "l14", name: "ACM Dépiwhite Advanced Intensive Anti-Brown Spot Cream", category: "lightening-pigmentation", categoryName: "العناية بالتفتيح والتصبغات", oldPrice: 700, price: 650, image: "https://cdn.salla.sa/RarZy/e76db941-841f-45d8-b510-dc3bb5dd7429-1000x1000-FxN1ViMjpjYKVZIxz5rKbqZoPyvDX9SangPV7MiY.jpg" },
+      { id: "l15", name: "Vacation Uni-White Night Cream", category: "lightening-pigmentation", categoryName: "العناية بالتفتيح والتصبغات", oldPrice: 350, price: 300, image: "https://f.nooncdn.com/p/pzsku/Z1A4823CBB3986C9721FAZ/45/1755170260/d9233d7e-8a62-476d-acd7-269c85a5ab4b.jpg?width=1200" },
+      { id: "l16", name: "Glamy Lab Whitening Cream SPF30", category: "lightening-pigmentation", categoryName: "العناية بالتفتيح والتصبغات", oldPrice: 550, price: 500, image: "https://stuhm.com/wp-content/uploads/2025/10/Glamy-Lab-Whitening-Cream.webp" },
+      { id: "l17", name: "Foldex Skin Lightening Cream", category: "lightening-pigmentation", categoryName: "العناية بالتفتيح والتصبغات", oldPrice: 250, price: 200, image: "https://f.nooncdn.com/p/pzsku/ZD66D9F759D37C25C30B0Z/45/1766241246/8513d04e-a8c1-4720-a9b5-04a89429b671.jpg?width=800" },
+      { id: "l18", name: "Leylak Whitening Cream", category: "lightening-pigmentation", categoryName: "العناية بالتفتيح والتصبغات", oldPrice: 330, price: 280, image: "https://f.nooncdn.com/p/pzsku/Z5B848086E13F7AFAC0CFZ/45/_/1703168985/a82d3d62-8960-4197-bf25-8a88953f6961.jpg?width=800" },
+      { id: "l19", name: "Infinity Spanish Labs Whitening Cream Gel", category: "lightening-pigmentation", categoryName: "العناية بالتفتيح والتصبغات", oldPrice: 220, price: 200, image: "https://infinityclinicpharma.com/cdn/shop/files/Infinity_Spanish_Labs_product_shoot_2406244199.png?v=1721035754&width=1024" },
+
+      /* ---------- SERUMS ---------- */
+
+      { id: "sr1", name: "Eucerin Even Pigment Perfector Illuminating Serum", category: "serums", categoryName: "السيرمات", oldPrice: 1500, price: 1350, image: "https://f.nooncdn.com/p/pzsku/Z52EE8EF792F9DABE0590Z/45/1761202599/40f0f4e3-fcb2-462d-b298-93391ebaceef.jpg" },
+
+      { id: "sr2", name: "See-Lit Hyaluronic & Vitamin B Plumping Serum", category: "serums", categoryName: "السيرمات", oldPrice: 270, price: 240, image: "https://f.nooncdn.com/p/pzsku/Z9048291642E6A95A3361Z/45/1767807910/c06770c1-f3c5-4741-b703-273a9ae0ce2e.jpg" },
+
+      { id: "sr3", name: "Dr. Rashel Vitamin C Brightening & Anti-Aging Face Serum", category: "serums", categoryName: "السيرمات", oldPrice: 250, price: 200, image: "https://f.nooncdn.com/p/pzsku/Z09D5D27DC1A404619DA6Z/45/_/1778591913/4605303f-6720-433d-81f0-bc8d0182342b.jpg" },
+
+      { id: "sr4", name: "Eucerin DermoPurifyer Oil Control Triple Effect Serum", category: "serums", categoryName: "السيرمات", oldPrice: 700, price: 600, image: "https://f.nooncdn.com/p/pzsku/Z07D80D0EB0C1F3A4972DZ/45/1767866357/469e7f58-e6a5-4a3a-9acc-e938bf750474.jpg" },
+
+      { id: "sr5", name: "Garnier Fast Bright 30x Vitamin C Serum", category: "serums", categoryName: "السيرمات", oldPrice: 400, price: 350, image: "https://f.nooncdn.com/p/pnsku/N45380432A/45/_/1764242506/0d68b628-0d42-443b-bc4f-f2b9e21c3fa4.jpg" },
+
+      { id: "sr6", name: "Dermactive Acti-Clear Correcting Serum", category: "serums", categoryName: "السيرمات", oldPrice: 270, price: 220, image: "https://f.nooncdn.com/p/pzsku/ZC3AE3198009E93FF20BAZ/45/1758369597/84dfee62-89a5-4252-be17-3772e44bef1c.jpg" },
+
+      { id: "sr7", name: "Derma Ten Derma Powers Soothing Power Serum", category: "serums", categoryName: "السيرمات", oldPrice: 350, price: 300, image: "https://f.nooncdn.com/p/pzsku/Z4EA022CF41B7D5CC8A90Z/45/1753714113/dba0a0ed-e3c9-4ffd-956d-ecd3925a5d2d.jpg" },
+
+      { id: "sr8", name: "Vacation Pro-Series Glycolic Acid Serum NAD+", category: "serums", categoryName: "السيرمات", oldPrice: 300, price: 250, image: "https://f.nooncdn.com/p/pzsku/ZD5E930E8A68E266A6BD9Z/45/_/1780580561/c5879dc9-de4b-4f48-a4a7-8798dbf9c6d8.jpg" },
+
+      { id: "sr9", name: "Dermacy Firming + Hydrating Serum", category: "serums", categoryName: "السيرمات", oldPrice: 600, price: 550, image: "https://f.nooncdn.com/p/pzsku/Z0B398AC362E6A0495483Z/45/_/1715185215/42492944-0f4f-4079-9d9f-e1cfbb247db6.jpg" },
+
+      { id: "sr10", name: "Vacation Pro-Series Niacinamide Serum 10%", category: "serums", categoryName: "السيرمات", oldPrice: 350, price: 300, image: "https://deoora.com/cdn/shop/files/niacinamidenew.png?v=1782490034&width=1946" },
+
+      { id: "sr11", name: "Tersus Facial Serum", category: "serums", categoryName: "السيرمات", oldPrice: 280, price: 225, image: "https://f.nooncdn.com/p/pzsku/Z6F78D43B7D9AD65EFE3DZ/45/1761127682/f48cd743-0bed-4def-9629-c7f2d7343df4.jpg" },
+
+      { id: "sr12", name: "Eva Skin Clinic Anti-Ageing Serum", category: "serums", categoryName: "السيرمات", oldPrice: 300, price: 250, image: "https://f.nooncdn.com/p/5ece8f96a96857f7bfac53b531d2de89|pzsku/Z96450AD0735DB837DA72Z/45/1770190348/83e6da52-0995-46ca-a615-9474b1f31637.jpg" },
+
+      { id: "sr13", name: "Dr. Rashel Collagen Elasticity & Firming Primer Serum", category: "serums", categoryName: "السيرمات", oldPrice: 300, price: 250, image: "https://f.nooncdn.com/p/pzsku/Z33B9EB5EC6D59921EFE5Z/45/_/1778592139/76750f70-986b-4374-b5f8-e4e93e945207.jpg" },
+
+      { id: "sr14", name: "Advanced Snail 96 Mucin Power Essence", category: "serums", categoryName: "السيرمات", oldPrice: 300, price: 250, image: "https://f.nooncdn.com/p/7b9a38b316e85e699b06c2086f99e5b9|pzsku/Z996DDF3E38CC1CF5F452Z/45/1770152759/5420c0aa-09e8-4fc6-9e0c-e06dbb57d434.jpg" },
+
+      { id: "sr15", name: "Anua Niacinamide 10% + TXA 4% Serum", category: "serums", categoryName: "السيرمات", oldPrice: 999, price: 850, image: "https://f.nooncdn.com/p/pzsku/Z8B8D2AF12BB848A653C5Z/45/_/1779791653/a534f501-2bb1-460d-be0c-7e6c1f2404b0.jpg" },
+
+      { id: "sr16", name: "L'Oréal Hyaluron Expert 1.5% Hyaluronic Acid Serum", category: "serums", categoryName: "السيرمات", oldPrice: 600, price: 500, image: "https://f.nooncdn.com/p/pzsku/Z9B80A506C1799B559A5CZ/45/1748433180/4901b059-6d7c-4421-9df5-e634f55f47c5.jpg" },
+
+      { id: "sr17", name: "Skinside Blemish Free Pore Refining Serum", category: "serums", categoryName: "السيرمات", oldPrice: 250, price: 180, image: "https://skinsidelabs.com/wp-content/uploads/2023/05/Blemish-Free-Niacinamide-10_-Zinc-1_-Pore-Refining-Serum.jpg.webp" },
+
+      { id: "sr18", name: "Hepto Panthenol Face Serum", category: "serums", categoryName: "السيرمات", oldPrice: 280, price: 210, image: "https://f.nooncdn.com/p/pzsku/Z8EC6351EE0A39B54ACBEZ/45/_/1771533178/22bf3867-1542-44ab-8482-a5f28197eecc.jpg" },
+
+      { id: "sr19", name: "Dr. Rashel Hyaluronic Acid Instant Hydration Primer Serum", category: "serums", categoryName: "السيرمات", oldPrice: 300, price: 250, image: "https://f.nooncdn.com/p/pzsku/Z9C1D41484F3567021FEEZ/45/_/1778592369/e2457e94-47da-46b3-8eae-3a9f2f0ad9fd.jpg" },
+
+      { id: "sr20", name: "Dermatique Advanced Glow Lightening Serum", category: "serums", categoryName: "السيرمات", oldPrice: 250, price: 180, image: "https://f.nooncdn.com/p/pzsku/ZD5776D72E13976CFA87EZ/45/1767809316/77a107dd-1ea4-46e5-8b50-441885e3c732.jpg" },
+
+      { id: "sr21", name: "Derma Ten Pore Refining Power Serum", category: "serums", categoryName: "السيرمات", oldPrice: 350, price: 300, image: "https://f.nooncdn.com/p/pzsku/Z14B7F88CB2A0DFCEE3CCZ/45/1764270380/dddfc4de-bdfb-4049-8480-0ae90090da08.jpg" },
+
+      { id: "sr22", name: "Regenix Dermal Facial Super Serum Rejuvenating", category: "serums", categoryName: "السيرمات", oldPrice: 999, price: 850, image: "https://f.nooncdn.com/p/pzsku/Z3E912AE681C1E228DF42Z/45/_/1772625392/3728e09d-0245-4fc1-a88e-b1426a9de877.jpg" },
+
+      { id: "sr23", name: "Leylak Hyaluronic Acid and Vitamin C 10% Serum", category: "serums", categoryName: "السيرمات", oldPrice: 450, price: 330, image: "https://f.nooncdn.com/p/pzsku/Z3E912AE681C1E228DF42Z/45/_/1772625392/3728e09d-0245-4fc1-a88e-b1426a9de877.jpg" },
+
+      { id: "sr24", name: "Shine and White Face Serum", category: "serums", categoryName: "السيرمات", oldPrice: 400, price: 320, image: "https://f.nooncdn.com/p/pzsku/ZFBA7C430BA379451CD1CZ/45/1755951066/b48a1621-ac05-4d40-8aac-e69623f5ab69.jpg" },
+
+      { id: "sr25", name: "Skinova Image Niacinamide Serum Advance", category: "serums", categoryName: "السيرمات", oldPrice: 350, price: 300, image: "https://f.nooncdn.com/p/pzsku/ZEF9E878A095B36817134Z/45/1767188336/fe132362-8703-450d-9f54-0bec2b4666cd.jpg" },
+
+      { id: "sr26", name: "Skinova Image Hyalo Cica Serum", category: "serums", categoryName: "السيرمات", oldPrice: 350, price: 300, image: "https://f.nooncdn.com/p/pzsku/Z681C625FF2CB8CA30360Z/45/_/1778173466/c51c856d-1a3e-4675-8127-319de5f4cd5d.jpg" },
+
+      { id: "sr27", name: "L'Oréal Paris Glycolic-Bright 8% Serum", category: "serums", categoryName: "السيرمات", oldPrice: 550, price: 450, image: "https://f.nooncdn.com/p/pzsku/ZCF22CA0A0761EB1B4E7CZ/45/1764075574/6a03b59c-fd73-4116-9d6b-e407b9a31968.jpg?width=original" },
+
+      { id: "sr28", name: "Dermaelle Advanced Serum Niacinamide 5%", category: "serums", categoryName: "السيرمات", oldPrice: 300, price: 250, image: "https://f.nooncdn.com/p/pzsku/ZF3332D075E49FF53F270Z/45/1766927686/61040006-315d-48ca-8a4d-02940c2dc8b8.jpg" },
+
+      { id: "sr29", name: "Ordinoor Even Tone Serum", category: "serums", categoryName: "السيرمات", oldPrice: 450, price: 370, image: "https://www.avenscosmeticseg.com/cdn/shop/files/eventone_new_des.webp?v=1781699556&width=1946" },
+
+      { id: "sr30", name: "Nuveracosmetics Sebio Control Niacinamide Serum 5%", category: "serums", categoryName: "السيرمات", oldPrice: 300, price: 250, image: "https://f.nooncdn.com/p/pzsku/ZCB21CC145888D2BFAE08Z/45/_/1778237483/a8fa48bb-d853-4fe3-84c4-7cb43b5c3698.jpg" },
+
+      { id: "sr31", name: "Moist.1 Hyaluronic Acid Serum 2% H.A", category: "serums", categoryName: "السيرمات", oldPrice: 300, price: 250, image: "https://f.nooncdn.com/p/pzsku/Z4827627E6A4D954B4C70Z/45/1767809366/cf5022fa-e030-4f00-a639-8098731ee847.jpg" },
+
     ];
 
 
@@ -2304,6 +2446,7 @@
                 src="${product.image}"
                 alt="${product.name}"
                 loading="lazy"
+                onerror="this.onerror=null;this.src='https://placehold.co/600x600/f4f8f6/176b5a?text=Dr.+Hassan';"
                 >
 
             </div>
