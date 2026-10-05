@@ -318,6 +318,12 @@
         url("https://f.nooncdn.com/p/pzsku/Z7C5BC8768EBE8F24C4B0Z/45/1755361253/8be8d69c-a106-45b7-a167-ac657d8b2f65.jpg") center/cover;
     }
 
+    .category-card.hair-care {
+      background:
+        linear-gradient(rgba(0,0,0,.05), rgba(0,0,0,.05)),
+        url("https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=1200&q=80") center/cover;
+    }
+
     .category-card-content {
       position: relative;
       z-index: 2;
@@ -1053,6 +1059,16 @@
           </div>
         </div>
 
+        <div class="category-card hair-care">
+          <div class="category-card-content">
+            <h3>العناية بالشعر</h3>
+            <p>منتجات لتقوية الشعر والعناية به</p>
+            <button onclick="filterProducts('hair-care')">
+              عرض المنتجات
+            </button>
+          </div>
+        </div>
+
       </div>
 
     </div>
@@ -1098,6 +1114,13 @@
           data-filter="cleansers"
           onclick="filterProducts('cleansers')">
           🧼 الغسولات
+        </button>
+
+        <button
+          class="filter-btn"
+          data-filter="hair-care"
+          onclick="filterProducts('hair-care')">
+          💇‍♀️ العناية بالشعر
         </button>
 
       </div>
@@ -1859,6 +1882,348 @@
         oldPrice: 250,
         price: 170,
         image: "https://f.nooncdn.com/p/pzsku/ZF63EA6FD7361F1831FEEZ/45/_/1789252802/abce5815-4da4-4a66-b635-791f3ef01a6c.jpg?width=800"
+      },
+
+      /* ---------- HAIR CARE ---------- */
+
+      {
+        id: "h1",
+        name: "Capixy Anti-Hair Loss Tonic Spray (كابيكسي سبراي مقوي للشعر - الأبيض)",
+        category: "hair-care",
+        categoryName: "العناية بالشعر",
+        oldPrice: 450,
+        price: 300,
+        image: "https://media.zid.store/431ce382-352f-41d9-b2b8-8147b2b3b500/a09e5bb0-4486-499e-8658-4197aff76331.webp"
+      },
+
+      {
+        id: "h2",
+        name: "Twist & Go Hair Intensive Lotion (تويست آند جو لوشن مكثف للشعر)",
+        category: "hair-care",
+        categoryName: "العناية بالشعر",
+        oldPrice: 300,
+        price: 270,
+        image: "https://nobaeg.com/cdn/shop/files/twistgo-length-intensive-hair-lotion-125ml-3668198_1200x1200_db07090e-af3d-4f9a-9326-2da221453d4c.webp?v=1764241031"
+      },
+
+      {
+        id: "h3",
+        name: "LeVisage VIGILANT Hair Growth Serum / Ampoules (أمبولات/سيروم ليفيزاج فيجيلانت لإنبات الشعر)",
+        category: "hair-care",
+        categoryName: "العناية بالشعر",
+        oldPrice: 650,
+        price: 550,
+        image: "https://f.nooncdn.com/p/pzsku/ZD9E470D6B898219C2DF5Z/45/_/1773620297/1bfcd28b-164d-4762-9481-49931f31b4c4.jpg"
+      },
+
+      {
+        id: "h4",
+        name: "StrongVille Hair Lotion Men (سترونج فيل لوشن للرجال)",
+        category: "hair-care",
+        categoryName: "العناية بالشعر",
+        oldPrice: 300,
+        price: 240,
+        image: "https://www.eg.sohaticare.com/cdn/shop/products/Strongville-Men-Spray-100gm-_1_1fc1b689-418e-41c3-9d07-49716c97fe15.png?v=1677752463"
+      },
+
+      {
+        id: "h5",
+        name: "Capixy Intense Tonic Spray (كابيكسي سبراي مكثف - الأحمر)",
+        category: "hair-care",
+        categoryName: "العناية بالشعر",
+        oldPrice: 650,
+        price: 550,
+        image: "https://i.ebayimg.com/images/g/FOcAAeSwe75oo8-~/s-l1200.jpg"
+      },
+
+      {
+        id: "h6",
+        name: "Minoxilook 5% Topical Solution (مينوكسيلوك محلول موضعي 5%)",
+        category: "hair-care",
+        categoryName: "العناية بالشعر",
+        oldPrice: 300,
+        price: 275,
+        image: "https://f.nooncdn.com/p/pzsku/Z9348DFAA720F9C13A571Z/45/1758099178/3ea2b33b-e289-4ef2-81b6-31d96ebccae3.jpg?width=480"
+      },
+
+      {
+        id: "h7",
+        name: "Raw African Follicle Booster Oil (زيت رو أفريكان محفز النمو)",
+        category: "hair-care",
+        categoryName: "العناية بالشعر",
+        oldPrice: 250,
+        price: 200,
+        image: "https://f.nooncdn.com/p/pzsku/Z5DD8FAEC663C35D1BB32Z/45/_/1775254016/bf710f2d-1beb-441c-9993-8c1effca9a20.jpg"
+      },
+
+      {
+        id: "h8",
+        name: "Twist & Go Anti-Hair Loss Lotion (تويست آند جو لوشن لتساقط الشعر - الأخضر)",
+        category: "hair-care",
+        categoryName: "العناية بالشعر",
+        oldPrice: 300,
+        price: 270,
+        image: "https://cdn.shopify.com/s/files/1/0917/1632/1576/files/twistgo-anti-hair-loss-lotion-250ml-7960801.webp?v=1756895927"
+      },
+
+      {
+        id: "h9",
+        name: "Capixy Anti-Hair Loss Vials Box (أمبولات كابيكسي لعلاج تساقط الشعر)",
+        category: "hair-care",
+        categoryName: "العناية بالشعر",
+        oldPrice: 999,
+        price: 850,
+        image: "https://f.nooncdn.com/p/pzsku/Z3BEFF29FE7FA3B1BBA0DZ/45/1747311492/af99056c-1676-41d7-9b32-91c0f262a792.jpg?width=480"
+      },
+
+      {
+        id: "h10",
+        name: "Clary Hair Fall Control Serum (سيروم كلاري لتساقط الشعر)",
+        category: "hair-care",
+        categoryName: "العناية بالشعر",
+        oldPrice: 350,
+        price: 300,
+        image: "https://f.nooncdn.com/p/pzsku/Z2CEB6D92C9D5AF06F857Z/45/_/1699798584/dd706440-6a6c-41aa-b9de-a178c3c2808e.jpg?width=1200"
+      },
+
+      {
+        id: "h11",
+        name: "Clary Hair Fall Control Conditioner (بلسم كلاري لتساقط الشعر)",
+        category: "hair-care",
+        categoryName: "العناية بالشعر",
+        oldPrice: 350,
+        price: 300,
+        image: "https://f.nooncdn.com/p/pzsku/Z2CEB6D92C9D5AF06F857Z/45/_/1699798584/dd706440-6a6c-41aa-b9de-a178c3c2808e.jpg?width=1200"
+      },
+
+      {
+        id: "h12",
+        name: "Twist & Go Hair Serum Dry Touch (سيروم تويست آند جو للشعر الجاف)",
+        category: "hair-care",
+        categoryName: "العناية بالشعر",
+        oldPrice: 300,
+        price: 200,
+        image: "https://d1sfia80qolkyg.cloudfront.net/products/23916471image.jpg"
+      },
+
+      {
+        id: "h13",
+        name: "Premier PremCrystal Look Hair Serum (سيروم بريمير كريستال للشعر)",
+        category: "hair-care",
+        categoryName: "العناية بالشعر",
+        oldPrice: 300,
+        price: 225,
+        image: "https://taypharmacies.com/wp-content/uploads/2022/12/PREMIER-PREM-CRYSTAL-LOOK-SERUM-70-ML.jpg"
+      },
+
+      {
+        id: "h14",
+        name: "Capixy Leave-in Heat Protection Spray (سبراي كابيكسي حماية من الحرارة)",
+        category: "hair-care",
+        categoryName: "العناية بالشعر",
+        oldPrice: 400,
+        price: 350,
+        image: "https://media.zid.store/431ce382-352f-41d9-b2b8-8147b2b3b500/a09e5bb0-4486-499e-8658-4197aff76331.webp"
+      },
+
+      {
+        id: "h15",
+        name: "TRESemmé Coconut Nourish Conditioner/Shampoo (شامبو/بلسم تريزمي بجوز الهند والألوفيرا)",
+        category: "hair-care",
+        categoryName: "العناية بالشعر",
+        oldPrice: 250,
+        price: 220,
+        image: "https://f.nooncdn.com/p/f23de7f06a7257eea1f65dc2987ef8bd%7Cpzsku/Z53EBE63DA7FD96145DD7Z/45/1769945838/c729e008-868f-44a4-ae16-048e92f14eec.jpg?width=800"
+      },
+
+      {
+        id: "h16",
+        name: "Seropipe Hair Conditioner (بلسم سيروبيب)",
+        category: "hair-care",
+        categoryName: "العناية بالشعر",
+        oldPrice: 450,
+        price: 300,
+        image: "https://f.nooncdn.com/p/pzsku/ZB6D067489BE49BC156B7Z/45/1765030560/f85a94aa-72ee-4a90-9a75-527f8a73abe3.jpg?width=800"
+      },
+
+      {
+        id: "h17",
+        name: "TRESemmé Keratin Smooth Shampoo (شامبو تريزمي كيراتين سموث - الأحمر)",
+        category: "hair-care",
+        categoryName: "العناية بالشعر",
+        oldPrice: 350,
+        price: 275,
+        image: "https://cdn.mafrservices.com/pim-content/SAU/media/product/646900/1779624600/646900_main.jpg"
+      },
+
+      {
+        id: "h18",
+        name: "Clary Hair Fall Control Shampoo (شامبو كلاري لتساقط الشعر)",
+        category: "hair-care",
+        categoryName: "العناية بالشعر",
+        oldPrice: 400,
+        price: 300,
+        image: "https://www.eg.sohaticare.com/cdn/shop/products/Clary-Shampoo-300ml-_1_1200x1200_crop_center_5b7b881d-c48a-4e74-9547-bca0f763bc77.png?v=1677752315"
+      },
+
+      {
+        id: "h19",
+        name: "Clary Leave-In Cream (كريم ليف إن كلاري)",
+        category: "hair-care",
+        categoryName: "العناية بالشعر",
+        oldPrice: 350,
+        price: 275,
+        image: "https://eparkville.com/cdn/shop/files/leaveincream_426d466c-e1d9-4347-95ed-f9a7d27488e5.png?v=1707137729"
+      },
+
+      {
+        id: "h20",
+        name: "Capixy Hair Fertilizer Anti-Hair Loss Shampoo (شامبو كابيكسي لعلاج تساقط الشعر)",
+        category: "hair-care",
+        categoryName: "العناية بالشعر",
+        oldPrice: 350,
+        price: 300,
+        image: "https://f.nooncdn.com/p/pnsku/N53325295A/45/_/1767607550/9f2a9fd3-b11e-40c4-bcea-9537bcea200b.jpg?width=1200"
+      },
+
+      {
+        id: "h21",
+        name: "Seropipe Hair Shampoo Zero Sulfate (شامبو سيروبيب خالي من السلفات)",
+        category: "hair-care",
+        categoryName: "العناية بالشعر",
+        oldPrice: 350,
+        price: 300,
+        image: "https://f.nooncdn.com/p/pzsku/Z94AA2975C583C5F62EC9Z/45/1765797262/02bcb69c-1f29-45a6-9c69-e0d8672cd1b0.jpg?width=1200"
+      },
+
+      {
+        id: "h22",
+        name: "StrongVille Hair Shampoo Bond Builder (شامبو سترونج فيل)",
+        category: "hair-care",
+        categoryName: "العناية بالشعر",
+        oldPrice: 200,
+        price: 150,
+        image: "https://eg.sohaticare.com/cdn/shop/products/Strongville-Extra-Hair-Shampoo-220ml-_1_02dd8533-ed93-42db-90d5-d81c4d86154c.png?v=1677752450"
+      },
+
+      {
+        id: "h23",
+        name: "Infinity Naturals Hair Conditioner (بلسم إنفينيتي ناتشورالز بجوز الهند والشيا)",
+        category: "hair-care",
+        categoryName: "العناية بالشعر",
+        oldPrice: 500,
+        price: 400,
+        image: "https://infinityclinicpharma.com/cdn/shop/files/INFINITY_Natural_product_shoot_2406241053.png?v=1720446759&width=798"
+      },
+
+      {
+        id: "h24",
+        name: "Leaves Anti-Hair Loss Shampoo & Conditioner (شامبو وبلسم ليفز بالأعشاب الهندية)",
+        category: "hair-care",
+        categoryName: "العناية بالشعر",
+        oldPrice: 350,
+        price: 300,
+        image: "https://www.bloompharmacy.com/cdn/shop/files/leaves-anti-hair-loss-shampoo-conditioner-250ml-6159696.jpg?v=1767021433"
+      },
+
+      {
+        id: "h25",
+        name: "Eva Advanced Care Clinic Hydrolysed Keratin Shampoo (شامبو إيفا كلينيك بالكيراتين)",
+        category: "hair-care",
+        categoryName: "العناية بالشعر",
+        oldPrice: 150,
+        price: 125,
+        image: "https://talabat.dhmedia.io/image/product-information-management/6975ef86531ff1ed54d45eb3.png"
+      },
+
+      {
+        id: "h26",
+        name: "Twist & Go Hair Volumizing Shampoo (شامبو تويست آند جو لزيادة كثافة الشعر)",
+        category: "hair-care",
+        categoryName: "العناية بالشعر",
+        oldPrice: 250,
+        price: 200,
+        image: "https://f.nooncdn.com/p/pzsku/ZEA31AB28A0423E2CB12EZ/45/1747083430/b3b243a9-0636-42bf-944c-8ed5bce804ec.jpg?width=1200"
+      },
+
+      {
+        id: "h27",
+        name: "Capixy Hydrating Conditioner (بلسم كابيكسي المرطب للشعر)",
+        category: "hair-care",
+        categoryName: "العناية بالشعر",
+        oldPrice: 350,
+        price: 250,
+        image: "https://e-alrajhipharma.com/cdn/shop/files/1_5667466e-e4e6-41b2-a6b2-26a3affb9091.png?v=1761575805&width=720"
+      },
+
+      {
+        id: "h28",
+        name: "Clary Hair Fall Control Hair Mask (ماسك كلاري لتساقط الشعر)",
+        category: "hair-care",
+        categoryName: "العناية بالشعر",
+        oldPrice: 350,
+        price: 300,
+        image: "https://m.media-amazon.com/images/I/61iix7RpkfL._AC_SX522_.jpg"
+      },
+
+      {
+        id: "h29",
+        name: "Hairoots Hair Mask (ماسك هيروتس للشعر)",
+        category: "hair-care",
+        categoryName: "العناية بالشعر",
+        oldPrice: 300,
+        price: 250,
+        image: "https://ssppldurcjtgbfnwrcnv.supabase.co/storage/v1/object/public/products-imgs/hairroots-hair-mask-150ml/3.png"
+      },
+
+      {
+        id: "h30",
+        name: "Bio Soft Avocado Deep Conditioner (بلسم بيو سوفت العميق بالأفوكادو)",
+        category: "hair-care",
+        categoryName: "العناية بالشعر",
+        oldPrice: 170,
+        price: 130,
+        image: "https://images-na.ssl-images-amazon.com/images/I/41mNJmMVqKL._SL500_._AC_SL500_.jpg"
+      },
+
+      {
+        id: "h31",
+        name: "TRESemmé Botanique Hydrating Coconut Mask (ماسك تريزمي بجوز الهند والألوفيرا)",
+        category: "hair-care",
+        categoryName: "العناية بالشعر",
+        oldPrice: 400,
+        price: 350,
+        image: "https://brandcity.pk/cdn/shop/files/1226704-1_1024x1024.jpg?v=1690360606"
+      },
+
+      {
+        id: "h32",
+        name: "Twist & Go Hair Mask (ماسك تويست آند جو للشعر)",
+        category: "hair-care",
+        categoryName: "العناية بالشعر",
+        oldPrice: 300,
+        price: 200,
+        image: "https://f.nooncdn.com/p/pzsku/Z9821533E70F53A145B04Z/45/1754997131/6d66aa59-8dcc-41ef-afae-877f55a5a353.jpg?width=800"
+      },
+
+      {
+        id: "h33",
+        name: "Capixy Ultimate Nourishing Hair Mask (ماسك كابيكسي المغذي للشعر)",
+        category: "hair-care",
+        categoryName: "العناية بالشعر",
+        oldPrice: 450,
+        price: 350,
+        image: "https://images-eu.ssl-images-amazon.com/images/I/51Cs%2BnnefdL._AC_UL495_SR435%2C495_.jpg"
+      },
+
+      {
+        id: "h34",
+        name: "Karseell Maca Power Collagen Hair Mask (ماسك كارسييل بالكولاجين للشعر - 500ml)",
+        category: "hair-care",
+        categoryName: "العناية بالشعر",
+        oldPrice: 999,
+        price: 850,
+        image: "https://f.nooncdn.com/p/pzsku/Z546BDE5EDBB110A9D682Z/45/_/1719994511/b8cce63f-33d1-4d4c-beee-836a8821a86b.jpg?width=1200"
       },
 
     ];
