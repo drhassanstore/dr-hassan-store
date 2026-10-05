@@ -75,6 +75,62 @@
       margin: auto;
     }
 
+
+    /* زر الاستشارة الطبية تحت البانر */
+    .consultation-wrap {
+      text-align: center;
+      padding: 18px 0 25px;
+      background: #fff;
+    }
+
+    .consultation-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      background: #25D366;
+      color: #fff;
+      padding: 13px 26px;
+      border-radius: 30px;
+      font-weight: bold;
+      text-decoration: none;
+      box-shadow: 0 8px 20px rgba(37,211,102,.2);
+      transition: .2s ease;
+    }
+
+    .consultation-btn:hover {
+      transform: translateY(-2px);
+    }
+
+
+    /* ================= MEDICAL CONSULTATION SECTION ================= */
+
+    .consultation-section {
+      background: #fff;
+      padding: 55px 0;
+    }
+
+    .consultation-card {
+      max-width: 850px;
+      margin: auto;
+      text-align: center;
+      background: var(--light-green);
+      border-radius: 22px;
+      padding: 35px 25px;
+      box-shadow: var(--shadow);
+    }
+
+    .consultation-card h2 {
+      color: var(--dark-green);
+      margin-bottom: 8px;
+      font-size: 30px;
+    }
+
+    .consultation-card p {
+      color: var(--gray);
+      margin-bottom: 20px;
+    }
+
     /* ================= HEADER ================= */
 
     header {
@@ -921,6 +977,7 @@
     <img src="logo.jpg" alt="دكتور حسن">
   </div>
 
+
   <!-- ================= HEADER ================= -->
 
   <header>
@@ -1381,6 +1438,23 @@
 
 
   <!-- ================= FOOTER ================= -->
+
+  <!-- ================= MEDICAL CONSULTATION ================= -->
+
+  <section class="consultation-section" id="consultation">
+    <div class="container">
+      <div class="consultation-card">
+        <h2>استشارات طبية</h2>
+        <p>للاستفسارات والاستشارات الطبية تواصلي معنا مباشرة عبر واتساب.</p>
+        <a
+          href="https://wa.me/201080212554"
+          target="_blank"
+          class="consultation-btn">
+          💬 استشارات طبية
+        </a>
+      </div>
+    </div>
+  </section>
 
   <footer>
 
