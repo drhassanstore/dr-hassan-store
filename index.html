@@ -7,7 +7,7 @@
   <title>دكتور حسن | متجر منتجات دكتور حسن للعناية بالبشرة والشعر</title>
 
   <meta name="description" content="متجر دكتور حسن لمنتجات العناية بالبشرة والشعر والجسم. منتجات أصلية وأسعار مميزة مع خدمة توصيل داخل مصر.">
-  <meta name="keywords" content="دكتور حسن, عناية بالبشرة, مرطبات, صن بلوك, واقي شمس, منتجات العناية بالبشرة">
+  <meta name="keywords" content="دكتور حسن, عناية بالبشرة, مرطبات, غسولات, صن بلوك, واقي شمس, منتجات العناية بالبشرة">
   <meta name="author" content="Dr. Hassan Store">
 
   <meta property="og:title" content="دكتور حسن | متجر العناية بالبشرة">
@@ -310,6 +310,12 @@
       background:
         linear-gradient(rgba(0,0,0,.05), rgba(0,0,0,.05)),
         url("images/sunscreen/WhatsApp Image 2026-09-12 at 12.10.20 PM.jpeg") center/cover;
+    }
+
+    .category-card.cleansers {
+      background:
+        linear-gradient(rgba(0,0,0,.05), rgba(0,0,0,.05)),
+        url("https://f.nooncdn.com/p/pzsku/Z7C5BC8768EBE8F24C4B0Z/45/1755361253/8be8d69c-a106-45b7-a167-ac657d8b2f65.jpg") center/cover;
     }
 
     .category-card-content {
@@ -1037,6 +1043,16 @@
           </div>
         </div>
 
+        <div class="category-card cleansers">
+          <div class="category-card-content">
+            <h3>الغسولات</h3>
+            <p>تنظيف وعناية يومية بالبشرة</p>
+            <button onclick="filterProducts('cleansers')">
+              عرض المنتجات
+            </button>
+          </div>
+        </div>
+
       </div>
 
     </div>
@@ -1075,6 +1091,13 @@
           data-filter="sunscreen"
           onclick="filterProducts('sunscreen')">
           ☀️ واقي الشمس
+        </button>
+
+        <button
+          class="filter-btn"
+          data-filter="cleansers"
+          onclick="filterProducts('cleansers')">
+          🧼 الغسولات
         </button>
 
       </div>
@@ -1684,7 +1707,159 @@
         oldPrice: 800,
         price: 700,
         image: "images/sunscreen/s9.jpg"
+      },
+
+      /* ---------- CLEANSERS ---------- */
+
+      {
+        id: "c1",
+        name: "Vacation Facial Cleanser",
+        category: "cleansers",
+        categoryName: "الغسولات",
+        oldPrice: 300,
+        price: 175,
+        image: "https://f.nooncdn.com/p/pzsku/Z7C5BC8768EBE8F24C4B0Z/45/1755361253/8be8d69c-a106-45b7-a167-ac657d8b2f65.jpg"
+      },
+
+      {
+        id: "c2",
+        name: "Malinda Gel",
+        category: "cleansers",
+        categoryName: "الغسولات",
+        oldPrice: 450,
+        price: 290,
+        image: "https://face2face-eg.com/image/cache/catalog/MALINDA/%5B89%5D%20MALINDA%20Face%20Cleanser%20GEL%20250ML-800x800.png"
+      },
+
+      {
+        id: "c3",
+        name: "Synobar",
+        category: "cleansers",
+        categoryName: "الغسولات",
+        oldPrice: 300,
+        price: 260,
+        image: "https://f.nooncdn.com/p/pnsku/N30302898A/45/_/1694082448/10414d33-8025-4580-9c87-11459e4de006.jpg?width=480"
+      },
+
+      {
+        id: "c4",
+        name: "Dear Facial Cleanser",
+        category: "cleansers",
+        categoryName: "الغسولات",
+        oldPrice: 150,
+        price: 120,
+        image: "https://f.nooncdn.com/p/pzsku/Z618E04A9F2EC7A925E7CZ/45/1747084797/4d44dd47-b4f6-4717-bc61-45e06f13efb6.jpg?width=1200"
+      },
+
+      {
+        id: "c5",
+        name: "Topi-Gent Cleansing Foam",
+        category: "cleansers",
+        categoryName: "الغسولات",
+        oldPrice: 350,
+        price: 290,
+        image: "https://bemart.app/cdn/shop/files/topigent_1200x1200.jpg?v=1707768454"
+      },
+
+      {
+        id: "c6",
+        name: "La Roche-Posay Effaclar Pump 400ml",
+        category: "cleansers",
+        categoryName: "الغسولات",
+        oldPrice: 1250,
+        price: 1150,
+        image: "https://www.dischem.co.za/api/catalog/product/3/3/3337872411991_4eeebea3a83c1da0f3b3880928899c1a.jpg?image-type=image&store=default"
+      },
+
+      {
+        id: "c7",
+        name: "La Roche-Posay Effaclar Tube 200ml",
+        category: "cleansers",
+        categoryName: "الغسولات",
+        oldPrice: 850,
+        price: 700,
+        image: "https://s4.thcdn.com/productimg/1600/1600/11091822-9855227170118602.jpg"
+      },
+
+      {
+        id: "c8",
+        name: "Topi-Gent Cleansing Foam بالفرشاة",
+        category: "cleansers",
+        categoryName: "الغسولات",
+        oldPrice: 350,
+        price: 290,
+        image: "https://anwar.store/cdn/shop/files/1689683350653.jpg?v=1740680975"
+      },
+
+      {
+        id: "c9",
+        name: "Dermaelle Oil Control Gel",
+        category: "cleansers",
+        categoryName: "الغسولات",
+        oldPrice: 250,
+        price: 170,
+        image: "https://e-dermaelle.com/cdn/shop/files/1.cleanser.png?v=1769009156&width=1500"
+      },
+
+      {
+        id: "c10",
+        name: "Tetra Hydro Daily Gel Cleanser",
+        category: "cleansers",
+        categoryName: "الغسولات",
+        oldPrice: 200,
+        price: 150,
+        image: "https://chancestoreegy.com/cdn/shop/files/1-1-1_bcb2c99d-5147-4b02-a047-836725dfef36.jpg?v=1762740858"
+      },
+
+      {
+        id: "c11",
+        name: "KIARA MINI FACIAL CLEANSER GEL FOR OILY & COMBINATION ACNE PRONE SKIN 100ML",
+        category: "cleansers",
+        categoryName: "الغسولات",
+        oldPrice: 250,
+        price: 170,
+        image: "https://anwar.store/cdn/shop/files/621b2f78b3e79d18a884d8b6643b7190_1.webp?v=1790172971"
+      },
+
+      {
+        id: "c12",
+        name: "StarVille Facial Cleanser Gel",
+        category: "cleansers",
+        categoryName: "الغسولات",
+        oldPrice: 175,
+        price: 150,
+        image: "https://eparkville.com/cdn/shop/files/acnecleanser.jpg?v=1707820772&width=1080"
+      },
+
+      {
+        id: "c13",
+        name: "CeraVe Foaming Cleanser 236ml",
+        category: "cleansers",
+        categoryName: "الغسولات",
+        oldPrice: 700,
+        price: 640,
+        image: "https://www.regentsparkpharmacy.com.au/cdn/shop/files/cerave_foaming_cleanser_236ml.png?v=1721623227&width=1500"
+      },
+
+      {
+        id: "c14",
+        name: "Topi Gent Sebum Cleansing 150 ml | عناية شخصية Topi 150 مل",
+        category: "cleansers",
+        categoryName: "الغسولات",
+        oldPrice: 350,
+        price: 290,
+        image: "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcRi43FVlzlDnh_B68_Y0NC3_LavZR8e3i19oZjbjqusRHSU-hMyaSrT2IxFQVwtWN1i7DJPaL7tAo14SI5FNY3eeFW3zftftZZ4DvZEPr12L5WTNdwmpMmsxPQmngqIGWcdGTSG1w&usqp=CAc"
       }
+
+      {
+        id: "c15",
+        name: "Kiara Soft Facial Cleanser Gel for Oily & Combination Acne-Prone Skin 250ml",
+        category: "cleansers",
+        categoryName: "الغسولات",
+        oldPrice: 250,
+        price: 170,
+        image: "https://eg.jumia.is/unsafe/fit-in/150x150/filters:fill(white)/product/04/6942431/1.jpg?8986="
+      },
 
     ];
 
