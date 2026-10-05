@@ -75,6 +75,22 @@
       margin: auto;
     }
 
+    /* ================= FULL WIDTH LOGO COVER ================= */
+
+    .logo-cover {
+      width: 100%;
+      background: white;
+      overflow: hidden;
+    }
+
+    .logo-cover img {
+      width: 100%;
+      height: 240px;
+      display: block;
+      object-fit: cover;
+      object-position: center;
+    }
+
     /* ================= HEADER ================= */
 
     header {
@@ -99,13 +115,6 @@
       align-items: center;
       gap: 10px;
       min-width: 160px;
-    }
-
-    .logo-box img {
-      width: 52px;
-      height: 52px;
-      object-fit: contain;
-      border-radius: 50%;
     }
 
     .logo-box span {
@@ -166,10 +175,13 @@
     }
 
     .hero-content {
-      display: grid;
-      grid-template-columns: 1.2fr .8fr;
-      align-items: center;
-      gap: 50px;
+      display: block;
+      text-align: center;
+      max-width: 900px;
+    }
+
+    .hero-content > div {
+      margin: auto;
     }
 
     .hero h1 {
@@ -192,21 +204,6 @@
       padding: 13px 25px;
       border-radius: 30px;
       font-weight: bold;
-    }
-
-    .hero-logo {
-      display: flex;
-      justify-content: center;
-    }
-
-    .hero-logo img {
-      width: 280px;
-      height: 280px;
-      object-fit: contain;
-      border-radius: 50%;
-      background: white;
-      padding: 15px;
-      box-shadow: 0 15px 50px rgba(0,0,0,.18);
     }
 
     /* ================= SECTIONS ================= */
@@ -836,6 +833,10 @@
     }
 
     @media (max-width: 800px) {
+      .logo-cover img {
+        height: 170px;
+      }
+
       .nav {
         flex-wrap: wrap;
         padding: 10px 0;
@@ -862,10 +863,6 @@
         font-size: 32px;
       }
 
-      .hero-logo {
-        order: -1;
-      }
-
       .products-grid {
         grid-template-columns: repeat(2, 1fr);
       }
@@ -876,6 +873,10 @@
     }
 
     @media (max-width: 550px) {
+      .logo-cover img {
+        height: 125px;
+      }
+
       .container {
         width: 94%;
       }
@@ -915,11 +916,6 @@
         font-size: 19px;
       }
 
-      .hero-logo img {
-        width: 200px;
-        height: 200px;
-      }
-
       .shipping-table {
         font-size: 12px;
       }
@@ -934,13 +930,18 @@
 
 <body>
 
+  <!-- ================= FULL WIDTH LOGO COVER ================= -->
+
+  <div class="logo-cover">
+    <img src="logo.jpg" alt="دكتور حسن">
+  </div>
+
   <!-- ================= HEADER ================= -->
 
   <header>
     <div class="container nav">
 
       <a href="#home" class="logo-box">
-        <img src="logo.jpg" alt="دكتور حسن">
         <span>دكتور حسن</span>
       </a>
 
@@ -979,10 +980,6 @@
         <a href="#products" class="hero-btn">
           تسوقي الآن
         </a>
-      </div>
-
-      <div class="hero-logo">
-        <img src="logo.jpg" alt="Dr Hassan Store">
       </div>
 
     </div>
@@ -1068,7 +1065,7 @@
           type="search"
           id="searchInput"
           placeholder="🔎 ابحثي عن اسم المنتج..."
-          oninput="searchProducts">
+          oninput="searchProducts()">
       </div>
 
       <div class="products-grid" id="productsGrid"></div>
@@ -1185,6 +1182,8 @@
 
       <div class="order-layout">
 
+        <!-- FORM -->
+
         <div class="order-card">
 
           <h3>بيانات العميل</h3>
@@ -1256,6 +1255,8 @@
 
         </div>
 
+
+        <!-- ORDER SUMMARY -->
 
         <div class="order-card">
 
@@ -1464,7 +1465,17 @@
 
   <script>
 
+    /* =====================================================
+       WHATSAPP STORE NUMBER
+       رقم واتساب المتجر
+    ===================================================== */
+
     const WHATSAPP_NUMBER = "201080212554";
+
+
+    /* =====================================================
+       PRODUCTS
+    ===================================================== */
 
     const products = [
 
@@ -1613,8 +1624,6 @@
         image: "images/sunscreen/WhatsApp Image 2026-09-12 at 12.11.56 PM.jpeg"
       },
 
-      /* ---------- UPDATED PRODUCTS ---------- */
-
       {
         id: "s5",
         name: "La Roche-Posay (Oil Control Fluid)",
@@ -1622,7 +1631,7 @@
         categoryName: "واقي الشمس",
         oldPrice: 400,
         price: 300,
-        image: "images/sunscreen/s5.jpg"
+        image: "images/sunscreen/WhatsApp Image 2026-09-12 at 12.12.21 PM.jpeg"
       },
 
       {
@@ -1632,7 +1641,7 @@
         categoryName: "واقي الشمس",
         oldPrice: 1100,
         price: 999,
-        image: "images/sunscreen/s6.jpg"
+        image: "images/sunscreen/WhatsApp Image 2026-09-12 at 12.12.52 PM.jpeg"
       },
 
       {
@@ -1642,7 +1651,7 @@
         categoryName: "واقي الشمس",
         oldPrice: 450,
         price: 350,
-        image: "images/sunscreen/s7.jpg"
+        image: "images/sunscreen/WhatsApp Image 2026-09-12 at 12.13.16 PM.jpeg"
       },
 
       {
@@ -1652,7 +1661,7 @@
         categoryName: "واقي الشمس",
         oldPrice: 450,
         price: 420,
-        image: "images/sunscreen/s8.jpg"
+        image: "images/sunscreen/WhatsApp Image 2026-09-12 at 12.13.41 PM.jpeg"
       },
 
       {
@@ -1662,11 +1671,15 @@
         categoryName: "واقي الشمس",
         oldPrice: 800,
         price: 700,
-        image: "images/sunscreen/s9.jpg"
+        image: "images/sunscreen/WhatsApp Image 2026-09-12 at 12.14.39 PM.jpeg"
       }
 
     ];
 
+
+    /* =====================================================
+       CART
+    ===================================================== */
 
     let cart = [];
     let currentFilter = "all";
@@ -1675,12 +1688,22 @@
     const COD_FEE = 20;
 
 
+    /* =====================================================
+       DISCOUNT
+    ===================================================== */
+
     function getDiscountPercent(oldPrice, price) {
+
       return Math.round(
         ((oldPrice - price) / oldPrice) * 100
       );
+
     }
 
+
+    /* =====================================================
+       RENDER PRODUCTS
+    ===================================================== */
 
     function renderProducts(list = products) {
 
@@ -1762,6 +1785,10 @@
     }
 
 
+    /* =====================================================
+       FILTER PRODUCTS
+    ===================================================== */
+
     function filterProducts(category) {
 
       currentFilter = category;
@@ -1811,6 +1838,10 @@
     }
 
 
+    /* =====================================================
+       SEARCH
+    ===================================================== */
+
     function searchProducts() {
 
       const search =
@@ -1842,6 +1873,10 @@
 
     }
 
+
+    /* =====================================================
+       ADD TO CART
+    ===================================================== */
 
     function addToCart(productId) {
 
@@ -1876,6 +1911,10 @@
     }
 
 
+    /* =====================================================
+       CHANGE QUANTITY
+    ===================================================== */
+
     function changeQuantity(id, change) {
 
       const item =
@@ -1897,6 +1936,10 @@
     }
 
 
+    /* =====================================================
+       REMOVE ITEM
+    ===================================================== */
+
     function removeFromCart(id) {
 
       cart =
@@ -1906,6 +1949,10 @@
 
     }
 
+
+    /* =====================================================
+       CART TOTAL
+    ===================================================== */
 
     function calculateSubtotal() {
 
@@ -1917,6 +1964,10 @@
 
     }
 
+
+    /* =====================================================
+       UPDATE CART
+    ===================================================== */
 
     function updateCart() {
 
@@ -1999,11 +2050,16 @@
 
       }
 
+
       updateSummary();
       updateOrderSummary();
 
     }
 
+
+    /* =====================================================
+       APPLY COUPON
+    ===================================================== */
 
     function applyCoupon() {
 
@@ -2050,6 +2106,10 @@
     }
 
 
+    /* =====================================================
+       UPDATE SUMMARY
+    ===================================================== */
+
     function updateSummary() {
 
       const subtotal =
@@ -2085,6 +2145,10 @@
 
     }
 
+
+    /* =====================================================
+       ORDER SUMMARY
+    ===================================================== */
 
     function updateOrderSummary() {
 
@@ -2152,6 +2216,10 @@
     }
 
 
+    /* =====================================================
+       OPEN CART
+    ===================================================== */
+
     function openCart() {
 
       document
@@ -2165,6 +2233,10 @@
     }
 
 
+    /* =====================================================
+       CLOSE CART
+    ===================================================== */
+
     function closeCart() {
 
       document
@@ -2177,6 +2249,10 @@
 
     }
 
+
+    /* =====================================================
+       GO TO ORDER
+    ===================================================== */
 
     function goToOrder() {
 
@@ -2198,6 +2274,10 @@
 
     }
 
+
+    /* =====================================================
+       SEND ORDER TO WHATSAPP
+    ===================================================== */
 
     function sendOrder(event) {
 
@@ -2246,10 +2326,14 @@
       }
 
 
+      /* ================= ORDER ID ================= */
+
       const orderId =
         "DH-" +
         Date.now().toString().slice(-8);
 
+
+      /* ================= TOTALS ================= */
 
       const subtotal =
         calculateSubtotal();
@@ -2266,6 +2350,8 @@
         );
 
 
+      /* ================= PRODUCTS MESSAGE ================= */
+
       const productsText =
         cart.map((item, index) => {
 
@@ -2278,6 +2364,8 @@
 
         }).join("\n\n");
 
+
+      /* ================= WHATSAPP MESSAGE ================= */
 
       const message =
 
@@ -2330,6 +2418,8 @@ ${new Date().toLocaleString("ar-EG")}
 شكراً لطلبك من متجر دكتور حسن 🌿`;
 
 
+      /* ================= OPEN WHATSAPP ================= */
+
       const whatsappURL =
         `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
 
@@ -2340,6 +2430,8 @@ ${new Date().toLocaleString("ar-EG")}
       );
 
 
+      /* ================= SUCCESS MESSAGE ================= */
+
       document
         .getElementById("successOrderId")
         .textContent = orderId;
@@ -2348,6 +2440,11 @@ ${new Date().toLocaleString("ar-EG")}
         .getElementById("successBox")
         .classList.add("show");
 
+
+      /*
+        نمسح السلة بعد تجهيز الطلب.
+        العميل سيجد رسالة الطلب جاهزة داخل واتساب.
+      */
 
       cart = [];
 
@@ -2378,6 +2475,10 @@ ${new Date().toLocaleString("ar-EG")}
     }
 
 
+    /* =====================================================
+       PAYMENT CHANGE
+    ===================================================== */
+
     document
       .getElementById("paymentMethod")
       .addEventListener("change", function() {
@@ -2387,6 +2488,10 @@ ${new Date().toLocaleString("ar-EG")}
 
       });
 
+
+    /* =====================================================
+       INITIALIZE
+    ===================================================== */
 
     renderProducts();
     updateCart();
