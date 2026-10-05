@@ -1068,7 +1068,7 @@
           type="search"
           id="searchInput"
           placeholder="🔎 ابحثي عن اسم المنتج..."
-          oninput="searchProducts()">
+          oninput="searchProducts">
       </div>
 
       <div class="products-grid" id="productsGrid"></div>
@@ -1185,8 +1185,6 @@
 
       <div class="order-layout">
 
-        <!-- FORM -->
-
         <div class="order-card">
 
           <h3>بيانات العميل</h3>
@@ -1258,8 +1256,6 @@
 
         </div>
 
-
-        <!-- ORDER SUMMARY -->
 
         <div class="order-card">
 
@@ -1468,17 +1464,7 @@
 
   <script>
 
-    /* =====================================================
-       WHATSAPP STORE NUMBER
-       رقم واتساب المتجر
-    ===================================================== */
-
     const WHATSAPP_NUMBER = "201080212554";
-
-
-    /* =====================================================
-       PRODUCTS
-    ===================================================== */
 
     const products = [
 
@@ -1627,6 +1613,8 @@
         image: "images/sunscreen/WhatsApp Image 2026-09-12 at 12.11.56 PM.jpeg"
       },
 
+      /* ---------- UPDATED PRODUCTS ---------- */
+
       {
         id: "s5",
         name: "La Roche-Posay (Oil Control Fluid)",
@@ -1634,7 +1622,7 @@
         categoryName: "واقي الشمس",
         oldPrice: 400,
         price: 300,
-        image: "images/sunscreen/WhatsApp Image 2026-09-12 at 12.12.21 PM.jpeg"
+        image: "images/sunscreen/s5.jpg"
       },
 
       {
@@ -1644,7 +1632,7 @@
         categoryName: "واقي الشمس",
         oldPrice: 1100,
         price: 999,
-        image: "images/sunscreen/WhatsApp Image 2026-09-12 at 12.12.52 PM.jpeg"
+        image: "images/sunscreen/s6.jpg"
       },
 
       {
@@ -1654,7 +1642,7 @@
         categoryName: "واقي الشمس",
         oldPrice: 450,
         price: 350,
-        image: "images/sunscreen/WhatsApp Image 2026-09-12 at 12.13.16 PM.jpeg"
+        image: "images/sunscreen/s7.jpg"
       },
 
       {
@@ -1664,7 +1652,7 @@
         categoryName: "واقي الشمس",
         oldPrice: 450,
         price: 420,
-        image: "images/sunscreen/WhatsApp Image 2026-09-12 at 12.13.41 PM.jpeg"
+        image: "images/sunscreen/s8.jpg"
       },
 
       {
@@ -1674,15 +1662,11 @@
         categoryName: "واقي الشمس",
         oldPrice: 800,
         price: 700,
-        image: "images/sunscreen/WhatsApp Image 2026-09-12 at 12.14.39 PM.jpeg"
+        image: "images/sunscreen/s9.jpg"
       }
 
     ];
 
-
-    /* =====================================================
-       CART
-    ===================================================== */
 
     let cart = [];
     let currentFilter = "all";
@@ -1691,22 +1675,12 @@
     const COD_FEE = 20;
 
 
-    /* =====================================================
-       DISCOUNT
-    ===================================================== */
-
     function getDiscountPercent(oldPrice, price) {
-
       return Math.round(
         ((oldPrice - price) / oldPrice) * 100
       );
-
     }
 
-
-    /* =====================================================
-       RENDER PRODUCTS
-    ===================================================== */
 
     function renderProducts(list = products) {
 
@@ -1788,10 +1762,6 @@
     }
 
 
-    /* =====================================================
-       FILTER PRODUCTS
-    ===================================================== */
-
     function filterProducts(category) {
 
       currentFilter = category;
@@ -1841,10 +1811,6 @@
     }
 
 
-    /* =====================================================
-       SEARCH
-    ===================================================== */
-
     function searchProducts() {
 
       const search =
@@ -1876,10 +1842,6 @@
 
     }
 
-
-    /* =====================================================
-       ADD TO CART
-    ===================================================== */
 
     function addToCart(productId) {
 
@@ -1914,10 +1876,6 @@
     }
 
 
-    /* =====================================================
-       CHANGE QUANTITY
-    ===================================================== */
-
     function changeQuantity(id, change) {
 
       const item =
@@ -1939,10 +1897,6 @@
     }
 
 
-    /* =====================================================
-       REMOVE ITEM
-    ===================================================== */
-
     function removeFromCart(id) {
 
       cart =
@@ -1952,10 +1906,6 @@
 
     }
 
-
-    /* =====================================================
-       CART TOTAL
-    ===================================================== */
 
     function calculateSubtotal() {
 
@@ -1967,10 +1917,6 @@
 
     }
 
-
-    /* =====================================================
-       UPDATE CART
-    ===================================================== */
 
     function updateCart() {
 
@@ -2053,16 +1999,11 @@
 
       }
 
-
       updateSummary();
       updateOrderSummary();
 
     }
 
-
-    /* =====================================================
-       APPLY COUPON
-    ===================================================== */
 
     function applyCoupon() {
 
@@ -2109,10 +2050,6 @@
     }
 
 
-    /* =====================================================
-       UPDATE SUMMARY
-    ===================================================== */
-
     function updateSummary() {
 
       const subtotal =
@@ -2148,10 +2085,6 @@
 
     }
 
-
-    /* =====================================================
-       ORDER SUMMARY
-    ===================================================== */
 
     function updateOrderSummary() {
 
@@ -2219,10 +2152,6 @@
     }
 
 
-    /* =====================================================
-       OPEN CART
-    ===================================================== */
-
     function openCart() {
 
       document
@@ -2236,10 +2165,6 @@
     }
 
 
-    /* =====================================================
-       CLOSE CART
-    ===================================================== */
-
     function closeCart() {
 
       document
@@ -2252,10 +2177,6 @@
 
     }
 
-
-    /* =====================================================
-       GO TO ORDER
-    ===================================================== */
 
     function goToOrder() {
 
@@ -2277,10 +2198,6 @@
 
     }
 
-
-    /* =====================================================
-       SEND ORDER TO WHATSAPP
-    ===================================================== */
 
     function sendOrder(event) {
 
@@ -2329,14 +2246,10 @@
       }
 
 
-      /* ================= ORDER ID ================= */
-
       const orderId =
         "DH-" +
         Date.now().toString().slice(-8);
 
-
-      /* ================= TOTALS ================= */
 
       const subtotal =
         calculateSubtotal();
@@ -2353,8 +2266,6 @@
         );
 
 
-      /* ================= PRODUCTS MESSAGE ================= */
-
       const productsText =
         cart.map((item, index) => {
 
@@ -2367,8 +2278,6 @@
 
         }).join("\n\n");
 
-
-      /* ================= WHATSAPP MESSAGE ================= */
 
       const message =
 
@@ -2421,8 +2330,6 @@ ${new Date().toLocaleString("ar-EG")}
 شكراً لطلبك من متجر دكتور حسن 🌿`;
 
 
-      /* ================= OPEN WHATSAPP ================= */
-
       const whatsappURL =
         `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
 
@@ -2433,8 +2340,6 @@ ${new Date().toLocaleString("ar-EG")}
       );
 
 
-      /* ================= SUCCESS MESSAGE ================= */
-
       document
         .getElementById("successOrderId")
         .textContent = orderId;
@@ -2443,11 +2348,6 @@ ${new Date().toLocaleString("ar-EG")}
         .getElementById("successBox")
         .classList.add("show");
 
-
-      /*
-        نمسح السلة بعد تجهيز الطلب.
-        العميل سيجد رسالة الطلب جاهزة داخل واتساب.
-      */
 
       cart = [];
 
@@ -2478,10 +2378,6 @@ ${new Date().toLocaleString("ar-EG")}
     }
 
 
-    /* =====================================================
-       PAYMENT CHANGE
-    ===================================================== */
-
     document
       .getElementById("paymentMethod")
       .addEventListener("change", function() {
@@ -2491,10 +2387,6 @@ ${new Date().toLocaleString("ar-EG")}
 
       });
 
-
-    /* =====================================================
-       INITIALIZE
-    ===================================================== */
 
     renderProducts();
     updateCart();
