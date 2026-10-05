@@ -101,13 +101,6 @@
       min-width: 160px;
     }
 
-    .logo-box img {
-      width: 52px;
-      height: 52px;
-      object-fit: contain;
-      border-radius: 50%;
-    }
-
     .logo-box span {
       font-size: 20px;
       font-weight: bold;
@@ -166,10 +159,13 @@
     }
 
     .hero-content {
-      display: grid;
-      grid-template-columns: 1.2fr .8fr;
-      align-items: center;
-      gap: 50px;
+      display: block;
+      text-align: center;
+      max-width: 900px;
+    }
+
+    .hero-content > div {
+      margin: auto;
     }
 
     .hero h1 {
@@ -192,54 +188,6 @@
       padding: 13px 25px;
       border-radius: 30px;
       font-weight: bold;
-    }
-
-    .hero-logo {
-      display: flex;
-      justify-content: center;
-    }
-
-    .consultation-wrap {
-      text-align: center;
-      padding: 0 0 25px;
-    }
-
-    .consultation-btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      background: #25D366;
-      color: #fff;
-      padding: 13px 26px;
-      border-radius: 30px;
-      font-weight: bold;
-      text-decoration: none;
-      box-shadow: 0 8px 20px rgba(37,211,102,.2);
-      transition: .2s ease;
-    }
-
-    .consultation-btn:hover {
-      transform: translateY(-2px);
-    }
-
-    .shipping-note {
-      margin-top: 14px;
-      padding: 12px;
-      background: #f0f8f5;
-      border-radius: 10px;
-      color: #10483d;
-      text-align: center;
-    }
-
-    .hero-logo img {
-      width: 280px;
-      height: 280px;
-      object-fit: contain;
-      border-radius: 50%;
-      background: white;
-      padding: 15px;
-      box-shadow: 0 15px 50px rgba(0,0,0,.18);
     }
 
     /* ================= SECTIONS ================= */
@@ -967,13 +915,18 @@
 
 <body>
 
+  <!-- ================= FULL WIDTH LOGO COVER ================= -->
+
+  <div class="logo-cover">
+    <img src="logo.jpg" alt="دكتور حسن">
+  </div>
+
   <!-- ================= HEADER ================= -->
 
   <header>
     <div class="container nav">
 
       <a href="#home" class="logo-box">
-        <img src="logo.jpg" alt="دكتور حسن">
         <span>دكتور حسن</span>
       </a>
 
@@ -994,43 +947,6 @@
 
     </div>
   </header>
-
-
-  <!-- ================= HERO ================= -->
-
-  <section class="hero" id="home">
-    <div class="container hero-content">
-
-      <div>
-        <h1>العناية ببشرتك تبدأ من هنا 🌿</h1>
-
-        <p>
-          اكتشفي مجموعة مختارة من منتجات دكتور حسن للعناية بالبشرة،
-          المرطبات وواقي الشمس بأسعار مميزة.
-        </p>
-
-        <a href="#products" class="hero-btn">
-          تسوقي الآن
-        </a>
-      </div>
-
-      <div class="hero-logo">
-        <img src="logo.jpg" alt="Dr Hassan Store">
-      </div>
-
-    </div>
-
-    <div class="consultation-wrap">
-      <a
-        href="https://wa.me/201080212554"
-        target="_blank"
-        rel="noopener"
-        class="consultation-btn">
-        💬 استشارة طبية عبر واتساب
-      </a>
-    </div>
-  </section>
-
 
   <!-- ================= CATEGORIES ================= -->
 
@@ -1146,7 +1062,7 @@
           <tr><td>القاهرة</td><td>70 جنيه</td></tr>
           <tr><td>الجيزة</td><td>70 جنيه</td></tr>
           <tr><td>البحيرة</td><td>90 جنيه</td></tr>
-          <tr><td>باقي المحافظات</td><td>100 جنيه</td></tr>
+          <tr><td>محافظة أخرى</td><td>100 جنيه</td></tr>
         </tbody>
 
       </table>
@@ -1228,7 +1144,7 @@
                 <option value="القاهرة">القاهرة — 70 جنيه</option>
                 <option value="الجيزة">الجيزة — 70 جنيه</option>
                 <option value="البحيرة">البحيرة — 90 جنيه</option>
-                <option value="باقي المحافظات">باقي المحافظات — 100 جنيه</option>
+                <option value="محافظة أخرى">محافظة أخرى — 100 جنيه</option>
               </select>
             </div>
 
@@ -1714,7 +1630,7 @@
       "القاهرة": 70,
       "الجيزة": 70,
       "البحيرة": 90,
-      "باقي المحافظات": 100
+      "محافظة أخرى": 100
     };
 
     function getShippingFee() {
@@ -1941,7 +1857,6 @@
       }
 
       updateCart();
-      openCart();
 
     }
 
