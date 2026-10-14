@@ -1,5 +1,1707 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-/* ---------- SUNSCREEN ---------- */
+  <title>دكتور حسن | متجر منتجات دكتور حسن للعناية بالبشرة والشعر</title>
+
+  <meta name="description" content="متجر دكتور حسن لمنتجات العناية بالبشرة والشعر والجسم. منتجات أصلية وأسعار مميزة مع خدمة توصيل داخل مصر.">
+  <meta name="keywords" content="دكتور حسن, عناية بالبشرة, مرطبات, غسولات, صن بلوك, واقي شمس, منتجات العناية بالبشرة">
+  <meta name="author" content="Dr. Hassan Store">
+
+  <meta property="og:title" content="دكتور حسن | متجر العناية بالبشرة">
+  <meta property="og:description" content="منتجات العناية بالبشرة والشعر بأسعار مميزة">
+  <meta property="og:type" content="website">
+
+  <link rel="icon" type="image/png" href="favicon.png">
+
+  <style>
+    :root {
+      --green: #176b5a;
+      --dark-green: #10483d;
+      --light-green: #eef7f4;
+      --white: #ffffff;
+      --text: #222;
+      --gray: #777;
+      --border: #e5e5e5;
+      --danger: #d9534f;
+      --success: #198754;
+      --gold: #d49b25;
+      --shadow: 0 8px 30px rgba(0,0,0,.07);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
+      background: #fff;
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    button,
+    input,
+    select,
+    textarea {
+      font-family: inherit;
+    }
+
+    button {
+      cursor: pointer;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      width: 92%;
+      max-width: 1250px;
+      margin: auto;
+    }
+
+
+    /* زر الاستشارة الطبية تحت البانر */
+    .consultation-wrap {
+      text-align: center;
+      padding: 18px 0 25px;
+      background: #fff;
+    }
+
+    .consultation-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      background: #25D366;
+      color: #fff;
+      padding: 13px 26px;
+      border-radius: 30px;
+      font-weight: bold;
+      text-decoration: none;
+      box-shadow: 0 8px 20px rgba(37,211,102,.2);
+      transition: .2s ease;
+    }
+
+    .consultation-btn:hover {
+      transform: translateY(-2px);
+    }
+
+
+    /* ================= MEDICAL CONSULTATION SECTION ================= */
+
+    .consultation-section {
+      background: #fff;
+      padding: 55px 0;
+    }
+
+    .consultation-card {
+      max-width: 850px;
+      margin: auto;
+      text-align: center;
+      background: var(--light-green);
+      border-radius: 22px;
+      padding: 35px 25px;
+      box-shadow: var(--shadow);
+    }
+
+    .consultation-card h2 {
+      color: var(--dark-green);
+      margin-bottom: 8px;
+      font-size: 30px;
+    }
+
+    .consultation-card p {
+      color: var(--gray);
+      margin-bottom: 20px;
+    }
+
+    /* ================= HEADER ================= */
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255,255,255,.97);
+      border-bottom: 1px solid var(--border);
+      box-shadow: 0 2px 15px rgba(0,0,0,.04);
+    }
+
+    .nav {
+      min-height: 75px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .logo-box {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      min-width: 160px;
+    }
+
+    .logo-box span {
+      font-size: 20px;
+      font-weight: bold;
+      color: var(--dark-green);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: #333;
+      font-size: 14px;
+      font-weight: 600;
+      transition: .2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--green);
+    }
+
+    .cart-btn {
+      border: none;
+      background: var(--green);
+      color: white;
+      border-radius: 30px;
+      padding: 11px 17px;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      gap: 7px;
+    }
+
+    .cart-count {
+      background: white;
+      color: var(--green);
+      width: 23px;
+      height: 23px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+    }
+
+    /* ================= HERO ================= */
+
+    .hero {
+      background:
+        linear-gradient(135deg, rgba(16,72,61,.96), rgba(23,107,90,.88));
+      color: white;
+      padding: 75px 0;
+    }
+
+    .hero-content {
+      display: block;
+      text-align: center;
+      max-width: 900px;
+    }
+
+    .hero-content > div {
+      margin: auto;
+    }
+
+    .hero h1 {
+      font-size: 43px;
+      line-height: 1.3;
+      margin-bottom: 18px;
+    }
+
+    .hero p {
+      font-size: 18px;
+      opacity: .94;
+      max-width: 650px;
+      margin-bottom: 25px;
+    }
+
+    .hero-btn {
+      display: inline-block;
+      background: white;
+      color: var(--dark-green);
+      padding: 13px 25px;
+      border-radius: 30px;
+      font-weight: bold;
+    }
+
+    /* ================= SECTIONS ================= */
+
+    section {
+      padding: 70px 0;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .section-title h2 {
+      color: var(--dark-green);
+      font-size: 32px;
+      margin-bottom: 8px;
+    }
+
+    .section-title p {
+      color: var(--gray);
+    }
+
+    /* ================= CATEGORIES ================= */
+
+    .categories {
+      background: #fff;
+    }
+
+    .categories-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 25px;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .category-card {
+      min-height: 190px;
+      border-radius: 22px;
+      overflow: hidden;
+      position: relative;
+      background: var(--light-green);
+      display: flex;
+      align-items: flex-end;
+      padding: 25px;
+      box-shadow: var(--shadow);
+    }
+
+    .category-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(transparent, rgba(0,0,0,.65));
+    }
+
+    .category-card.moisturizers {
+      background:
+        linear-gradient(rgba(0,0,0,.05), rgba(0,0,0,.05)),
+        url("https://images.unsplash.com/photo-1571781926291-c477ebfd024b?auto=format&fit=crop&w=1400&q=90") center/cover;
+    }
+
+    .category-card.sunscreen {
+      background:
+        linear-gradient(rgba(0,0,0,.05), rgba(0,0,0,.05)),
+        url("https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=1400&q=90") center/cover;
+    }
+
+    .category-card.cleansers {
+      background:
+        linear-gradient(rgba(0,0,0,.05), rgba(0,0,0,.05)),
+        url("https://images.unsplash.com/photo-1556229010-6c3f2c9ca5f8?auto=format&fit=crop&w=1400&q=90") center/cover;
+    }
+
+    .category-card.hair-care {
+      background:
+        linear-gradient(rgba(0,0,0,.05), rgba(0,0,0,.05)),
+        url("https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=1200&q=80") center/cover;
+    }
+
+    .category-card.serums {
+      background: linear-gradient(rgba(0,0,0,.10), rgba(0,0,0,.10)),
+        url('https://images.unsplash.com/photo-1611930022073-b7a4ba5fcccd?auto=format&fit=crop&w=1400&q=90') center/cover no-repeat !important;
+    }
+
+    .category-card.lightening-pigmentation {
+      background:
+        linear-gradient(rgba(0,0,0,.05), rgba(0,0,0,.05)),
+        url("https://images.unsplash.com/photo-1612817288484-6f916006741a?auto=format&fit=crop&w=1200&q=80") center/cover;
+    }
+
+    .category-card-content {
+      position: relative;
+      z-index: 2;
+      color: white;
+    }
+
+    .category-card h3 {
+      font-size: 24px;
+      margin-bottom: 4px;
+    }
+
+    .category-card button {
+      border: none;
+      background: white;
+      color: var(--green);
+      padding: 8px 17px;
+      border-radius: 20px;
+      font-weight: bold;
+      margin-top: 8px;
+    }
+
+    /* ================= PRODUCTS ================= */
+
+    .products {
+      background: var(--light-green);
+    }
+
+    .filters {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 25px;
+    }
+
+    .filter-btn {
+      border: 1px solid var(--green);
+      background: white;
+      color: var(--green);
+      border-radius: 25px;
+      padding: 10px 20px;
+      font-weight: bold;
+      transition: .2s;
+    }
+
+    .filter-btn:hover,
+    .filter-btn.active {
+      background: var(--green);
+      color: white;
+    }
+
+    .search-box {
+      max-width: 500px;
+      margin: 0 auto 35px;
+      position: relative;
+    }
+
+    .search-box input {
+      width: 100%;
+      border: 1px solid var(--border);
+      border-radius: 30px;
+      padding: 14px 22px;
+      outline: none;
+      background: white;
+      font-size: 15px;
+    }
+
+    .search-box input:focus {
+      border-color: var(--green);
+    }
+
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 22px;
+    }
+
+    .product {
+      background: white;
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      position: relative;
+      transition: transform .2s, box-shadow .2s;
+    }
+
+    .product:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 35px rgba(0,0,0,.11);
+    }
+
+    .product-image {
+      height: 270px;
+      background: #fafafa;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .product-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      padding: 12px;
+    }
+
+    .discount-badge {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      background: var(--danger);
+      color: white;
+      padding: 5px 10px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: bold;
+      z-index: 2;
+    }
+
+    .product-category {
+      color: var(--green);
+      font-size: 12px;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    .product-info {
+      padding: 18px;
+      text-align: center;
+    }
+
+    .product h3 {
+      color: var(--dark-green);
+      font-size: 17px;
+      min-height: 54px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .price-box {
+      margin: 10px 0 15px;
+    }
+
+    .old-price {
+      color: #999;
+      text-decoration: line-through;
+      font-size: 14px;
+      margin-left: 8px;
+    }
+
+    .new-price {
+      color: var(--green);
+      font-size: 22px;
+      font-weight: bold;
+    }
+
+    .currency {
+      font-size: 13px;
+      color: #555;
+    }
+
+    .add-btn {
+      width: 100%;
+      border: none;
+      background: var(--green);
+      color: white;
+      padding: 11px;
+      border-radius: 25px;
+      font-weight: bold;
+      transition: .2s;
+    }
+
+    .add-btn:hover {
+      background: var(--dark-green);
+    }
+
+    .no-products {
+      text-align: center;
+      color: var(--gray);
+      padding: 30px;
+      grid-column: 1 / -1;
+    }
+
+    /* ================= SHIPPING ================= */
+
+    .shipping-table {
+      width: 100%;
+      border-collapse: collapse;
+      overflow: hidden;
+      border-radius: 15px;
+      box-shadow: var(--shadow);
+    }
+
+    .shipping-table th,
+    .shipping-table td {
+      padding: 14px;
+      text-align: center;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .shipping-table th {
+      background: var(--green);
+      color: white;
+    }
+
+    .shipping-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .shipping-table tr:nth-child(even) {
+      background: #fafafa;
+    }
+
+    .payment-box {
+      margin-top: 30px;
+      background: var(--light-green);
+      padding: 25px;
+      border-radius: 18px;
+    }
+
+    .payment-box h3 {
+      color: var(--dark-green);
+      margin-bottom: 10px;
+    }
+
+    /* ================= ORDER ================= */
+
+    .order-section {
+      background: var(--light-green);
+    }
+
+    .order-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+      align-items: start;
+    }
+
+    .order-card {
+      background: white;
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: var(--shadow);
+    }
+
+    .order-card h3 {
+      color: var(--dark-green);
+      margin-bottom: 20px;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    .form-group label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 6px;
+      font-size: 14px;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 12px 14px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      outline: none;
+      background: white;
+    }
+
+    .form-group textarea {
+      min-height: 90px;
+      resize: vertical;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--green);
+    }
+
+    .submit-btn {
+      width: 100%;
+      border: none;
+      background: var(--green);
+      color: white;
+      padding: 14px;
+      border-radius: 12px;
+      font-weight: bold;
+      font-size: 16px;
+    }
+
+    .submit-btn:disabled {
+      opacity: .6;
+      cursor: not-allowed;
+    }
+
+    /* ================= CART ================= */
+
+    .cart-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,.45);
+      z-index: 1999;
+      display: none;
+    }
+
+    .cart-overlay.show {
+      display: block;
+    }
+
+    .cart-sidebar {
+      position: fixed;
+      top: 0;
+      left: -430px;
+      width: min(430px, 95%);
+      height: 100vh;
+      background: white;
+      z-index: 2000;
+      box-shadow: 10px 0 35px rgba(0,0,0,.2);
+      transition: .3s;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .cart-sidebar.open {
+      left: 0;
+    }
+
+    .cart-header {
+      padding: 20px;
+      background: var(--green);
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .close-cart {
+      border: none;
+      background: transparent;
+      color: white;
+      font-size: 28px;
+    }
+
+    .cart-items {
+      flex: 1;
+      overflow-y: auto;
+      padding: 15px;
+    }
+
+    .cart-item {
+      border-bottom: 1px solid var(--border);
+      padding: 15px 0;
+    }
+
+    .cart-item-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+    }
+
+    .cart-item-name {
+      font-weight: bold;
+      color: var(--dark-green);
+      font-size: 14px;
+    }
+
+    .remove-item {
+      border: none;
+      background: transparent;
+      color: var(--danger);
+      font-size: 18px;
+    }
+
+    .cart-item-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 10px;
+    }
+
+    .quantity-control {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .quantity-control button {
+      width: 28px;
+      height: 28px;
+      border: 1px solid var(--border);
+      background: #fff;
+      border-radius: 7px;
+    }
+
+    .cart-footer {
+      padding: 18px;
+      border-top: 1px solid var(--border);
+      background: #fafafa;
+    }
+
+    .summary-row {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 8px;
+    }
+
+    .summary-row.total {
+      font-size: 20px;
+      font-weight: bold;
+      color: var(--dark-green);
+      border-top: 1px solid var(--border);
+      padding-top: 10px;
+      margin-top: 10px;
+    }
+
+    .coupon-row {
+      display: flex;
+      gap: 8px;
+      margin: 12px 0;
+    }
+
+    .coupon-row input {
+      flex: 1;
+      border: 1px solid var(--border);
+      padding: 9px;
+      border-radius: 8px;
+    }
+
+    .coupon-row button {
+      border: none;
+      background: var(--dark-green);
+      color: white;
+      padding: 0 14px;
+      border-radius: 8px;
+    }
+
+    .empty-cart {
+      text-align: center;
+      color: var(--gray);
+      padding: 50px 20px;
+    }
+
+    .go-order-btn {
+      width: 100%;
+      border: none;
+      background: var(--green);
+      color: white;
+      padding: 13px;
+      border-radius: 10px;
+      font-weight: bold;
+    }
+
+    /* ================= ABOUT ================= */
+
+    .about-box {
+      max-width: 900px;
+      margin: auto;
+      background: var(--light-green);
+      padding: 35px;
+      border-radius: 22px;
+      text-align: center;
+    }
+
+    .about-box h3 {
+      color: var(--dark-green);
+      margin-bottom: 12px;
+    }
+
+    /* ================= POLICIES ================= */
+
+    .policies-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .policy-card {
+      background: white;
+      border: 1px solid var(--border);
+      padding: 25px;
+      border-radius: 18px;
+      text-align: center;
+    }
+
+    .policy-card h3 {
+      color: var(--dark-green);
+      margin-bottom: 8px;
+    }
+
+    .policy-card p {
+      color: var(--gray);
+      font-size: 14px;
+    }
+
+    /* ================= SUCCESS ================= */
+
+    .success-box {
+      display: none;
+      background: #e8f7ef;
+      border: 1px solid #b9e4c9;
+      color: #176b3a;
+      padding: 18px;
+      border-radius: 12px;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .success-box.show {
+      display: block;
+    }
+
+    /* ================= FOOTER ================= */
+
+    footer {
+      background: var(--dark-green);
+      color: white;
+      padding: 35px 0;
+      text-align: center;
+    }
+
+    footer p {
+      opacity: .9;
+      margin: 5px 0;
+    }
+
+    /* ================= WHATSAPP ================= */
+
+    .whatsapp {
+      position: fixed;
+      left: 20px;
+      bottom: 20px;
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      background: #25D366;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 27px;
+      z-index: 1500;
+      box-shadow: 0 5px 20px rgba(0,0,0,.2);
+    }
+
+    /* ================= RESPONSIVE ================= */
+
+    @media (max-width: 1050px) {
+      .products-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .nav-links {
+        gap: 12px;
+      }
+    }
+
+    @media (max-width: 800px) {
+      .nav {
+        flex-wrap: wrap;
+        padding: 10px 0;
+      }
+
+      .nav-links {
+        order: 3;
+        width: 100%;
+        overflow-x: auto;
+        justify-content: flex-start;
+        padding-bottom: 5px;
+      }
+
+      .hero-content,
+      .order-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding: 50px 0;
+      }
+
+      .hero h1 {
+        font-size: 32px;
+      }
+
+      .hero-logo {
+        order: -1;
+      }
+
+      .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .policies-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 550px) {
+      .container {
+        width: 94%;
+      }
+
+      section {
+        padding: 50px 0;
+      }
+
+      .categories-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .products-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+      }
+
+      .product-image {
+        height: 210px;
+      }
+
+      .product-info {
+        padding: 12px;
+      }
+
+      .product h3 {
+        font-size: 14px;
+        min-height: 60px;
+      }
+
+      .old-price {
+        display: block;
+        margin: 0;
+      }
+
+      .new-price {
+        font-size: 19px;
+      }
+
+      .hero-logo img {
+        width: 200px;
+        height: 200px;
+      }
+
+      .shipping-table {
+        font-size: 12px;
+      }
+
+      .shipping-table th,
+      .shipping-table td {
+        padding: 9px 5px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ================= FULL WIDTH LOGO COVER ================= -->
+
+  <div class="logo-cover">
+    <img src="logo.jpg" alt="دكتور حسن">
+  </div>
+
+
+  <!-- ================= HEADER ================= -->
+
+  <header>
+    <div class="container nav">
+
+      <a href="#home" class="logo-box">
+        <span>دكتور حسن</span>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="#home">الرئيسية</a></li>
+        <li><a href="#categories">الأقسام</a></li>
+        <li><a href="#products">المنتجات</a></li>
+        <li><a href="#shipping">الشحن</a></li>
+        <li><a href="#order">اطلب الآن</a></li>
+        <li><a href="#about">عن المتجر</a></li>
+        <li><a href="#policies">السياسات</a></li>
+      </ul>
+
+      <button class="cart-btn" onclick="openCart()">
+        🛒 السلة
+        <span class="cart-count" id="cartCount">0</span>
+      </button>
+
+    </div>
+  </header>
+
+  <!-- ================= STORE COVER ================= -->
+  <section class="hero" id="home" style="background-image:linear-gradient(90deg,rgba(16,72,61,.94),rgba(16,72,61,.55)),url('https://images.unsplash.com/photo-1556229010-6c3f2c9ca5f8?auto=format&fit=crop&w=1800&q=90');background-size:cover;background-position:center;min-height:430px;display:flex;align-items:center;">
+    <div class="container hero-content">
+      <div>
+        <a
+          href="https://wa.me/201080212554"
+          target="_blank"
+          class="consultation-btn"
+          style="display:inline-flex;align-items:center;justify-content:center;font-size:20px;font-weight:800;padding:16px 30px;min-width:220px;border-radius:16px;margin-bottom:22px;box-shadow:0 10px 25px rgba(0,0,0,.18);">
+          🩺 استشارة طبية
+        </a>
+        <h1>منتجات دكتور حسن للعناية بالبشرة والشعر</h1>
+        <p>اختاري عنايتك اليومية من مجموعة مختارة من المرطبات، السيرمات، واقي الشمس، الغسولات ومنتجات العناية بالشعر والتفتيح.</p>
+        <a class="hero-btn" href="#products">تسوقي الآن 🛍️</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CATEGORIES ================= -->
+
+  <section class="categories" id="categories">
+    <div class="container">
+
+      <div class="section-title">
+        <h2>تسوقي حسب القسم</h2>
+        <p>اختاري المنتج المناسب لروتين العناية ببشرتك</p>
+      </div>
+
+      <div class="categories-grid">
+
+        <div class="category-card moisturizers">
+          <div class="category-card-content">
+            <h3>المرطبات</h3>
+            <p>ترطيب وعناية يومية بالبشرة</p>
+            <button onclick="filterProducts('moisturizers')">
+              عرض المنتجات
+            </button>
+          </div>
+        </div>
+
+        <div class="category-card serums" style="background:linear-gradient(rgba(0,0,0,.10),rgba(0,0,0,.10)),url('https://images.unsplash.com/photo-1611930022073-b7a4ba5fcccd?auto=format&fit=crop&w=1400&q=90') center/cover no-repeat;">
+          <div class="category-card-content">
+            <h3>السيرمات</h3>
+            <p>سيرمات للترطيب والتفتيح والنضارة</p>
+            <button onclick="filterProducts('serums')">عرض المنتجات</button>
+          </div>
+        </div>
+
+        <div class="category-card sunscreen">
+          <div class="category-card-content">
+            <h3>واقي الشمس</h3>
+            <p>حماية يومية من أشعة الشمس</p>
+            <button onclick="filterProducts('sunscreen')">
+              عرض المنتجات
+            </button>
+          </div>
+        </div>
+
+        <div class="category-card cleansers">
+          <div class="category-card-content">
+            <h3>الغسولات</h3>
+            <p>تنظيف وعناية يومية بالبشرة</p>
+            <button onclick="filterProducts('cleansers')">
+              عرض المنتجات
+            </button>
+          </div>
+        </div>
+
+        <div class="category-card hair-care">
+          <div class="category-card-content">
+            <h3>العناية بالشعر</h3>
+            <p>منتجات لتقوية الشعر والعناية به</p>
+            <button onclick="filterProducts('hair-care')">
+              عرض المنتجات
+            </button>
+          </div>
+        </div>
+
+        <div class="category-card lightening-pigmentation">
+          <div class="category-card-content">
+            <h3>العناية بالتفتيح والتصبغات</h3>
+            <p>منتجات للتفتيح والعناية بالبقع والتصبغات</p>
+            <button onclick="filterProducts('lightening-pigmentation')">
+              عرض المنتجات
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ================= PRODUCTS ================= -->
+
+  <section class="products" id="products">
+
+    <div class="container">
+
+      <div class="section-title">
+        <h2>منتجاتنا</h2>
+        <p>اختاري من مجموعة منتجات العناية بالبشرة</p>
+      </div>
+
+      <div class="filters">
+
+        <button
+          class="filter-btn active"
+          data-filter="all"
+          onclick="filterProducts('all')">
+          كل المنتجات
+        </button>
+
+        <button
+          class="filter-btn"
+          data-filter="moisturizers"
+          onclick="filterProducts('moisturizers')">
+          🧴 المرطبات
+        </button>
+
+        <button
+          class="filter-btn"
+          data-filter="sunscreen"
+          onclick="filterProducts('sunscreen')">
+          ☀️ واقي الشمس
+        </button>
+
+        <button
+          class="filter-btn"
+          data-filter="serums"
+          onclick="filterProducts('serums')">
+          💧 السيرمات
+        </button>
+
+        <button
+          class="filter-btn"
+          data-filter="cleansers"
+          onclick="filterProducts('cleansers')">
+          🧼 الغسولات
+        </button>
+
+        <button
+          class="filter-btn"
+          data-filter="hair-care"
+          onclick="filterProducts('hair-care')">
+          💇‍♀️ العناية بالشعر
+        </button>
+
+        <button
+          class="filter-btn"
+          data-filter="lightening-pigmentation"
+          onclick="filterProducts('lightening-pigmentation')">
+          ✨ التفتيح والتصبغات
+        </button>
+
+      </div>
+
+      <div class="search-box">
+        <input
+          type="search"
+          id="searchInput"
+          placeholder="🔎 ابحثي عن اسم المنتج..."
+          oninput="searchProducts()">
+      </div>
+
+      <div class="products-grid" id="productsGrid"></div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ================= SHIPPING ================= -->
+
+  <section id="shipping">
+
+    <div class="container">
+
+      <div class="section-title">
+        <h2>الشحن والتوصيل</h2>
+        <p>أسعار التوصيل حسب المنطقة</p>
+      </div>
+
+      <table class="shipping-table">
+
+        <thead>
+          <tr>
+            <th>المنطقة</th>
+            <th>سعر الشحن</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr><td>الإسكندرية</td><td>100 جنيه</td></tr>
+          <tr><td>القاهرة</td><td>70 جنيه</td></tr>
+          <tr><td>الجيزة</td><td>70 جنيه</td></tr>
+          <tr><td>البحيرة</td><td>90 جنيه</td></tr>
+          <tr><td>محافظة أخرى</td><td>100 جنيه</td></tr>
+        </tbody>
+
+      </table>
+
+      <div class="payment-box">
+
+        <h3>💳 طرق الدفع</h3>
+
+        <p>
+          <strong>فودافون كاش:</strong>
+          01080212554
+        </p>
+
+        <p>
+          <strong>الدفع عند الاستلام:</strong>
+          يتم إضافة 20 جنيه على قيمة الطلب.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ================= ORDER ================= -->
+
+  <section class="order-section" id="order">
+
+    <div class="container">
+
+      <div class="section-title">
+        <h2>تأكيد الطلب</h2>
+        <p>املئي البيانات التالية لإتمام طلبك</p>
+      </div>
+
+      <div class="success-box" id="successBox">
+        <strong>تم تجهيز طلبك بنجاح ✅</strong>
+        <br>
+        تم فتح واتساب لإرسال الطلب.
+        <br>
+        رقم الطلب:
+        <strong id="successOrderId"></strong>
+      </div>
+
+      <div class="order-layout">
+
+        <!-- FORM -->
+
+        <div class="order-card">
+
+          <h3>بيانات العميل</h3>
+
+          <form id="orderForm" onsubmit="sendOrder(event)">
+
+            <div class="form-group">
+              <label>الاسم بالكامل *</label>
+              <input
+                type="text"
+                id="customerName"
+                required
+                placeholder="اكتبي اسمك بالكامل">
+            </div>
+
+            <div class="form-group">
+              <label>رقم الهاتف *</label>
+              <input
+                type="tel"
+                id="customerPhone"
+                required
+                placeholder="01xxxxxxxxx">
+            </div>
+
+            <div class="form-group">
+              <label>المحافظة *</label>
+              <select id="governorate" required onchange="updateSummary()">
+                <option value="">اختاري المحافظة</option>
+                <option value="الإسكندرية">الإسكندرية — 100 جنيه</option>
+                <option value="القاهرة">القاهرة — 70 جنيه</option>
+                <option value="الجيزة">الجيزة — 70 جنيه</option>
+                <option value="البحيرة">البحيرة — 90 جنيه</option>
+                <option value="محافظة أخرى">محافظة أخرى — 100 جنيه</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label>المنطقة *</label>
+              <input
+                type="text"
+                id="area"
+                required
+                placeholder="اكتبي المنطقة">
+            </div>
+
+            <div class="form-group">
+              <label>العنوان بالتفصيل *</label>
+              <textarea
+                id="address"
+                required
+                placeholder="الشارع - رقم المنزل - الدور - الشقة..."></textarea>
+            </div>
+
+            <div class="form-group">
+              <label>طريقة الدفع *</label>
+
+              <select id="paymentMethod" required>
+                <option value="">اختاري طريقة الدفع</option>
+                <option value="الدفع عند الاستلام">الدفع عند الاستلام (+20 جنيه)</option>
+                <option value="فودافون كاش">فودافون كاش — 01080212554</option>
+              </select>
+            </div>
+
+            <button
+              type="submit"
+              class="submit-btn"
+              id="submitOrderBtn">
+              تأكيد الطلب عبر واتساب
+            </button>
+
+          </form>
+
+        </div>
+
+
+        <!-- ORDER SUMMARY -->
+
+        <div class="order-card">
+
+          <h3>ملخص الطلب 🛒</h3>
+
+          <div id="orderSummary">
+            <p style="color:#777;text-align:center;">
+              السلة فارغة حاليًا
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ================= ABOUT ================= -->
+
+  <section id="about">
+
+    <div class="container">
+
+      <div class="section-title">
+        <h2>عن متجر دكتور حسن</h2>
+      </div>
+
+      <div class="about-box">
+
+        <h3>منتجات للعناية ببشرتك وشعرك</h3>
+
+        <p>
+          نوفر مجموعة من منتجات العناية بالبشرة والشعر والجسم،
+          مع إمكانية الطلب أونلاين والتوصيل حتى باب المنزل.
+        </p>
+
+        <p style="margin-top:10px;">
+          نحرص على تقديم المنتجات بأسعار مناسبة وتجربة شراء سهلة وسريعة.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ================= POLICIES ================= -->
+
+  <section id="policies">
+
+    <div class="container">
+
+      <div class="section-title">
+        <h2>سياسات المتجر</h2>
+      </div>
+
+      <div class="policies-grid">
+
+        <div class="policy-card">
+          <h3>🚚 الشحن</h3>
+          <p>
+            يتم تحديد تكلفة الشحن حسب المنطقة الموضحة في جدول الشحن.
+          </p>
+        </div>
+
+        <div class="policy-card">
+          <h3>📦 تأكيد الطلب</h3>
+          <p>
+            بعد إرسال الطلب سيتم التواصل مع العميل لتأكيد البيانات والطلب.
+          </p>
+        </div>
+
+        <div class="policy-card">
+          <h3>💳 الدفع</h3>
+          <p>
+            يتوفر الدفع عند الاستلام أو فودافون كاش على الرقم 01080212554 حسب الاختيار.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ================= CART ================= -->
+
+  <div
+    class="cart-overlay"
+    id="cartOverlay"
+    onclick="closeCart()">
+  </div>
+
+  <aside class="cart-sidebar" id="cartSidebar">
+
+    <div class="cart-header">
+
+      <h3>🛒 سلة المشتريات</h3>
+
+      <button
+        class="close-cart"
+        onclick="closeCart()">
+        ×
+      </button>
+
+    </div>
+
+    <div
+      class="cart-items"
+      id="cartItems">
+    </div>
+
+    <div class="cart-footer">
+
+      <div class="coupon-row">
+        <input
+          type="text"
+          id="couponInput"
+          placeholder="كود الخصم">
+
+        <button onclick="applyCoupon()">
+          تطبيق
+        </button>
+      </div>
+
+      <div
+        id="couponMessage"
+        style="font-size:13px;margin-bottom:8px;">
+      </div>
+
+      <div class="summary-row">
+        <span>الإجمالي الفرعي</span>
+        <strong>
+          <span id="subtotal">0</span> جنيه
+        </strong>
+      </div>
+
+      <div class="summary-row">
+        <span>الخصم</span>
+        <strong>
+          <span id="discount">0</span> جنيه
+        </strong>
+      </div>
+
+      <div class="summary-row">
+        <span>الشحن</span>
+        <strong>
+          <span id="shippingFee">0</span> جنيه
+        </strong>
+      </div>
+
+      <div class="summary-row">
+        <span>رسوم الدفع عند الاستلام</span>
+        <strong>
+          <span id="codFee">0</span> جنيه
+        </strong>
+      </div>
+
+      <div class="summary-row total">
+        <span>الإجمالي</span>
+        <strong>
+          <span id="total">0</span> جنيه
+        </strong>
+      </div>
+
+      <button
+        class="go-order-btn"
+        onclick="goToOrder()">
+        متابعة وإتمام الطلب
+      </button>
+
+    </div>
+
+  </aside>
+
+
+  <!-- ================= WHATSAPP ================= -->
+
+  <a
+    class="whatsapp"
+    href="https://wa.me/201080212554"
+    target="_blank"
+    aria-label="واتساب">
+    ☎
+  </a>
+
+
+  <!-- ================= FOOTER ================= -->
+
+  <!-- ================= MEDICAL CONSULTATION ================= -->
+
+  <section class="consultation-section" id="consultation">
+    <div class="container">
+      <div class="consultation-card">
+        <h2>استشارات طبية</h2>
+        <p>للاستفسارات والاستشارات الطبية تواصلي معنا مباشرة عبر واتساب.</p>
+        <a
+          href="https://wa.me/201080212554"
+          target="_blank"
+          class="consultation-btn">
+          💬 استشارات طبية
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+
+    <div class="container">
+
+      <p>
+        © 2026 دكتور حسن - جميع الحقوق محفوظة
+      </p>
+
+      <p>
+        متجر دكتور حسن للعناية بالبشرة والشعر
+      </p>
+
+    </div>
+
+  </footer>
+
+
+  <!-- ================= JAVASCRIPT ================= -->
+
+  <script>
+
+    /* =====================================================
+       WHATSAPP STORE NUMBER
+       رقم واتساب المتجر
+    ===================================================== */
+
+    const WHATSAPP_NUMBER = "201080212554";
+
+
+    /* =====================================================
+       PRODUCTS
+    ===================================================== */
+
+    const products = [
+
+      /* ---------- MOISTURIZERS ---------- */
+
+      {
+        id: "m1",
+        name: "Dear Moisturising Cream",
+        category: "moisturizers",
+        categoryName: "المرطبات",
+        oldPrice: 100,
+        price: 90,
+        image: "images/moisturizers/WhatsApp Image 2026-09-12 at 11.55.36 AM.jpeg"
+      },
+
+      {
+        id: "m2",
+        name: "Dermactive Actl-Clear",
+        category: "moisturizers",
+        categoryName: "المرطبات",
+        oldPrice: 180,
+        price: 150,
+        image: "images/moisturizers/WhatsApp Image 2026-09-12 at 11.56.15 AM.jpeg"
+      },
+
+      {
+        id: "m3",
+        name: "Glow Mark Moisturising Cream",
+        category: "moisturizers",
+        categoryName: "المرطبات",
+        oldPrice: 350,
+        price: 300,
+        image: "images/moisturizers/WhatsApp Image 2026-09-12 at 11.57.03 AM.jpeg"
+      },
+
+      {
+        id: "m4",
+        name: "BIONNEX",
+        category: "moisturizers",
+        categoryName: "المرطبات",
+        oldPrice: 600,
+        price: 500,
+        image: "images/moisturizers/WhatsApp Image 2026-09-12 at 11.57.47 AM.jpeg"
+      },
+
+      {
+        id: "m5",
+        name: "CeraVe Oil Control Moisturising Gel-Cream",
+        category: "moisturizers",
+        categoryName: "المرطبات",
+        oldPrice: 750,
+        price: 650,
+        image: "images/moisturizers/WhatsApp Image 2026-09-12 at 11.58.57 AM.jpeg"
+      },
+
+      {
+        id: "m6",
+        name: "Skinova Moisturising",
+        category: "moisturizers",
+        categoryName: "المرطبات",
+        oldPrice: 350,
+        price: 300,
+        image: "images/moisturizers/WhatsApp Image 2026-09-12 at 11.59.44 AM.jpeg"
+      },
+
+      {
+        id: "m7",
+        name: "Dermacy",
+        category: "moisturizers",
+        categoryName: "المرطبات",
+        oldPrice: 400,
+        price: 350,
+        image: "images/moisturizers/WhatsApp Image 2026-09-12 at 12.00.11 PM.jpeg"
+      },
+
+      {
+        id: "m8",
+        name: "BG Acne Prone Skin Cream",
+        category: "moisturizers",
+        categoryName: "المرطبات",
+        oldPrice: 350,
+        price: 300,
+        image: "images/moisturizers/WhatsApp Image 2026-09-12 at 12.01.07 PM.jpeg"
+      },
+
+      {
+        id: "m9",
+        name: "LEYLAK Moisturising Gel",
+        category: "moisturizers",
+        categoryName: "المرطبات",
+        oldPrice: 330,
+        price: 280,
+        image: "images/moisturizers/WhatsApp Image 2026-09-12 at 12.01.34 PM.jpeg"
+      },
+
+      {
+        id: "m10",
+        name: "VACATION SEBIO-CONTROL Moisturising",
+        category: "moisturizers",
+        categoryName: "المرطبات",
+        oldPrice: 330,
+        price: 280,
+        image: "images/moisturizers/WhatsApp Image 2026-09-12 at 12.02.16 PM.jpeg"
+      },
+
+
+      /* ---------- SUNSCREEN ---------- */
 
       {
         id: "s1",
@@ -46,8 +1748,8 @@
         name: "La Roche-Posay (Oil Control Fluid)",
         category: "sunscreen",
         categoryName: "واقي الشمس",
-        oldPrice: 1100,
-        price: 999,
+        oldPrice: 400,
+        price: 300,
         image: "images/sunscreen/s5.jpg"
       },
 
@@ -56,8 +1758,8 @@
         name: "Infinity Oil Sunscreen Gel-Cream",
         category: "sunscreen",
         categoryName: "واقي الشمس",
-        oldPrice: 450,
-        price: 350,
+        oldPrice: 1100,
+        price: 999,
         image: "images/sunscreen/s6.jpg"
       },
 
@@ -67,7 +1769,7 @@
         category: "sunscreen",
         categoryName: "واقي الشمس",
         oldPrice: 450,
-        price: 420,
+        price: 350,
         image: "images/sunscreen/s7.jpg"
       },
 
@@ -76,8 +1778,8 @@
         name: "BIODERMA Photoderm SPOT-AGE",
         category: "sunscreen",
         categoryName: "واقي الشمس",
-        oldPrice: 800,
-        price: 700,
+        oldPrice: 450,
+        price: 420,
         image: "images/sunscreen/s8.jpg"
       },
 
@@ -86,7 +1788,1452 @@
         name: "VACATION SPF 50+ Spray",
         category: "sunscreen",
         categoryName: "واقي الشمس",
-        oldPrice: 400,
-        price: 300,
+        oldPrice: 800,
+        price: 700,
         image: "images/sunscreen/s9.jpg"
       },
+
+      /* ---------- CLEANSERS ---------- */
+
+      {
+        id: "c1",
+        name: "Vacation Facial Cleanser",
+        category: "cleansers",
+        categoryName: "الغسولات",
+        oldPrice: 300,
+        price: 175,
+        image: "https://f.nooncdn.com/p/pzsku/Z7C5BC8768EBE8F24C4B0Z/45/1755361253/8be8d69c-a106-45b7-a167-ac657d8b2f65.jpg"
+      },
+
+      {
+        id: "c2",
+        name: "Malinda Gel",
+        category: "cleansers",
+        categoryName: "الغسولات",
+        oldPrice: 450,
+        price: 290,
+        image: "https://face2face-eg.com/image/cache/catalog/MALINDA/%5B89%5D%20MALINDA%20Face%20Cleanser%20GEL%20250ML-800x800.png"
+      },
+
+      {
+        id: "c3",
+        name: "Synobar",
+        category: "cleansers",
+        categoryName: "الغسولات",
+        oldPrice: 300,
+        price: 260,
+        image: "https://f.nooncdn.com/p/pnsku/N30302898A/45/_/1694082448/10414d33-8025-4580-9c87-11459e4de006.jpg?width=480"
+      },
+
+      {
+        id: "c4",
+        name: "Dear Facial Cleanser",
+        category: "cleansers",
+        categoryName: "الغسولات",
+        oldPrice: 150,
+        price: 120,
+        image: "https://f.nooncdn.com/p/pzsku/Z618E04A9F2EC7A925E7CZ/45/1747084797/4d44dd47-b4f6-4717-bc61-45e06f13efb6.jpg?width=1200"
+      },
+
+      {
+        id: "c5",
+        name: "Topi-Gent Cleansing Foam",
+        category: "cleansers",
+        categoryName: "الغسولات",
+        oldPrice: 350,
+        price: 290,
+        image: "https://bemart.app/cdn/shop/files/topigent_1200x1200.jpg?v=1707768454"
+      },
+
+      {
+        id: "c6",
+        name: "La Roche-Posay Effaclar Pump 400ml",
+        category: "cleansers",
+        categoryName: "الغسولات",
+        oldPrice: 1250,
+        price: 1150,
+        image: "https://f.nooncdn.com/p/pnsku/N11294410A/45/_/1778155560/18c6f228-6111-4e1f-9df2-49ede13a7b73.jpg"
+      },
+
+      {
+        id: "c7",
+        name: "La Roche-Posay Effaclar Tube 200ml",
+        category: "cleansers",
+        categoryName: "الغسولات",
+        oldPrice: 850,
+        price: 700,
+        image: "https://s4.thcdn.com/productimg/1600/1600/11091822-9855227170118602.jpg"
+      },
+
+      {
+        id: "c8",
+        name: "Topi-Gent Cleansing Foam بالفرشاة",
+        category: "cleansers",
+        categoryName: "الغسولات",
+        oldPrice: 350,
+        price: 290,
+        image: "https://anwar.store/cdn/shop/files/1689683350653.jpg?v=1740680975"
+      },
+
+      {
+        id: "c9",
+        name: "Dermaelle Oil Control Gel",
+        category: "cleansers",
+        categoryName: "الغسولات",
+        oldPrice: 250,
+        price: 170,
+        image: "https://e-dermaelle.com/cdn/shop/files/1.cleanser.png?v=1769009156&width=1500"
+      },
+
+      {
+        id: "c10",
+        name: "Tetra Hydro Daily Gel Cleanser",
+        category: "cleansers",
+        categoryName: "الغسولات",
+        oldPrice: 200,
+        price: 150,
+        image: "https://chancestoreegy.com/cdn/shop/files/1-1-1_bcb2c99d-5147-4b02-a047-836725dfef36.jpg?v=1762740858"
+      },
+
+      {
+        id: "c11",
+        name: "KIARA MINI FACIAL CLEANSER GEL FOR OILY & COMBINATION ACNE PRONE SKIN 100ML",
+        category: "cleansers",
+        categoryName: "الغسولات",
+        oldPrice: 250,
+        price: 170,
+        image: "https://anwar.store/cdn/shop/files/621b2f78b3e79d18a884d8b6643b7190_1.webp?v=1790172971"
+      },
+
+      {
+        id: "c12",
+        name: "StarVille Facial Cleanser Gel",
+        category: "cleansers",
+        categoryName: "الغسولات",
+        oldPrice: 175,
+        price: 150,
+        image: "https://eparkville.com/cdn/shop/files/acnecleanser.jpg?v=1707820772&width=1080"
+      },
+
+      {
+        id: "c13",
+        name: "CeraVe Foaming Cleanser 236ml",
+        category: "cleansers",
+        categoryName: "الغسولات",
+        oldPrice: 700,
+        price: 640,
+        image: "https://www.regentsparkpharmacy.com.au/cdn/shop/files/cerave_foaming_cleanser_236ml.png?v=1721623227&width=1500"
+      },
+
+      {
+        id: "c14",
+        name: "Topi Gent Sebum Cleansing 150 ml | عناية شخصية Topi 150 مل",
+        category: "cleansers",
+        categoryName: "الغسولات",
+        oldPrice: 350,
+        price: 290,
+        image: "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcRi43FVlzlDnh_B68_Y0NC3_LavZR8e3i19oZjbjqusRHSU-hMyaSrT2IxFQVwtWN1i7DJPaL7tAo14SI5FNY3eeFW3zftftZZ4DvZEPr12L5WTNdwmpMmsxPQmngqIGWcdGTSG1w&usqp=CAc"
+      },
+
+      {
+        id: "c15",
+        name: "Kiara Soft Facial Cleanser Gel for Oily & Combination Acne-Prone Skin 250ml",
+        category: "cleansers",
+        categoryName: "الغسولات",
+        oldPrice: 250,
+        price: 170,
+        image: "https://f.nooncdn.com/p/pzsku/ZF63EA6FD7361F1831FEEZ/45/_/1789252802/abce5815-4da4-4a66-b635-791f3ef01a6c.jpg?width=800"
+      },
+
+      /* ---------- HAIR CARE ---------- */
+
+      {
+        id: "h1",
+        name: "Capixy Anti-Hair Loss Tonic Spray (كابيكسي سبراي مقوي للشعر - الأبيض)",
+        category: "hair-care",
+        categoryName: "العناية بالشعر",
+        oldPrice: 450,
+        price: 300,
+        image: "https://media.zid.store/431ce382-352f-41d9-b2b8-8147b2b3b500/a09e5bb0-4486-499e-8658-4197aff76331.webp"
+      },
+
+      {
+        id: "h2",
+        name: "Twist & Go Hair Intensive Lotion (تويست آند جو لوشن مكثف للشعر)",
+        category: "hair-care",
+        categoryName: "العناية بالشعر",
+        oldPrice: 300,
+        price: 270,
+        image: "https://nobaeg.com/cdn/shop/files/twistgo-length-intensive-hair-lotion-125ml-3668198_1200x1200_db07090e-af3d-4f9a-9326-2da221453d4c.webp?v=1764241031"
+      },
+
+      {
+        id: "h3",
+        name: "LeVisage VIGILANT Hair Growth Serum / Ampoules (أمبولات/سيروم ليفيزاج فيجيلانت لإنبات الشعر)",
+        category: "hair-care",
+        categoryName: "العناية بالشعر",
+        oldPrice: 650,
+        price: 550,
+        image: "https://f.nooncdn.com/p/pzsku/ZD9E470D6B898219C2DF5Z/45/_/1773620297/1bfcd28b-164d-4762-9481-49931f31b4c4.jpg"
+      },
+
+      {
+        id: "h4",
+        name: "StrongVille Hair Lotion Men (سترونج فيل لوشن للرجال)",
+        category: "hair-care",
+        categoryName: "العناية بالشعر",
+        oldPrice: 300,
+        price: 240,
+        image: "https://www.eg.sohaticare.com/cdn/shop/products/Strongville-Men-Spray-100gm-_1_1fc1b689-418e-41c3-9d07-49716c97fe15.png?v=1677752463"
+      },
+
+      {
+        id: "h5",
+        name: "Capixy Intense Tonic Spray (كابيكسي سبراي مكثف - الأحمر)",
+        category: "hair-care",
+        categoryName: "العناية بالشعر",
+        oldPrice: 650,
+        price: 550,
+        image: "https://i.ebayimg.com/images/g/FOcAAeSwe75oo8-~/s-l1200.jpg"
+      },
+
+      {
+        id: "h6",
+        name: "Minoxilook 5% Topical Solution (مينوكسيلوك محلول موضعي 5%)",
+        category: "hair-care",
+        categoryName: "العناية بالشعر",
+        oldPrice: 300,
+        price: 275,
+        image: "https://f.nooncdn.com/p/pzsku/Z9348DFAA720F9C13A571Z/45/1758099178/3ea2b33b-e289-4ef2-81b6-31d96ebccae3.jpg?width=480"
+      },
+
+      {
+        id: "h7",
+        name: "Raw African Follicle Booster Oil (زيت رو أفريكان محفز النمو)",
+        category: "hair-care",
+        categoryName: "العناية بالشعر",
+        oldPrice: 250,
+        price: 200,
+        image: "https://f.nooncdn.com/p/pzsku/Z5DD8FAEC663C35D1BB32Z/45/_/1775254016/bf710f2d-1beb-441c-9993-8c1effca9a20.jpg"
+      },
+
+      {
+        id: "h8",
+        name: "Twist & Go Anti-Hair Loss Lotion (تويست آند جو لوشن لتساقط الشعر - الأخضر)",
+        category: "hair-care",
+        categoryName: "العناية بالشعر",
+        oldPrice: 300,
+        price: 270,
+        image: "https://cdn.shopify.com/s/files/1/0917/1632/1576/files/twistgo-anti-hair-loss-lotion-250ml-7960801.webp?v=1756895927"
+      },
+
+      {
+        id: "h9",
+        name: "Capixy Anti-Hair Loss Vials Box (أمبولات كابيكسي لعلاج تساقط الشعر)",
+        category: "hair-care",
+        categoryName: "العناية بالشعر",
+        oldPrice: 999,
+        price: 850,
+        image: "https://f.nooncdn.com/p/pzsku/Z3BEFF29FE7FA3B1BBA0DZ/45/1747311492/af99056c-1676-41d7-9b32-91c0f262a792.jpg?width=480"
+      },
+
+      {
+        id: "h10",
+        name: "Clary Hair Fall Control Serum (سيروم كلاري لتساقط الشعر)",
+        category: "hair-care",
+        categoryName: "العناية بالشعر",
+        oldPrice: 350,
+        price: 300,
+        image: "https://f.nooncdn.com/p/pzsku/Z2CEB6D92C9D5AF06F857Z/45/_/1699798584/dd706440-6a6c-41aa-b9de-a178c3c2808e.jpg?width=1200"
+      },
+
+      {
+        id: "h11",
+        name: "Clary Hair Fall Control Conditioner (بلسم كلاري لتساقط الشعر)",
+        category: "hair-care",
+        categoryName: "العناية بالشعر",
+        oldPrice: 350,
+        price: 300,
+        image: "https://f.nooncdn.com/p/pzsku/Z2CEB6D92C9D5AF06F857Z/45/_/1699798584/dd706440-6a6c-41aa-b9de-a178c3c2808e.jpg?width=1200"
+      },
+
+      {
+        id: "h12",
+        name: "Twist & Go Hair Serum Dry Touch (سيروم تويست آند جو للشعر الجاف)",
+        category: "hair-care",
+        categoryName: "العناية بالشعر",
+        oldPrice: 300,
+        price: 200,
+        image: "https://d1sfia80qolkyg.cloudfront.net/products/23916471image.jpg"
+      },
+
+      {
+        id: "h13",
+        name: "Premier PremCrystal Look Hair Serum (سيروم بريمير كريستال للشعر)",
+        category: "hair-care",
+        categoryName: "العناية بالشعر",
+        oldPrice: 300,
+        price: 225,
+        image: "https://taypharmacies.com/wp-content/uploads/2022/12/PREMIER-PREM-CRYSTAL-LOOK-SERUM-70-ML.jpg"
+      },
+
+      {
+        id: "h14",
+        name: "Capixy Leave-in Heat Protection Spray (سبراي كابيكسي حماية من الحرارة)",
+        category: "hair-care",
+        categoryName: "العناية بالشعر",
+        oldPrice: 400,
+        price: 350,
+        image: "https://media.zid.store/431ce382-352f-41d9-b2b8-8147b2b3b500/a09e5bb0-4486-499e-8658-4197aff76331.webp"
+      },
+
+      {
+        id: "h15",
+        name: "TRESemmé Coconut Nourish Conditioner/Shampoo (شامبو/بلسم تريزمي بجوز الهند والألوفيرا)",
+        category: "hair-care",
+        categoryName: "العناية بالشعر",
+        oldPrice: 250,
+        price: 220,
+        image: "https://f.nooncdn.com/p/f23de7f06a7257eea1f65dc2987ef8bd%7Cpzsku/Z53EBE63DA7FD96145DD7Z/45/1769945838/c729e008-868f-44a4-ae16-048e92f14eec.jpg?width=800"
+      },
+
+      {
+        id: "h16",
+        name: "Seropipe Hair Conditioner (بلسم سيروبيب)",
+        category: "hair-care",
+        categoryName: "العناية بالشعر",
+        oldPrice: 450,
+        price: 300,
+        image: "https://f.nooncdn.com/p/pzsku/ZB6D067489BE49BC156B7Z/45/1765030560/f85a94aa-72ee-4a90-9a75-527f8a73abe3.jpg?width=800"
+      },
+
+      {
+        id: "h17",
+        name: "TRESemmé Keratin Smooth Shampoo (شامبو تريزمي كيراتين سموث - الأحمر)",
+        category: "hair-care",
+        categoryName: "العناية بالشعر",
+        oldPrice: 350,
+        price: 275,
+        image: "https://cdn.mafrservices.com/pim-content/SAU/media/product/646900/1779624600/646900_main.jpg"
+      },
+
+      {
+        id: "h18",
+        name: "Clary Hair Fall Control Shampoo (شامبو كلاري لتساقط الشعر)",
+        category: "hair-care",
+        categoryName: "العناية بالشعر",
+        oldPrice: 400,
+        price: 300,
+        image: "https://www.eg.sohaticare.com/cdn/shop/products/Clary-Shampoo-300ml-_1_1200x1200_crop_center_5b7b881d-c48a-4e74-9547-bca0f763bc77.png?v=1677752315"
+      },
+
+      {
+        id: "h19",
+        name: "Clary Leave-In Cream (كريم ليف إن كلاري)",
+        category: "hair-care",
+        categoryName: "العناية بالشعر",
+        oldPrice: 350,
+        price: 275,
+        image: "https://eparkville.com/cdn/shop/files/leaveincream_426d466c-e1d9-4347-95ed-f9a7d27488e5.png?v=1707137729"
+      },
+
+      {
+        id: "h20",
+        name: "Capixy Hair Fertilizer Anti-Hair Loss Shampoo (شامبو كابيكسي لعلاج تساقط الشعر)",
+        category: "hair-care",
+        categoryName: "العناية بالشعر",
+        oldPrice: 350,
+        price: 300,
+        image: "https://f.nooncdn.com/p/pnsku/N53325295A/45/_/1767607550/9f2a9fd3-b11e-40c4-bcea-9537bcea200b.jpg?width=1200"
+      },
+
+      {
+        id: "h21",
+        name: "Seropipe Hair Shampoo Zero Sulfate (شامبو سيروبيب خالي من السلفات)",
+        category: "hair-care",
+        categoryName: "العناية بالشعر",
+        oldPrice: 350,
+        price: 300,
+        image: "https://f.nooncdn.com/p/pzsku/Z94AA2975C583C5F62EC9Z/45/1765797262/02bcb69c-1f29-45a6-9c69-e0d8672cd1b0.jpg?width=1200"
+      },
+
+      {
+        id: "h22",
+        name: "StrongVille Hair Shampoo Bond Builder (شامبو سترونج فيل)",
+        category: "hair-care",
+        categoryName: "العناية بالشعر",
+        oldPrice: 200,
+        price: 150,
+        image: "https://eg.sohaticare.com/cdn/shop/products/Strongville-Extra-Hair-Shampoo-220ml-_1_02dd8533-ed93-42db-90d5-d81c4d86154c.png?v=1677752450"
+      },
+
+      {
+        id: "h23",
+        name: "Infinity Naturals Hair Conditioner (بلسم إنفينيتي ناتشورالز بجوز الهند والشيا)",
+        category: "hair-care",
+        categoryName: "العناية بالشعر",
+        oldPrice: 500,
+        price: 400,
+        image: "https://infinityclinicpharma.com/cdn/shop/files/INFINITY_Natural_product_shoot_2406241053.png?v=1720446759&width=798"
+      },
+
+      {
+        id: "h24",
+        name: "Leaves Anti-Hair Loss Shampoo & Conditioner (شامبو وبلسم ليفز بالأعشاب الهندية)",
+        category: "hair-care",
+        categoryName: "العناية بالشعر",
+        oldPrice: 350,
+        price: 300,
+        image: "https://www.bloompharmacy.com/cdn/shop/files/leaves-anti-hair-loss-shampoo-conditioner-250ml-6159696.jpg?v=1767021433"
+      },
+
+      {
+        id: "h25",
+        name: "Eva Advanced Care Clinic Hydrolysed Keratin Shampoo (شامبو إيفا كلينيك بالكيراتين)",
+        category: "hair-care",
+        categoryName: "العناية بالشعر",
+        oldPrice: 150,
+        price: 125,
+        image: "https://talabat.dhmedia.io/image/product-information-management/6975ef86531ff1ed54d45eb3.png"
+      },
+
+      {
+        id: "h26",
+        name: "Twist & Go Hair Volumizing Shampoo (شامبو تويست آند جو لزيادة كثافة الشعر)",
+        category: "hair-care",
+        categoryName: "العناية بالشعر",
+        oldPrice: 250,
+        price: 200,
+        image: "https://f.nooncdn.com/p/pzsku/ZEA31AB28A0423E2CB12EZ/45/1747083430/b3b243a9-0636-42bf-944c-8ed5bce804ec.jpg?width=1200"
+      },
+
+      {
+        id: "h27",
+        name: "Capixy Hydrating Conditioner (بلسم كابيكسي المرطب للشعر)",
+        category: "hair-care",
+        categoryName: "العناية بالشعر",
+        oldPrice: 350,
+        price: 250,
+        image: "https://e-alrajhipharma.com/cdn/shop/files/1_5667466e-e4e6-41b2-a6b2-26a3affb9091.png?v=1761575805&width=720"
+      },
+
+      {
+        id: "h28",
+        name: "Clary Hair Fall Control Hair Mask (ماسك كلاري لتساقط الشعر)",
+        category: "hair-care",
+        categoryName: "العناية بالشعر",
+        oldPrice: 350,
+        price: 300,
+        image: "https://m.media-amazon.com/images/I/61iix7RpkfL._AC_SX522_.jpg"
+      },
+
+      {
+        id: "h29",
+        name: "Hairoots Hair Mask (ماسك هيروتس للشعر)",
+        category: "hair-care",
+        categoryName: "العناية بالشعر",
+        oldPrice: 300,
+        price: 250,
+        image: "https://ssppldurcjtgbfnwrcnv.supabase.co/storage/v1/object/public/products-imgs/hairroots-hair-mask-150ml/3.png"
+      },
+
+      {
+        id: "h30",
+        name: "Bio Soft Avocado Deep Conditioner (بلسم بيو سوفت العميق بالأفوكادو)",
+        category: "hair-care",
+        categoryName: "العناية بالشعر",
+        oldPrice: 170,
+        price: 130,
+        image: "https://images-na.ssl-images-amazon.com/images/I/41mNJmMVqKL._SL500_._AC_SL500_.jpg"
+      },
+
+      {
+        id: "h31",
+        name: "TRESemmé Botanique Hydrating Coconut Mask (ماسك تريزمي بجوز الهند والألوفيرا)",
+        category: "hair-care",
+        categoryName: "العناية بالشعر",
+        oldPrice: 400,
+        price: 350,
+        image: "https://brandcity.pk/cdn/shop/files/1226704-1_1024x1024.jpg?v=1690360606"
+      },
+
+      {
+        id: "h32",
+        name: "Twist & Go Hair Mask (ماسك تويست آند جو للشعر)",
+        category: "hair-care",
+        categoryName: "العناية بالشعر",
+        oldPrice: 300,
+        price: 200,
+        image: "https://f.nooncdn.com/p/pzsku/Z9821533E70F53A145B04Z/45/1754997131/6d66aa59-8dcc-41ef-afae-877f55a5a353.jpg?width=800"
+      },
+
+      {
+        id: "h33",
+        name: "Capixy Ultimate Nourishing Hair Mask (ماسك كابيكسي المغذي للشعر)",
+        category: "hair-care",
+        categoryName: "العناية بالشعر",
+        oldPrice: 450,
+        price: 350,
+        image: "https://images-eu.ssl-images-amazon.com/images/I/51Cs%2BnnefdL._AC_UL495_SR435%2C495_.jpg"
+      },
+
+      {
+        id: "h34",
+        name: "Karseell Maca Power Collagen Hair Mask (ماسك كارسييل بالكولاجين للشعر - 500ml)",
+        category: "hair-care",
+        categoryName: "العناية بالشعر",
+        oldPrice: 999,
+        price: 850,
+        image: "https://f.nooncdn.com/p/pzsku/Z546BDE5EDBB110A9D682Z/45/_/1719994511/b8cce63f-33d1-4d4c-beee-836a8821a86b.jpg?width=1200"
+      },
+
+      /* ---------- LIGHTENING & PIGMENTATION CARE ---------- */
+
+      { id: "l1", name: "Rederma Laboratories gen.z Lightening Cream", category: "lightening-pigmentation", categoryName: "العناية بالتفتيح والتصبغات", oldPrice: 350, price: 275, image: "https://www.mouradpharmacy.com/web/image/product.product/72/image_1920?unique=bda4652" },
+      { id: "l2", name: "Lightening Cream (Dermawhite / Alpha Arbutin)", category: "lightening-pigmentation", categoryName: "العناية بالتفتيح والتصبغات", oldPrice: 200, price: 150, image: "https://f.nooncdn.com/p/pzsku/Z94B11B3367FCED84EA7EZ/45/1751469785/e251f8a9-57c6-486c-9165-9d3e81508c62.jpg" },
+      { id: "l3", name: "Daky Whitening Cream", category: "lightening-pigmentation", categoryName: "العناية بالتفتيح والتصبغات", oldPrice: 250, price: 200, image: "https://4eshopping.com/assets/images/products/7601391708002654.webp" },
+      { id: "l4", name: "StarVille Whitening Cream", category: "lightening-pigmentation", categoryName: "العناية بالتفتيح والتصبغات", oldPrice: 150, price: 125, image: "https://f.nooncdn.com/p/pzsku/ZECA44DB17F3A49DDFFBEZ/45/1758716154/0072d874-84a9-4667-a6c5-b52af024d62b.jpg" },
+      { id: "l5", name: "Dermactive Acti-White Depigmenting Cream", category: "lightening-pigmentation", categoryName: "العناية بالتفتيح والتصبغات", oldPrice: 350, price: 280, image: "https://f.nooncdn.com/p/1b936e5aa7fc5b598b5f10a6dd9bd61f|pzsku/Z8CF57981876D789DF3C5Z/45/1770800161/24a65f91-19da-4389-b884-465cbe268d34.jpg" },
+      { id: "l6", name: "Tetra Glow Whitening Cream Sensitive Zone", category: "lightening-pigmentation", categoryName: "العناية بالتفتيح والتصبغات", oldPrice: 450, price: 400, image: "https://f.nooncdn.com/p/pzsku/ZD8600F0E4739F1F6CC91Z/45/1767687972/f1c5ba64-3cd4-4c83-a7cc-ca29e44ff527.jpg" },
+      { id: "l7", name: "Dermaelle W+ Hyalu White Face & Neck Cream", category: "lightening-pigmentation", categoryName: "العناية بالتفتيح والتصبغات", oldPrice: 300, price: 260, image: "https://e-dermaelle.com/cdn/shop/files/1.faceandneckcream.png?v=1769010705" },
+      { id: "l8", name: "Daky Whitening Cream For Sensitive Zone", category: "lightening-pigmentation", categoryName: "العناية بالتفتيح والتصبغات", oldPrice: 250, price: 200, image: "https://tallah-beauty.com/cdn/shop/files/Daky_whitening_for_Sensitive_area_50_GM.png?v=1773062492&width=1946" },
+      { id: "l9", name: "Alejon Whitening Cream", category: "lightening-pigmentation", categoryName: "العناية بالتفتيح والتصبغات", oldPrice: 400, price: 350, image: "https://f.nooncdn.com/p/pzsku/Z6F8DC51E82DBA2329806Z/45/1751121427/f9d16893-5975-45ff-a661-399fe63c8f15.jpg" },
+      { id: "l10", name: "Kolagra Bikini Whitening Cream (Rich in Vitamin C)", category: "lightening-pigmentation", categoryName: "العناية بالتفتيح والتصبغات", oldPrice: 140, price: 120, image: "https://f.nooncdn.com/p/pzsku/ZA57154FB52373A3A007EZ/45/1753793161/2aa1b89e-3a55-4bd1-a0c0-2f82c9b4316a.jpg?width=800" },
+      { id: "l11", name: "Uriage Bariéderm-CICA Cream", category: "lightening-pigmentation", categoryName: "العناية بالتفتيح والتصبغات", oldPrice: 750, price: 650, image: "https://wee-prod-public.s3.eu-central-1.amazonaws.com/f11c1145/b077e5c2/c7e1c565/9ff256e2/680b32cc4a1785.73883062.large.png" },
+      { id: "l12", name: "Bioderma Pigmentbio Sensitive Areas", category: "lightening-pigmentation", categoryName: "العناية بالتفتيح والتصبغات", oldPrice: 1200, price: 999, image: "https://cdn.pharma-gdd.com/cache/product_show/31112e80e4c97d0de1ca073cded2759ca036fcad04f6f43d6c6ea849c1cf1683c42bcaee.jpg" },
+      { id: "l13", name: "Tetra Glow Depigmenting & Whitening Cream Night Care", category: "lightening-pigmentation", categoryName: "العناية بالتفتيح والتصبغات", oldPrice: 400, price: 350, image: "https://alfouadpharmacies.com/cdn/shop/files/Tetra-Glow-Night-Care-FaceNeck-Cream-30G.webp?v=1754297765" },
+      { id: "l14", name: "ACM Dépiwhite Advanced Intensive Anti-Brown Spot Cream", category: "lightening-pigmentation", categoryName: "العناية بالتفتيح والتصبغات", oldPrice: 700, price: 650, image: "https://cdn.salla.sa/RarZy/e76db941-841f-45d8-b510-dc3bb5dd7429-1000x1000-FxN1ViMjpjYKVZIxz5rKbqZoPyvDX9SangPV7MiY.jpg" },
+      { id: "l15", name: "Vacation Uni-White Night Cream", category: "lightening-pigmentation", categoryName: "العناية بالتفتيح والتصبغات", oldPrice: 350, price: 300, image: "https://f.nooncdn.com/p/pzsku/Z1A4823CBB3986C9721FAZ/45/1755170260/d9233d7e-8a62-476d-acd7-269c85a5ab4b.jpg?width=1200" },
+      { id: "l16", name: "Glamy Lab Whitening Cream SPF30", category: "lightening-pigmentation", categoryName: "العناية بالتفتيح والتصبغات", oldPrice: 550, price: 500, image: "https://stuhm.com/wp-content/uploads/2025/10/Glamy-Lab-Whitening-Cream.webp" },
+      { id: "l17", name: "Foldex Skin Lightening Cream", category: "lightening-pigmentation", categoryName: "العناية بالتفتيح والتصبغات", oldPrice: 250, price: 200, image: "https://f.nooncdn.com/p/pzsku/ZD66D9F759D37C25C30B0Z/45/1766241246/8513d04e-a8c1-4720-a9b5-04a89429b671.jpg?width=800" },
+      { id: "l18", name: "Leylak Whitening Cream", category: "lightening-pigmentation", categoryName: "العناية بالتفتيح والتصبغات", oldPrice: 330, price: 280, image: "https://f.nooncdn.com/p/pzsku/Z5B848086E13F7AFAC0CFZ/45/_/1703168985/a82d3d62-8960-4197-bf25-8a88953f6961.jpg?width=800" },
+      { id: "l19", name: "Infinity Spanish Labs Whitening Cream Gel", category: "lightening-pigmentation", categoryName: "العناية بالتفتيح والتصبغات", oldPrice: 220, price: 200, image: "https://infinityclinicpharma.com/cdn/shop/files/Infinity_Spanish_Labs_product_shoot_2406244199.png?v=1721035754&width=1024" },
+
+      /* ---------- SERUMS ---------- */
+
+      { id: "sr1", name: "Eucerin Even Pigment Perfector Illuminating Serum", category: "serums", categoryName: "السيرمات", oldPrice: 1500, price: 1350, image: "https://f.nooncdn.com/p/pzsku/Z52EE8EF792F9DABE0590Z/45/1761202599/40f0f4e3-fcb2-462d-b298-93391ebaceef.jpg" },
+
+      { id: "sr2", name: "See-Lit Hyaluronic & Vitamin B Plumping Serum", category: "serums", categoryName: "السيرمات", oldPrice: 270, price: 240, image: "https://f.nooncdn.com/p/pzsku/Z9048291642E6A95A3361Z/45/1767807910/c06770c1-f3c5-4741-b703-273a9ae0ce2e.jpg" },
+
+      { id: "sr3", name: "Dr. Rashel Vitamin C Brightening & Anti-Aging Face Serum", category: "serums", categoryName: "السيرمات", oldPrice: 250, price: 200, image: "https://f.nooncdn.com/p/pzsku/Z09D5D27DC1A404619DA6Z/45/_/1778591913/4605303f-6720-433d-81f0-bc8d0182342b.jpg" },
+
+      { id: "sr4", name: "Eucerin DermoPurifyer Oil Control Triple Effect Serum", category: "serums", categoryName: "السيرمات", oldPrice: 700, price: 600, image: "https://f.nooncdn.com/p/pzsku/Z07D80D0EB0C1F3A4972DZ/45/1767866357/469e7f58-e6a5-4a3a-9acc-e938bf750474.jpg" },
+
+      { id: "sr5", name: "Garnier Fast Bright 30x Vitamin C Serum", category: "serums", categoryName: "السيرمات", oldPrice: 400, price: 350, image: "https://f.nooncdn.com/p/pnsku/N45380432A/45/_/1764242506/0d68b628-0d42-443b-bc4f-f2b9e21c3fa4.jpg" },
+
+      { id: "sr6", name: "Dermactive Acti-Clear Correcting Serum", category: "serums", categoryName: "السيرمات", oldPrice: 270, price: 220, image: "https://f.nooncdn.com/p/pzsku/ZC3AE3198009E93FF20BAZ/45/1758369597/84dfee62-89a5-4252-be17-3772e44bef1c.jpg" },
+
+      { id: "sr7", name: "Derma Ten Derma Powers Soothing Power Serum", category: "serums", categoryName: "السيرمات", oldPrice: 350, price: 300, image: "https://f.nooncdn.com/p/pzsku/Z4EA022CF41B7D5CC8A90Z/45/1753714113/dba0a0ed-e3c9-4ffd-956d-ecd3925a5d2d.jpg" },
+
+      { id: "sr8", name: "Vacation Pro-Series Glycolic Acid Serum NAD+", category: "serums", categoryName: "السيرمات", oldPrice: 300, price: 250, image: "https://f.nooncdn.com/p/pzsku/ZD5E930E8A68E266A6BD9Z/45/_/1780580561/c5879dc9-de4b-4f48-a4a7-8798dbf9c6d8.jpg" },
+
+      { id: "sr9", name: "Dermacy Firming + Hydrating Serum", category: "serums", categoryName: "السيرمات", oldPrice: 600, price: 550, image: "https://f.nooncdn.com/p/pzsku/Z0B398AC362E6A0495483Z/45/_/1715185215/42492944-0f4f-4079-9d9f-e1cfbb247db6.jpg" },
+
+      { id: "sr10", name: "Vacation Pro-Series Niacinamide Serum 10%", category: "serums", categoryName: "السيرمات", oldPrice: 350, price: 300, image: "https://deoora.com/cdn/shop/files/niacinamidenew.png?v=1782490034&width=1946" },
+
+      { id: "sr11", name: "Tersus Facial Serum", category: "serums", categoryName: "السيرمات", oldPrice: 280, price: 225, image: "https://f.nooncdn.com/p/pzsku/Z6F78D43B7D9AD65EFE3DZ/45/1761127682/f48cd743-0bed-4def-9629-c7f2d7343df4.jpg" },
+
+      { id: "sr12", name: "Eva Skin Clinic Anti-Ageing Serum", category: "serums", categoryName: "السيرمات", oldPrice: 300, price: 250, image: "https://f.nooncdn.com/p/5ece8f96a96857f7bfac53b531d2de89|pzsku/Z96450AD0735DB837DA72Z/45/1770190348/83e6da52-0995-46ca-a615-9474b1f31637.jpg" },
+
+      { id: "sr13", name: "Dr. Rashel Collagen Elasticity & Firming Primer Serum", category: "serums", categoryName: "السيرمات", oldPrice: 300, price: 250, image: "https://f.nooncdn.com/p/pzsku/Z33B9EB5EC6D59921EFE5Z/45/_/1778592139/76750f70-986b-4374-b5f8-e4e93e945207.jpg" },
+
+      { id: "sr14", name: "Advanced Snail 96 Mucin Power Essence", category: "serums", categoryName: "السيرمات", oldPrice: 300, price: 250, image: "https://f.nooncdn.com/p/7b9a38b316e85e699b06c2086f99e5b9|pzsku/Z996DDF3E38CC1CF5F452Z/45/1770152759/5420c0aa-09e8-4fc6-9e0c-e06dbb57d434.jpg" },
+
+      { id: "sr15", name: "Anua Niacinamide 10% + TXA 4% Serum", category: "serums", categoryName: "السيرمات", oldPrice: 999, price: 850, image: "https://f.nooncdn.com/p/pzsku/Z8B8D2AF12BB848A653C5Z/45/_/1779791653/a534f501-2bb1-460d-be0c-7e6c1f2404b0.jpg" },
+
+      { id: "sr16", name: "L'Oréal Hyaluron Expert 1.5% Hyaluronic Acid Serum", category: "serums", categoryName: "السيرمات", oldPrice: 600, price: 500, image: "https://f.nooncdn.com/p/pzsku/Z9B80A506C1799B559A5CZ/45/1748433180/4901b059-6d7c-4421-9df5-e634f55f47c5.jpg" },
+
+      { id: "sr17", name: "Skinside Blemish Free Pore Refining Serum", category: "serums", categoryName: "السيرمات", oldPrice: 250, price: 180, image: "https://skinsidelabs.com/wp-content/uploads/2023/05/Blemish-Free-Niacinamide-10_-Zinc-1_-Pore-Refining-Serum.jpg.webp" },
+
+      { id: "sr18", name: "Hepto Panthenol Face Serum", category: "serums", categoryName: "السيرمات", oldPrice: 280, price: 210, image: "https://f.nooncdn.com/p/pzsku/Z8EC6351EE0A39B54ACBEZ/45/_/1771533178/22bf3867-1542-44ab-8482-a5f28197eecc.jpg" },
+
+      { id: "sr19", name: "Dr. Rashel Hyaluronic Acid Instant Hydration Primer Serum", category: "serums", categoryName: "السيرمات", oldPrice: 300, price: 250, image: "https://f.nooncdn.com/p/pzsku/Z9C1D41484F3567021FEEZ/45/_/1778592369/e2457e94-47da-46b3-8eae-3a9f2f0ad9fd.jpg" },
+
+      { id: "sr20", name: "Dermatique Advanced Glow Lightening Serum", category: "serums", categoryName: "السيرمات", oldPrice: 250, price: 180, image: "https://f.nooncdn.com/p/pzsku/ZD5776D72E13976CFA87EZ/45/1767809316/77a107dd-1ea4-46e5-8b50-441885e3c732.jpg" },
+
+      { id: "sr21", name: "Derma Ten Pore Refining Power Serum", category: "serums", categoryName: "السيرمات", oldPrice: 350, price: 300, image: "https://f.nooncdn.com/p/pzsku/Z14B7F88CB2A0DFCEE3CCZ/45/1764270380/dddfc4de-bdfb-4049-8480-0ae90090da08.jpg" },
+
+      { id: "sr22", name: "Regenix Dermal Facial Super Serum Rejuvenating", category: "serums", categoryName: "السيرمات", oldPrice: 999, price: 850, image: "https://f.nooncdn.com/p/pzsku/Z3E912AE681C1E228DF42Z/45/_/1772625392/3728e09d-0245-4fc1-a88e-b1426a9de877.jpg" },
+
+      { id: "sr23", name: "Leylak Hyaluronic Acid and Vitamin C 10% Serum", category: "serums", categoryName: "السيرمات", oldPrice: 450, price: 330, image: "https://f.nooncdn.com/p/pzsku/Z3E912AE681C1E228DF42Z/45/_/1772625392/3728e09d-0245-4fc1-a88e-b1426a9de877.jpg" },
+
+      { id: "sr24", name: "Shine and White Face Serum", category: "serums", categoryName: "السيرمات", oldPrice: 400, price: 320, image: "https://f.nooncdn.com/p/pzsku/ZFBA7C430BA379451CD1CZ/45/1755951066/b48a1621-ac05-4d40-8aac-e69623f5ab69.jpg" },
+
+      { id: "sr25", name: "Skinova Image Niacinamide Serum Advance", category: "serums", categoryName: "السيرمات", oldPrice: 350, price: 300, image: "https://f.nooncdn.com/p/pzsku/ZEF9E878A095B36817134Z/45/1767188336/fe132362-8703-450d-9f54-0bec2b4666cd.jpg" },
+
+      { id: "sr26", name: "Skinova Image Hyalo Cica Serum", category: "serums", categoryName: "السيرمات", oldPrice: 350, price: 300, image: "https://f.nooncdn.com/p/pzsku/Z681C625FF2CB8CA30360Z/45/_/1778173466/c51c856d-1a3e-4675-8127-319de5f4cd5d.jpg" },
+
+      { id: "sr27", name: "L'Oréal Paris Glycolic-Bright 8% Serum", category: "serums", categoryName: "السيرمات", oldPrice: 550, price: 450, image: "https://f.nooncdn.com/p/pzsku/ZCF22CA0A0761EB1B4E7CZ/45/1764075574/6a03b59c-fd73-4116-9d6b-e407b9a31968.jpg?width=original" },
+
+      { id: "sr28", name: "Dermaelle Advanced Serum Niacinamide 5%", category: "serums", categoryName: "السيرمات", oldPrice: 300, price: 250, image: "https://f.nooncdn.com/p/pzsku/ZF3332D075E49FF53F270Z/45/1766927686/61040006-315d-48ca-8a4d-02940c2dc8b8.jpg" },
+
+      { id: "sr29", name: "Ordinoor Even Tone Serum", category: "serums", categoryName: "السيرمات", oldPrice: 450, price: 370, image: "https://www.avenscosmeticseg.com/cdn/shop/files/eventone_new_des.webp?v=1781699556&width=1946" },
+
+      { id: "sr30", name: "Nuveracosmetics Sebio Control Niacinamide Serum 5%", category: "serums", categoryName: "السيرمات", oldPrice: 300, price: 250, image: "https://f.nooncdn.com/p/pzsku/ZCB21CC145888D2BFAE08Z/45/_/1778237483/a8fa48bb-d853-4fe3-84c4-7cb43b5c3698.jpg" },
+
+      { id: "sr31", name: "Moist.1 Hyaluronic Acid Serum 2% H.A", category: "serums", categoryName: "السيرمات", oldPrice: 300, price: 250, image: "https://f.nooncdn.com/p/pzsku/Z4827627E6A4D954B4C70Z/45/1767809366/cf5022fa-e030-4f00-a639-8098731ee847.jpg" },
+
+    ];
+
+
+    /* =====================================================
+       CART
+    ===================================================== */
+
+    let cart = [];
+    let currentFilter = "all";
+    let couponDiscount = 0;
+    let appliedCoupon = "";
+
+    const COUPONS = {
+      "DRHASSAN5": 0.05,
+      "DRHASSAN10": 0.10,
+      "DRHASSAN50": 0.50
+    };
+
+    const COD_FEE = 20;
+
+    const SHIPPING_FEES = {
+      "الإسكندرية": 100,
+      "القاهرة": 70,
+      "الجيزة": 70,
+      "البحيرة": 90,
+      "محافظة أخرى": 100
+    };
+
+    function getShippingFee() {
+      const governorate = document.getElementById("governorate");
+      return governorate ? (SHIPPING_FEES[governorate.value] || 0) : 0;
+    }
+
+
+    /* =====================================================
+       DISCOUNT
+    ===================================================== */
+
+    function getDiscountPercent(oldPrice, price) {
+
+      return Math.round(
+        ((oldPrice - price) / oldPrice) * 100
+      );
+
+    }
+
+
+    /* =====================================================
+       RENDER PRODUCTS
+    ===================================================== */
+
+    function renderProducts(list = products) {
+
+      const grid = document.getElementById("productsGrid");
+
+      if (!list.length) {
+
+        grid.innerHTML = `
+          <div class="no-products">
+            لا توجد منتجات مطابقة للبحث.
+          </div>
+        `;
+
+        return;
+      }
+
+      grid.innerHTML = list.map(product => {
+
+        const discount =
+          getDiscountPercent(product.oldPrice, product.price);
+
+        return `
+
+          <div class="product">
+
+            <div class="product-image">
+
+              <span class="discount-badge">
+                خصم ${discount}%
+              </span>
+
+              <img
+                src="${product.image}"
+                alt="${product.name}"
+                loading="lazy"
+                onerror="this.onerror=null;this.src='https://placehold.co/600x600/f4f8f6/176b5a?text=Dr.+Hassan';"
+                >
+
+            </div>
+
+            <div class="product-info">
+
+              <div class="product-category">
+                ${product.categoryName}
+              </div>
+
+              <h3>
+                ${product.name}
+              </h3>
+
+              <div class="price-box">
+
+                <span class="old-price">
+                  ${product.oldPrice} جنيه
+                </span>
+
+                <span class="new-price">
+                  ${product.price}
+                  <span class="currency">جنيه</span>
+                </span>
+
+              </div>
+
+              <button
+                class="add-btn"
+                onclick="addToCart('${product.id}')">
+
+                🛒 أضف للسلة
+
+              </button>
+
+            </div>
+
+          </div>
+
+        `;
+
+      }).join("");
+
+    }
+
+
+    /* =====================================================
+       FILTER PRODUCTS
+    ===================================================== */
+
+    function filterProducts(category) {
+
+      currentFilter = category;
+
+      document.querySelectorAll(".filter-btn")
+        .forEach(btn => {
+
+          btn.classList.toggle(
+            "active",
+            btn.dataset.filter === category
+          );
+
+        });
+
+      const search =
+        document.getElementById("searchInput").value
+          .trim()
+          .toLowerCase();
+
+      let filtered = products;
+
+      if (category !== "all") {
+
+        filtered = filtered.filter(
+          product => product.category === category
+        );
+
+      }
+
+      if (search) {
+
+        filtered = filtered.filter(
+          product =>
+            product.name.toLowerCase().includes(search)
+        );
+
+      }
+
+      renderProducts(filtered);
+
+      document
+        .getElementById("products")
+        .scrollIntoView({
+          behavior: "smooth"
+        });
+
+    }
+
+
+    /* =====================================================
+       SEARCH
+    ===================================================== */
+
+    function searchProducts() {
+
+      const search =
+        document.getElementById("searchInput").value
+          .trim()
+          .toLowerCase();
+
+      let filtered = products;
+
+      if (currentFilter !== "all") {
+
+        filtered = filtered.filter(
+          product =>
+            product.category === currentFilter
+        );
+
+      }
+
+      if (search) {
+
+        filtered = filtered.filter(
+          product =>
+            product.name.toLowerCase().includes(search)
+        );
+
+      }
+
+      renderProducts(filtered);
+
+    }
+
+
+    /* =====================================================
+       ADD TO CART
+    ===================================================== */
+
+    function addToCart(productId) {
+
+      const product =
+        products.find(p => p.id === productId);
+
+      if (!product) return;
+
+      const existing =
+        cart.find(item => item.id === productId);
+
+      if (existing) {
+
+        existing.quantity += 1;
+
+      } else {
+
+        cart.push({
+          id: product.id,
+          name: product.name,
+          price: product.price,
+          oldPrice: product.oldPrice,
+          image: product.image,
+          quantity: 1
+        });
+
+      }
+
+      updateCart();
+
+    }
+
+
+    /* =====================================================
+       CHANGE QUANTITY
+    ===================================================== */
+
+    function changeQuantity(id, change) {
+
+      const item =
+        cart.find(product => product.id === id);
+
+      if (!item) return;
+
+      item.quantity += change;
+
+      if (item.quantity <= 0) {
+
+        cart =
+          cart.filter(product => product.id !== id);
+
+      }
+
+      updateCart();
+
+    }
+
+
+    /* =====================================================
+       REMOVE ITEM
+    ===================================================== */
+
+    function removeFromCart(id) {
+
+      cart =
+        cart.filter(product => product.id !== id);
+
+      updateCart();
+
+    }
+
+
+    /* =====================================================
+       CART TOTAL
+    ===================================================== */
+
+    function calculateSubtotal() {
+
+      return cart.reduce(
+        (sum, item) =>
+          sum + (item.price * item.quantity),
+        0
+      );
+
+    }
+
+
+    /* =====================================================
+       UPDATE CART
+    ===================================================== */
+
+    function updateCart() {
+
+      const cartItems =
+        document.getElementById("cartItems");
+
+      const cartCount =
+        document.getElementById("cartCount");
+
+      const totalQuantity =
+        cart.reduce(
+          (sum, item) => sum + item.quantity,
+          0
+        );
+
+      cartCount.textContent = totalQuantity;
+
+
+      if (!cart.length) {
+
+        cartItems.innerHTML = `
+          <div class="empty-cart">
+            🛒
+            <br><br>
+            السلة فارغة
+            <br>
+            أضيفي المنتجات التي تريدين شراءها.
+          </div>
+        `;
+
+      } else {
+
+        cartItems.innerHTML = cart.map(item => `
+
+          <div class="cart-item">
+
+            <div class="cart-item-top">
+
+              <div class="cart-item-name">
+                ${item.name}
+              </div>
+
+              <button
+                class="remove-item"
+                onclick="removeFromCart('${item.id}')">
+                ×
+              </button>
+
+            </div>
+
+            <div class="cart-item-bottom">
+
+              <div class="quantity-control">
+
+                <button
+                  onclick="changeQuantity('${item.id}', -1)">
+                  −
+                </button>
+
+                <strong>
+                  ${item.quantity}
+                </strong>
+
+                <button
+                  onclick="changeQuantity('${item.id}', 1)">
+                  +
+                </button>
+
+              </div>
+
+              <strong>
+                ${item.price * item.quantity} جنيه
+              </strong>
+
+            </div>
+
+          </div>
+
+        `).join("");
+
+      }
+
+
+      updateSummary();
+      updateOrderSummary();
+
+    }
+
+
+    /* =====================================================
+       APPLY COUPON
+    ===================================================== */
+
+    function applyCoupon() {
+
+      const input =
+        document
+          .getElementById("couponInput")
+          .value
+          .trim()
+          .toUpperCase();
+
+      const message =
+        document.getElementById("couponMessage");
+
+      if (COUPONS[input]) {
+
+        appliedCoupon = input;
+        couponDiscount =
+          calculateSubtotal() * COUPONS[input];
+
+        const percent = COUPONS[input] * 100;
+
+        message.textContent =
+          `تم تطبيق خصم ${percent}% بنجاح 🎉`;
+
+        message.style.color = "#198754";
+
+      } else {
+
+        appliedCoupon = "";
+        couponDiscount = 0;
+
+        if (input) {
+
+          message.textContent =
+            "كود الخصم غير صحيح ❌";
+
+          message.style.color = "#d9534f";
+
+        } else {
+
+          message.textContent = "";
+
+        }
+
+      }
+
+      updateSummary();
+
+    }
+
+
+    /* =====================================================
+       UPDATE SUMMARY
+    ===================================================== */
+
+    function updateSummary() {
+
+      const subtotal =
+        calculateSubtotal();
+
+      if (appliedCoupon && COUPONS[appliedCoupon]) {
+        couponDiscount = subtotal * COUPONS[appliedCoupon];
+      }
+
+      const paymentMethod =
+        document.getElementById("paymentMethod")
+          ? document.getElementById("paymentMethod").value
+          : "";
+
+      const codFee =
+        paymentMethod === "الدفع عند الاستلام"
+          ? COD_FEE
+          : 0;
+
+      const shippingFee = getShippingFee();
+
+      const total =
+        Math.max(
+          0,
+          subtotal - couponDiscount + shippingFee + codFee
+        );
+
+      document.getElementById("subtotal")
+        .textContent = subtotal;
+
+      document.getElementById("discount")
+        .textContent = couponDiscount;
+
+      document.getElementById("shippingFee")
+        .textContent = shippingFee;
+
+      document.getElementById("codFee")
+        .textContent = codFee;
+
+      document.getElementById("total")
+        .textContent = total;
+
+    }
+
+
+    /* =====================================================
+       ORDER SUMMARY
+    ===================================================== */
+
+    function updateOrderSummary() {
+
+      const box =
+        document.getElementById("orderSummary");
+
+      if (!cart.length) {
+
+        box.innerHTML = `
+          <p style="color:#777;text-align:center;">
+            السلة فارغة حاليًا
+          </p>
+        `;
+
+        return;
+
+      }
+
+      box.innerHTML = `
+
+        ${cart.map(item => `
+
+          <div style="
+            display:flex;
+            justify-content:space-between;
+            gap:10px;
+            padding:10px 0;
+            border-bottom:1px solid #eee;
+            font-size:14px;
+          ">
+
+            <span>
+              ${item.name}
+              × ${item.quantity}
+            </span>
+
+            <strong>
+              ${item.price * item.quantity} جنيه
+            </strong>
+
+          </div>
+
+        `).join("")}
+
+        <div style="
+          display:flex;
+          justify-content:space-between;
+          margin-top:15px;
+          font-size:18px;
+          font-weight:bold;
+          color:#10483d;
+        ">
+
+          <span>الإجمالي</span>
+
+          <span>
+            ${document.getElementById("total").textContent}
+            جنيه
+          </span>
+
+        </div>
+
+      `;
+
+    }
+
+
+    /* =====================================================
+       OPEN CART
+    ===================================================== */
+
+    function openCart() {
+
+      document
+        .getElementById("cartSidebar")
+        .classList.add("open");
+
+      document
+        .getElementById("cartOverlay")
+        .classList.add("show");
+
+    }
+
+
+    /* =====================================================
+       CLOSE CART
+    ===================================================== */
+
+    function closeCart() {
+
+      document
+        .getElementById("cartSidebar")
+        .classList.remove("open");
+
+      document
+        .getElementById("cartOverlay")
+        .classList.remove("show");
+
+    }
+
+
+    /* =====================================================
+       GO TO ORDER
+    ===================================================== */
+
+    function goToOrder() {
+
+      if (!cart.length) {
+
+        alert("من فضلك أضيفي منتجًا إلى السلة أولًا.");
+
+        return;
+
+      }
+
+      closeCart();
+
+      document
+        .getElementById("order")
+        .scrollIntoView({
+          behavior: "smooth"
+        });
+
+    }
+
+
+    /* =====================================================
+       SEND ORDER TO WHATSAPP
+    ===================================================== */
+
+    function sendOrder(event) {
+
+      event.preventDefault();
+
+      if (!cart.length) {
+
+        alert("من فضلك أضيفي منتجًا إلى السلة أولًا.");
+
+        return;
+
+      }
+
+      const name =
+        document.getElementById("customerName").value.trim();
+
+      const phone =
+        document.getElementById("customerPhone").value.trim();
+
+      const governorate =
+        document.getElementById("governorate").value.trim();
+
+      const area =
+        document.getElementById("area").value.trim();
+
+      const address =
+        document.getElementById("address").value.trim();
+
+      const paymentMethod =
+        document.getElementById("paymentMethod").value;
+
+
+      if (
+        !name ||
+        !phone ||
+        !governorate ||
+        !area ||
+        !address ||
+        !paymentMethod
+      ) {
+
+        alert("من فضلك املئي جميع البيانات المطلوبة.");
+
+        return;
+
+      }
+
+
+      /* ================= ORDER ID ================= */
+
+      const orderId =
+        "DH-" +
+        Date.now().toString().slice(-8);
+
+
+      /* ================= TOTALS ================= */
+
+      const subtotal =
+        calculateSubtotal();
+
+      const codFee =
+        paymentMethod === "الدفع عند الاستلام"
+          ? COD_FEE
+          : 0;
+
+      const shippingFee = getShippingFee();
+
+      const total =
+        Math.max(
+          0,
+          subtotal - couponDiscount + shippingFee + codFee
+        );
+
+
+      /* ================= PRODUCTS MESSAGE ================= */
+
+      const productsText =
+        cart.map((item, index) => {
+
+          return (
+            `${index + 1}. ${item.name}\n` +
+            `   الكمية: ${item.quantity}\n` +
+            `   السعر: ${item.price} جنيه\n` +
+            `   الإجمالي: ${item.price * item.quantity} جنيه`
+          );
+
+        }).join("\n\n");
+
+
+      /* ================= WHATSAPP MESSAGE ================= */
+
+      const message =
+
+`🛍️ *طلب جديد - متجر دكتور حسن*
+
+━━━━━━━━━━━━━━
+📋 *بيانات الطلب*
+━━━━━━━━━━━━━━
+
+🔢 رقم الطلب: ${orderId}
+
+👤 الاسم:
+${name}
+
+📱 رقم الهاتف:
+${phone}
+
+📍 المحافظة:
+${governorate}
+
+📌 المنطقة:
+${area}
+
+🏠 العنوان:
+${address}
+
+💳 طريقة الدفع:
+${paymentMethod}
+
+━━━━━━━━━━━━━━
+🛒 *المنتجات*
+━━━━━━━━━━━━━━
+
+${productsText}
+
+━━━━━━━━━━━━━━
+💰 *الحساب*
+━━━━━━━━━━━━━━
+
+الإجمالي الفرعي: ${subtotal} جنيه
+الخصم: ${couponDiscount} جنيه
+الشحن: ${shippingFee} جنيه
+رسوم الدفع عند الاستلام: ${codFee} جنيه
+
+💵 *الإجمالي النهائي: ${total} جنيه*
+
+━━━━━━━━━━━━━━
+📅 تاريخ الطلب:
+${new Date().toLocaleString("ar-EG")}
+
+شكراً لطلبك من متجر دكتور حسن 🌿`;
+
+
+      /* ================= OPEN WHATSAPP ================= */
+
+      const whatsappURL =
+        `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+
+
+      window.open(
+        whatsappURL,
+        "_blank"
+      );
+
+
+      /* ================= SUCCESS MESSAGE ================= */
+
+      document
+        .getElementById("successOrderId")
+        .textContent = orderId;
+
+      document
+        .getElementById("successBox")
+        .classList.add("show");
+
+
+      /*
+        نمسح السلة بعد تجهيز الطلب.
+        العميل سيجد رسالة الطلب جاهزة داخل واتساب.
+      */
+
+      cart = [];
+
+      couponDiscount = 0;
+      appliedCoupon = "";
+
+      document
+        .getElementById("couponInput")
+        .value = "";
+
+      document
+        .getElementById("couponMessage")
+        .textContent = "";
+
+      document
+        .getElementById("orderForm")
+        .reset();
+
+      updateCart();
+
+
+      document
+        .getElementById("successBox")
+        .scrollIntoView({
+          behavior: "smooth",
+          block: "center"
+        });
+
+    }
+
+
+    /* =====================================================
+       PAYMENT CHANGE
+    ===================================================== */
+
+    document
+      .getElementById("paymentMethod")
+      .addEventListener("change", function() {
+
+        updateSummary();
+        updateOrderSummary();
+
+      });
+
+
+    /* =====================================================
+       INITIALIZE
+    ===================================================== */
+
+    renderProducts();
+    updateCart();
+
+  </script>
+
+</body>
+</html>
